@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="360" height="340"
+     viewBox="-10 -10 360 340">
+
+  <!-- Base triangle geometry (identical for all) -->
+  <!-- Angles: 100°, 30°, 50° | Long side at 30° to horizontal -->
+
+  <!-- RIGHT COLUMN (drawn first = underneath) -->
+  <g transform="translate(90,0)" fill="#EB3D0B">
+    <polygon points="0,0 190.526,110 85.565,148.203"/>
+  </g>
+
+  <g transform="translate(90,173.203)" fill="#7A8A96">
+    <polygon points="0,0 190.526,110 85.565,148.203"/>
+  </g>
+
+  <!-- LEFT COLUMN (drawn last = on top) -->
+  <g fill="#AFC7E8">
+    <polygon points="0,0 190.526,110 85.565,148.203"/>
+  </g>
+
+  <g transform="translate(0,173.203)" fill="#003E78">
+    <polygon points="0,0 190.526,110 85.565,148.203"/>
+  </g>
+
+</svg>

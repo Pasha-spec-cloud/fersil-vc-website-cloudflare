@@ -1,0 +1,30 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "main": ".open-next/worker.js",
+  "name": "fersil-vc-website-cloudflare",
+  "compatibility_date": "2026-07-22",
+  "compatibility_flags": [
+    "nodejs_compat",
+    "global_fetch_strictly_public"
+  ],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "services": [
+    {
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "fersil-vc-website-cloudflare"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "FERSIL_CONTENT",
+      "bucket_name": "fersil-vc-content"
+    },
+    {
+      "binding": "FERSIL_MEDIA",
+      "bucket_name": "fersil-vc-media"
+    }
+  ]
+}

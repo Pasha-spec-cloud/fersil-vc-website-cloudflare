@@ -1,0 +1,265 @@
+import Image from 'next/image';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
+import { Container } from '@/components/ui/container';
+import { SectionHeading } from '@/components/ui/section-heading';
+import { MaterialThesis } from '@/components/home/material-thesis';
+import { PageHero } from '@/components/layout/page-hero';
+import { TeamCard } from '@/components/team/team-card';
+import { NewsCard } from '@/components/news/news-card';
+import { getContentBundle } from '@/lib/content';
+
+const differentiators = [
+  {
+    title: 'Ferrum ↔ silicon thesis',
+    description: 'We back companies where atoms meet bits: sensing, control systems, robotics, industrial software, and the infrastructure that binds hardware to software.'
+  },
+  {
+    title: 'CEE diaspora angle',
+    description: 'Our team has spent years working with CEE talent and global operators, giving FerSil a differentiated view into diaspora founders building category-defining companies far beyond their home markets.'
+  },
+  {
+    title: 'Physical world learning',
+    description: 'We care about systems that improve through deployment in the real world, from industrial data loops to autonomy stacks and edge intelligence.'
+  }
+];
+
+function HeroIndustrialIllustration() {
+  return (
+    <div className="hero-industrial-illustration" aria-hidden>
+      <svg viewBox="0 0 1440 640" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="armStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="rgba(131,183,194,0.9)" />
+            <stop offset="100%" stopColor="rgba(183,192,200,0.25)" />
+          </linearGradient>
+          <linearGradient id="waferStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="rgba(183,192,200,0.6)" />
+            <stop offset="100%" stopColor="rgba(131,183,194,0.15)" />
+          </linearGradient>
+        </defs>
+        <g fill="none" strokeLinecap="round" strokeLinejoin="round">
+          <g stroke="url(#armStroke)" strokeWidth="4">
+            <path d="M1040 130h120" />
+            <circle cx="1030" cy="130" r="14" />
+            <path d="M1030 130l-70 72" />
+            <circle cx="960" cy="202" r="16" />
+            <path d="M960 202l92 88" />
+            <circle cx="1052" cy="290" r="16" />
+            <path d="M1052 290l-62 72" />
+            <path d="M990 362h96" />
+            <path d="M1018 362v34h40v-34" />
+            <rect x="1158" y="108" width="42" height="42" rx="8" />
+          </g>
+          <g stroke="url(#waferStroke)" strokeWidth="3">
+            <ellipse cx="300" cy="390" rx="170" ry="74" />
+            <ellipse cx="300" cy="390" rx="128" ry="55" />
+            <ellipse cx="300" cy="390" rx="84" ry="36" />
+            <path d="M130 390h340" />
+            <path d="M174 352c56 24 196 24 252 0" />
+            <path d="M174 428c56-24 196-24 252 0" />
+            <path d="M300 316v148" />
+            <path d="M236 330v120" />
+            <path d="M364 330v120" />
+          </g>
+          <g stroke="rgba(131,183,194,0.35)" strokeWidth="2">
+            <path d="M720 460h420" />
+            <path d="M760 460v-120h54v120" />
+            <path d="M840 460v-160h54v160" />
+            <path d="M920 460v-104h54v104" />
+            <path d="M1000 460v-142h54v142" />
+            <path d="M1080 460v-82h54v82" />
+            <path d="M740 500h430" />
+            <path d="M760 500v16M840 500v16M920 500v16M1000 500v16M1080 500v16" />
+          </g>
+        </g>
+      </svg>
+    </div>
+  );
+}
+
+export default async function HomePage() {
+  const { companies, team, news } = await getContentBundle();
+  const activeCompanies = companies.filter((company) => company.status === 'active');
+  const exits = companies.filter((company) => company.status === 'exited').length;
+  const geographies = new Set<string>();
+  companies.forEach((company) => company.officeLocations.forEach((location) => geographies.add(location)));
+  const representativeLogoSlugs = [
+    'openai',
+    'mariadb',
+    'acronis',
+    'nomagic',
+    'workerbase',
+    'portside',
+    'virtuozzo',
+    'hover',
+    'refurbed',
+    'onesoil',
+    'xolo',
+    'marta'
+  ] as const;
+  const representativeCompanies = representativeLogoSlugs
+    .map((slug) => activeCompanies.find((company) => company.slug === slug))
+    .filter((company): company is (typeof activeCompanies)[number] => Boolean(company));
+  const teamSpotlight = team
+    .filter((m) => !m.hidden && !m.draft && (m.role.toLowerCase().includes('partner') || m.role.toLowerCase().includes('chairman')))
+    .slice(0, 4);
+  const latestNews = news.slice(0, 3);
+  const companiesBySlug = Object.fromEntries(companies.map((company) => [company.slug, company] as const));
+
+  const heroStats = [
+    { label: 'Active companies', value: activeCompanies.length.toString() },
+    { label: 'Strategic exits', value: exits.toString() },
+    { label: 'Regions represented', value: geographies.size.toString() }
+  ];
+
+  return (
+    <div className="space-y-24 py-16">
+      <PageHero imageSrc="/media/backgrounds/home-hero.png" imageAlt="FerSil VC hero background with robotics lab environment" className="px-8 py-16">
+        <Container className="grid gap-10 lg:grid-cols-[2fr,1fr]">
+          <div className="space-y-8">
+            <p className="text-sm uppercase tracking-[0.4em] text-muted">FerSil VC</p>
+            <h1 className="h1">Backing the hardware-software interface</h1>
+            <p className="max-w-2xl text-lg text-muted">
+              FerSil VC invests in technical founders building robotics, industrial intelligence, and software shaped by the physical world. Ferrum ↔ silicon is the industry focus. The team angle is CEE diaspora founders building globally ambitious companies with deep technical roots.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Button size="lg" asChild>
+                <Link href="/companies">View Portfolio</Link>
+              </Button>
+              <Button variant="accent" size="lg" asChild>
+                <Link href="/team">Meet the Team</Link>
+              </Button>
+            </div>
+          </div>
+          <div className="rounded-3xl border border-white/5 bg-white/5 p-6 backdrop-blur">
+            <p className="text-sm text-muted">Platform Snapshot</p>
+            <ul className="mt-6 space-y-4 text-3xl font-display">
+              {heroStats.map((stat) => (
+                <li key={stat.label} className="flex items-baseline justify-between">
+                  <span>{stat.value}</span>
+                  <span className="text-xs uppercase tracking-[0.3em] text-muted">{stat.label}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Container>
+        <div className="hero-brand-bg pointer-events-none absolute inset-0" aria-hidden />
+        <HeroIndustrialIllustration />
+      </PageHero>
+
+      <section>
+        <Container>
+          <SectionHeading
+            kicker="Differentiators"
+            title="What differentiates FerSil"
+            description="A focused early-stage platform for founders building real-world systems, technical infrastructure, and robotics-enabled workflows."
+          />
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {differentiators.map((item) => (
+              <Card key={item.title} title={item.title} className="h-full">
+                <p className="mt-4 text-muted">{item.description}</p>
+              </Card>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section>
+        <Container>
+          <SectionHeading
+            kicker="Ferrum ↔ Silicon"
+            title="A materials metaphor behind the investment thesis"
+            description="We translated the iron-silicon crystal and property studies into an interactive FerSil section to make the thesis more tangible on the page."
+          />
+          <div className="mt-12">
+            <MaterialThesis />
+          </div>
+        </Container>
+      </section>
+
+      <section>
+        <Container>
+          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <SectionHeading
+              kicker="Companies"
+              title="Portfolio companies building the future"
+              description="Representative active companies across the FerSil network, spanning infrastructure, robotics, industrial systems, AI, and software shaped by the physical world."
+            />
+            <Button variant="ghost" className="self-start md:self-auto" asChild>
+              <Link href="/companies">Browse companies →</Link>
+            </Button>
+          </div>
+          <div className="panel mt-12 rounded-3xl border-white/10 p-6 md:p-8">
+            <p className="text-xs uppercase tracking-[0.3em] text-muted">Representative active companies</p>
+            <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-6">
+              {representativeCompanies.map((company) => (
+                <Link
+                  key={company.id}
+                  href={`/companies/${company.slug}`}
+                  className="group relative flex h-24 items-center justify-center rounded-[1.75rem] border border-slate-200 bg-white px-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+                >
+                  {company.logo ? (
+                    <Image
+                      src={company.logo}
+                      alt={company.name}
+                      fill
+                      className={company.slug === 'nomagic' ? 'object-contain p-1 brightness-[0.42] saturate-[1.75] contrast-[1.5] scale-[1.22]' : 'object-contain p-3'}
+                      sizes="220px"
+                    />
+                  ) : (
+                    <span className="flex h-full items-center justify-center font-display text-xl text-slate-900">{company.name[0]}</span>
+                  )}
+                </Link>
+              ))}
+            </div>
+            <p className="mt-6 text-sm text-muted">
+              {activeCompanies.length}+ active companies across {geographies.size}+ regions, plus {exits}+ strategic exits.
+            </p>
+          </div>
+        </Container>
+      </section>
+
+      <section>
+        <Container>
+          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <SectionHeading
+              kicker="Team"
+              title="Operators for technical funds and technical founders"
+              description="FerSil combines investing, LP operations, and company-building support around two lenses: ferrum ↔ silicon as sector focus, and CEE diaspora founders as a sourcing edge."
+            />
+            <Button variant="ghost" className="self-start md:self-auto" asChild>
+              <Link href="/team">Meet the full team →</Link>
+            </Button>
+          </div>
+          <div className="mt-10 grid grid-cols-2 gap-6">
+            {teamSpotlight.map((member) => (
+              <TeamCard key={member.id} member={member} companiesBySlug={companiesBySlug} variant="compact" companyFilter="active" />
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section>
+        <Container>
+          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <SectionHeading
+              kicker="News"
+              title="Updates from the FerSil network"
+              description="Legacy portfolio news, new milestones, and signals from the systems we believe will matter next."
+            />
+            <Button variant="ghost" className="self-start md:self-auto" asChild>
+              <Link href="/news">See all news →</Link>
+            </Button>
+          </div>
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {latestNews.map((item) => (
+              <NewsCard key={item.id} item={item} variant="compact" />
+            ))}
+          </div>
+        </Container>
+      </section>
+    </div>
+  );
+}
