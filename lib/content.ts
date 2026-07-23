@@ -152,9 +152,16 @@ type NewsOptions = LoadOptions & {
   limit?: number;
 };
 
+const PUBLIC_NEWS_START = Date.UTC(2021, 0, 1);
+
+export function isPublicNewsItem(item: Pick<NewsItem, 'publishedAt'>): boolean {
+  return new Date(item.publishedAt).getTime() >= PUBLIC_NEWS_START;
+}
+
 export async function getNewsItems(options: NewsOptions = {}): Promise<NewsItem[]> {
   const news = await readResource('news');
-  const filtered = filterDrafts(news, options.includeDrafts).sort(
+  const visible = filterDrafts(news, options.includeDrafts);
+  const filtered = (options.includeDrafts ? visible : visible.filter(isPublicNewsItem)).sort(
     (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
   );
 

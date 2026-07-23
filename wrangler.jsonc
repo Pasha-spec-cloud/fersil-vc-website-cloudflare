@@ -32,6 +32,11 @@
 			"simple": { "limit": 3, "period": 60 }
 		},
 		{
+			"name": "ACCESS_CODE_VERIFY_RATE_LIMITER",
+			"namespace_id": "19703",
+			"simple": { "limit": 10, "period": 60 }
+		},
+		{
 			"name": "ADMIN_LOGIN_RATE_LIMITER",
 			"namespace_id": "19702",
 			"simple": { "limit": 5, "period": 60 }

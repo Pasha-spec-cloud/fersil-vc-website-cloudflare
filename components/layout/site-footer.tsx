@@ -2,9 +2,9 @@ import { BrandMark } from '@/components/brand/brand-mark';
 import { Container } from '@/components/ui/container';
 
 const supportLogos = [
-  'https://almazcapital.com/assets/img-support-1.png',
-  'https://almazcapital.com/assets/img-support-2.png',
-  'https://almazcapital.com/assets/img-support-3.png'
+  { src: '/media/support/ebrd.png', alt: 'European Bank for Reconstruction and Development' },
+  { src: '/media/support/european-commission.png', alt: 'European Commission' },
+  { src: '/media/support/eif.png', alt: 'European Investment Fund' }
 ] as const;
 
 export function SiteFooter() {
@@ -19,8 +19,8 @@ export function SiteFooter() {
         </div>
         <div className="lg:justify-self-end lg:text-right">
           <div className="flex flex-wrap items-center gap-4 lg:justify-end">
-            {supportLogos.map((src, index) => (
-              <img key={src} src={src} alt={`Support visual ${index + 1}`} className="h-10 w-auto object-contain" loading="lazy" decoding="async" />
+            {supportLogos.map(({ src, alt }) => (
+              <img key={src} src={src} alt={alt} className="h-10 w-auto object-contain" loading="lazy" decoding="async" />
             ))}
           </div>
           <p className="mt-3 max-w-2xl text-xs text-muted lg:ml-auto">

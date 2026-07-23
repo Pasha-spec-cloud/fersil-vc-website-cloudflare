@@ -2,6 +2,7 @@ import { cookies } from 'next/headers';
 import { timingSafeEqual } from 'node:crypto';
 
 import { ADMIN_SESSION_COOKIE, ADMIN_SESSION_MAX_AGE } from '@/lib/constants';
+import { isAdminOpenAccessEnabled } from '@/lib/admin-access';
 import { createAdminSessionToken, readAdminSessionToken } from '@/lib/admin-session';
 import { getCloudflareRateLimiter } from '@/lib/cloudflare';
 import { verifyTotp } from '@/lib/totp';
@@ -12,10 +13,6 @@ type AdminCredentials = {
 };
 
 const DEFAULT_ADMIN_EMAIL = 'admin@fersil.vc';
-
-function adminOpenAccess(): boolean {
-  return process.env.ADMIN_OPEN_ACCESS === '1';
-}
 
 function normalizeEmail(value: string): string {
   return value.trim().toLowerCase();
@@ -48,7 +45,7 @@ export function getAdminCredentials(): AdminCredentials {
 }
 
 export async function hasActiveAdminSession(): Promise<boolean> {
-  if (adminOpenAccess()) {
+  if (isAdminOpenAccessEnabled()) {
     return true;
   }
   const cookieValue = (await cookies()).get(ADMIN_SESSION_COOKIE)?.value;
@@ -66,7 +63,7 @@ export async function createAdminSession(
   password: string,
   otp?: string
 ): Promise<{ success: boolean; error?: string }> {
-  if (adminOpenAccess()) {
+  if (isAdminOpenAccessEnabled()) {
     return { success: true };
   }
 
@@ -117,7 +114,7 @@ export async function createAdminSession(
 }
 
 export async function destroyAdminSession(): Promise<void> {
-  if (adminOpenAccess()) {
+  if (isAdminOpenAccessEnabled()) {
     return;
   }
   const cookieStore = await cookies();

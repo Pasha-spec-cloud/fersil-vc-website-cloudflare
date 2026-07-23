@@ -2,10 +2,9 @@ import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 
 import { ADMIN_SESSION_COOKIE, DEVELOPER_ACCESS_COOKIE } from '@/lib/constants';
+import { isAdminOpenAccessEnabled } from '@/lib/admin-access';
 import { readAdminSessionToken } from '@/lib/admin-session';
 import { readDeveloperToken } from '@/lib/developer-access';
-
-const adminOpenAccess = process.env.ADMIN_OPEN_ACCESS === '1';
 
 async function hasSession(request: NextRequest): Promise<boolean> {
   const cookie = request.cookies.get(ADMIN_SESSION_COOKIE)?.value;
@@ -36,7 +35,7 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  if (adminOpenAccess) {
+  if (isAdminOpenAccessEnabled()) {
     if (pathname === '/admin/login') {
       return NextResponse.redirect(new URL('/admin', request.url));
     }

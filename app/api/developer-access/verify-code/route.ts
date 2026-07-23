@@ -11,6 +11,7 @@ import {
   reduceDeveloperChallengeAttempts,
   verifyDeveloperChallenge
 } from '@/lib/developer-access';
+import { getCloudflareRateLimiter } from '@/lib/cloudflare';
 
 export async function POST(request: Request) {
   const body = (await request.json()) as { email?: string; code?: string };
@@ -18,6 +19,20 @@ export async function POST(request: Request) {
   const code = String(body.code ?? '').trim();
   if (!isAllowedDeveloperEmail(email) || !/^\d{6}$/.test(code)) {
     return NextResponse.json({ ok: false, error: 'Enter the six-digit code sent to your FerSil email.' }, { status: 400 });
+  }
+
+  const limiter = await getCloudflareRateLimiter('ACCESS_CODE_VERIFY_RATE_LIMITER');
+  if (limiter) {
+    const ip = request.headers.get('CF-Connecting-IP')
+      ?? request.headers.get('x-forwarded-for')?.split(',')[0]?.trim()
+      ?? 'unknown';
+    const [emailLimit, ipLimit] = await Promise.all([
+      limiter.limit({ key: `email:${email}` }),
+      limiter.limit({ key: `ip:${ip}` })
+    ]);
+    if (!emailLimit.success || !ipLimit.success) {
+      return NextResponse.json({ ok: false, error: 'Too many verification attempts. Try again in a minute.' }, { status: 429 });
+    }
   }
 
   const cookieStore = await cookies();
