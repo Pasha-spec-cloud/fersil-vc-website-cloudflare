@@ -10,13 +10,13 @@ import type { Company } from '@/types/content';
 import { slugify } from '@/lib/utils';
 
 export async function GET() {
-  assertAdminSession();
+  await assertAdminSession();
   const companies = await getCompanies({ includeDrafts: true });
   return NextResponse.json({ data: companies });
 }
 
 export async function POST(request: NextRequest) {
-  assertAdminSession();
+  await assertAdminSession();
   try {
     const { payload, logoFile } = await parseCompanyRequest(request);
     if (logoFile) {

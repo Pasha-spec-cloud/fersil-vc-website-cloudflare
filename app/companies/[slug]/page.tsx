@@ -12,7 +12,7 @@ import { getCompanies, getCompanyBySlug, getNewsItems, getTeamMembers } from '@/
 import { absoluteUrl, formatDate } from '@/lib/utils';
 
 type CompanyPageProps = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export async function generateStaticParams() {
@@ -21,7 +21,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: CompanyPageProps): Promise<Metadata> {
-  const company = await getCompanyBySlug(params.slug);
+  const { slug } = await params;
+  const company = await getCompanyBySlug(slug);
 
   if (!company) {
     return { title: 'Company not found' };
@@ -60,7 +61,8 @@ function normalizeFactTitle(title: string): string {
 }
 
 export default async function CompanyDetailPage({ params }: CompanyPageProps) {
-  const company = await getCompanyBySlug(params.slug);
+  const { slug } = await params;
+  const company = await getCompanyBySlug(slug);
 
   if (!company) {
     notFound();

@@ -3,13 +3,14 @@ import type { NextRequest } from 'next/server';
 import { readMediaObject } from '@/lib/storage';
 
 type RouteContext = {
-  params: {
+  params: Promise<{
     key?: string[];
-  };
+  }>;
 };
 
 export async function GET(_request: NextRequest, context: RouteContext) {
-  const segments = (context.params.key ?? []).filter(Boolean);
+  const { key } = await context.params;
+  const segments = (key ?? []).filter(Boolean);
   if (segments.length === 0 || segments.some((segment) => segment === '.' || segment === '..')) {
     return new Response('Not found', { status: 404 });
   }
@@ -26,6 +27,8 @@ export async function GET(_request: NextRequest, context: RouteContext) {
     headers.set('content-type', object.httpMetadata.contentType);
   }
   headers.set('cache-control', 'public, max-age=31536000, immutable');
+  headers.set('x-content-type-options', 'nosniff');
+  headers.set('content-security-policy', "default-src 'none'; sandbox");
   if (object.etag) {
     headers.set('etag', object.etag);
   }

@@ -7,17 +7,28 @@ type PageHeroProps = {
   imageSrc: string;
   imageAlt: string;
   children: ReactNode;
+  tone?: 'home' | 'companies' | 'team' | 'news' | 'contact';
   className?: string;
   contentClassName?: string;
 };
 
-export function PageHero({ imageSrc, imageAlt, children, className, contentClassName }: PageHeroProps) {
+export function PageHero({
+  imageSrc,
+  imageAlt,
+  children,
+  tone = 'home',
+  className,
+  contentClassName
+}: PageHeroProps) {
   return (
-    <section className={cn('panel relative overflow-hidden px-6 py-16 md:px-8', className)}>
-      <div className="absolute inset-0">
-        <Image src={imageSrc} alt={imageAlt} fill className="object-cover" priority sizes="100vw" />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,11,14,0.82)_0%,rgba(8,11,14,0.74)_36%,rgba(8,11,14,0.42)_70%,rgba(8,11,14,0.34)_100%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,11,14,0.30)_0%,rgba(8,11,14,0.58)_100%)]" />
+    <section
+      className={cn('page-hero panel relative overflow-hidden px-6 py-16 md:px-8', className)}
+      data-tone={tone}
+    >
+      <div className="page-hero-media absolute inset-0">
+        <Image src={imageSrc} alt={imageAlt} fill className="page-hero-image object-cover" priority sizes="100vw" />
+        <div className="page-hero-overlay absolute inset-0" />
+        <div className="page-hero-vignette absolute inset-0" />
       </div>
       <div className={cn('relative z-10', contentClassName)}>{children}</div>
     </section>

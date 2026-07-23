@@ -8,8 +8,9 @@ export const size = {
 };
 export const contentType = 'image/png';
 
-export default async function CompanyOgImage({ params }: { params: { slug: string } }) {
-  const company = await getCompanyBySlug(params.slug);
+export default async function CompanyOgImage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const company = await getCompanyBySlug(slug);
   const title = company?.name ?? 'FerSil VC';
   const subtitle = company?.tagline ?? 'Portfolio highlight backed by FerSil VC';
   const stage = company?.stage ?? (company?.status === 'exited' ? 'Strategic exit' : 'Portfolio company');

@@ -1,17 +1,28 @@
-const ALLOWED_DEVELOPER_EMAILS = new Set(['pasha@fersil.vc', 'ani@fersil.vc', 'michael@fersil.vc']);
-const DEVELOPER_ACCESS_PASSWORD = 'f{9/–wyQ=}T/=ER';
 const ACCESS_TTL_MS = 30 * 24 * 60 * 60 * 1000;
+const CHALLENGE_TTL_MS = 10 * 60 * 1000;
+const RESEND_COOLDOWN_MS = 60 * 1000;
+const MAX_CODE_ATTEMPTS = 5;
 
-type TokenPurpose = 'access';
+type TokenPurpose = 'access' | 'challenge';
 
 type SignedPayload = {
   email: string;
   exp: number;
   purpose: TokenPurpose;
+  codeDigest?: string;
+  attempts?: number;
+  issuedAt?: number;
 };
 
 function getSecret(): string {
-  return process.env.DEVELOPER_ACCESS_SECRET ?? process.env.ADMIN_SESSION_SECRET ?? 'fersil-developer-access';
+  const secret = process.env.DEVELOPER_ACCESS_SECRET ?? process.env.ADMIN_SESSION_SECRET;
+  if (secret) {
+    return secret;
+  }
+  if (process.env.NODE_ENV === 'production') {
+    throw new Error('DEVELOPER_ACCESS_SECRET is not configured');
+  }
+  return 'fersil-developer-access-local-only';
 }
 
 function utf8(value: string): Uint8Array {
@@ -61,11 +72,9 @@ export function normalizeDeveloperEmail(email: string): string {
 }
 
 export function isAllowedDeveloperEmail(email: string): boolean {
-  return ALLOWED_DEVELOPER_EMAILS.has(normalizeDeveloperEmail(email));
-}
-
-export function isValidDeveloperPassword(password: string): boolean {
-  return password === DEVELOPER_ACCESS_PASSWORD;
+  const normalized = normalizeDeveloperEmail(email);
+  const [localPart, domain, extra] = normalized.split('@');
+  return Boolean(localPart && domain === 'fersil.vc' && !extra);
 }
 
 export async function createDeveloperToken(payload: SignedPayload): Promise<string> {
@@ -108,6 +117,62 @@ export async function issueDeveloperAccessToken(email: string): Promise<{ token:
   };
 
   return { token: await createDeveloperToken(payload), exp: payload.exp };
+}
+
+export function generateDeveloperAccessCode(): string {
+  const value = crypto.getRandomValues(new Uint32Array(1))[0] % 1_000_000;
+  return value.toString().padStart(6, '0');
+}
+
+export async function issueDeveloperChallenge(email: string, code: string, attempts = MAX_CODE_ATTEMPTS): Promise<string> {
+  const normalizedEmail = normalizeDeveloperEmail(email);
+  const issuedAt = Date.now();
+  return createDeveloperToken({
+    email: normalizedEmail,
+    exp: issuedAt + CHALLENGE_TTL_MS,
+    purpose: 'challenge',
+    codeDigest: await signValue(`${normalizedEmail}:${code}`),
+    attempts,
+    issuedAt
+  });
+}
+
+export async function verifyDeveloperChallenge(
+  token: string | undefined,
+  email: string,
+  code: string
+): Promise<{ valid: boolean; payload: SignedPayload | null }> {
+  const payload = await readDeveloperToken(token, 'challenge');
+  const normalizedEmail = normalizeDeveloperEmail(email);
+  if (!payload || payload.email !== normalizedEmail || !payload.codeDigest || (payload.attempts ?? 0) <= 0) {
+    return { valid: false, payload };
+  }
+
+  return {
+    valid: await verifyValue(`${normalizedEmail}:${code}`, payload.codeDigest),
+    payload
+  };
+}
+
+export function canResendDeveloperCode(token: string | undefined): Promise<boolean> {
+  return readDeveloperToken(token, 'challenge').then(
+    (payload) => !payload?.issuedAt || Date.now() - payload.issuedAt >= RESEND_COOLDOWN_MS
+  );
+}
+
+export function getDeveloperChallengeTtlSeconds(): number {
+  return Math.floor(CHALLENGE_TTL_MS / 1000);
+}
+
+export function getRemainingChallengeAttempts(payload: SignedPayload): number {
+  return Math.max(0, (payload.attempts ?? MAX_CODE_ATTEMPTS) - 1);
+}
+
+export function reduceDeveloperChallengeAttempts(payload: SignedPayload): Promise<string> {
+  return createDeveloperToken({
+    ...payload,
+    attempts: getRemainingChallengeAttempts(payload)
+  });
 }
 
 export function getDeveloperAccessTtlSeconds(): number {

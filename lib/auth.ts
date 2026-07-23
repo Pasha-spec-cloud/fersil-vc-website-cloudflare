@@ -2,6 +2,8 @@ import { cookies } from 'next/headers';
 import { timingSafeEqual } from 'node:crypto';
 
 import { ADMIN_SESSION_COOKIE, ADMIN_SESSION_MAX_AGE } from '@/lib/constants';
+import { createAdminSessionToken, readAdminSessionToken } from '@/lib/admin-session';
+import { getCloudflareRateLimiter } from '@/lib/cloudflare';
 import { verifyTotp } from '@/lib/totp';
 
 type AdminCredentials = {
@@ -10,14 +12,9 @@ type AdminCredentials = {
 };
 
 const DEFAULT_ADMIN_EMAIL = 'admin@fersil.vc';
-const DEFAULT_ADMIN_PASSWORD = 'changeme';
 
 function adminOpenAccess(): boolean {
   return process.env.ADMIN_OPEN_ACCESS === '1';
-}
-
-function getSessionSecret(): string {
-  return process.env.ADMIN_SESSION_SECRET ?? process.env.ADMIN_PASSWORD ?? 'fersil-admin-session';
 }
 
 function normalizeEmail(value: string): string {
@@ -40,25 +37,26 @@ function twoFactorRequired(): boolean {
 }
 
 export function getAdminCredentials(): AdminCredentials {
+  const password = process.env.ADMIN_PASSWORD?.trim();
+  if (!password && process.env.NODE_ENV === 'production') {
+    throw new Error('ADMIN_PASSWORD is not configured');
+  }
   return {
     email: normalizeEmail(process.env.ADMIN_EMAIL ?? DEFAULT_ADMIN_EMAIL),
-    password: process.env.ADMIN_PASSWORD ?? DEFAULT_ADMIN_PASSWORD
+    password: password ?? 'changeme-local-only'
   };
 }
 
-export function hasActiveAdminSession(): boolean {
+export async function hasActiveAdminSession(): Promise<boolean> {
   if (adminOpenAccess()) {
     return true;
   }
-  const cookieValue = cookies().get(ADMIN_SESSION_COOKIE)?.value;
-  if (!cookieValue) {
-    return false;
-  }
-  return safeCompare(cookieValue, getSessionSecret());
+  const cookieValue = (await cookies()).get(ADMIN_SESSION_COOKIE)?.value;
+  return Boolean(await readAdminSessionToken(cookieValue));
 }
 
-export function assertAdminSession(): void {
-  if (!hasActiveAdminSession()) {
+export async function assertAdminSession(): Promise<void> {
+  if (!(await hasActiveAdminSession())) {
     throw new Error('Unauthorized');
   }
 }
@@ -74,19 +72,25 @@ export async function createAdminSession(
 
   const credentials = getAdminCredentials();
   const normalizedEmail = normalizeEmail(email);
+  const limiter = await getCloudflareRateLimiter('ADMIN_LOGIN_RATE_LIMITER');
+  if (limiter && !(await limiter.limit({ key: normalizedEmail || 'missing-email' })).success) {
+    return { success: false, error: 'Too many sign-in attempts. Try again in a minute.' };
+  }
   if (!safeCompare(normalizedEmail, credentials.email)) {
     return { success: false, error: 'Incorrect email, password, or one-time code' };
   }
 
   let passwordOk = false;
+  let hasStoredHash = false;
   try {
     const { getAdminSettings, verifyPasswordHash } = await import('@/lib/admin-settings');
     const settings = await getAdminSettings();
     if (settings.passwordHash) {
+      hasStoredHash = true;
       passwordOk = verifyPasswordHash(password, settings.passwordHash);
     }
   } catch {}
-  if (!passwordOk) {
+  if (!hasStoredHash) {
     passwordOk = safeCompare(password, credentials.password);
   }
   if (!passwordOk) {
@@ -100,8 +104,8 @@ export async function createAdminSession(
     }
   }
 
-  const cookieStore = cookies();
-  cookieStore.set(ADMIN_SESSION_COOKIE, getSessionSecret(), {
+  const cookieStore = await cookies();
+  cookieStore.set(ADMIN_SESSION_COOKIE, await createAdminSessionToken(normalizedEmail), {
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production',
     sameSite: 'lax',
@@ -112,10 +116,10 @@ export async function createAdminSession(
   return { success: true };
 }
 
-export function destroyAdminSession(): void {
+export async function destroyAdminSession(): Promise<void> {
   if (adminOpenAccess()) {
     return;
   }
-  const cookieStore = cookies();
+  const cookieStore = await cookies();
   cookieStore.delete(ADMIN_SESSION_COOKIE);
 }

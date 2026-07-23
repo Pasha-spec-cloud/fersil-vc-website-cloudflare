@@ -62,12 +62,12 @@ function handleError(error: unknown) {
 }
 
 type RouteContext = {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 };
 
 export async function PATCH(request: NextRequest, context: RouteContext) {
-  assertAdminSession();
-  const { id } = context.params;
+  await assertAdminSession();
+  const { id } = await context.params;
   try {
     const { payload, headshotFile, heroImageFile } = await parseTeamRequest(request);
     payload.id = id;
@@ -97,8 +97,8 @@ export async function PATCH(request: NextRequest, context: RouteContext) {
 }
 
 export async function DELETE(_request: NextRequest, context: RouteContext) {
-  assertAdminSession();
-  const { id } = context.params;
+  await assertAdminSession();
+  const { id } = await context.params;
   try {
     let previousCompanySlugs: string[] = [];
     let found = false;

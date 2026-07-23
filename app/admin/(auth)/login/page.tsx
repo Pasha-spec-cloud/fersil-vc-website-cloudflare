@@ -10,16 +10,17 @@ export const metadata: Metadata = {
 };
 
 type LoginPageProps = {
-  searchParams?: Record<string, string | string[] | undefined>;
+  searchParams?: Promise<Record<string, string | string[] | undefined>>;
 };
 
-export default function AdminLoginPage({ searchParams }: LoginPageProps) {
+export default async function AdminLoginPage({ searchParams }: LoginPageProps) {
   if (process.env.ADMIN_OPEN_ACCESS === '1') {
     redirect('/admin');
   }
 
-  const redirectTo = typeof searchParams?.from === 'string' && searchParams.from ? searchParams.from : '/admin';
-  const resetOk = searchParams?.reset === '1';
+  const query = await searchParams;
+  const redirectTo = typeof query?.from === 'string' && query.from ? query.from : '/admin';
+  const resetOk = query?.reset === '1';
 
   return (
     <div className="mx-auto flex min-h-[70vh] max-w-lg items-center justify-center py-16">

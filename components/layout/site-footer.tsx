@@ -1,3 +1,4 @@
+import { BrandMark } from '@/components/brand/brand-mark';
 import { Container } from '@/components/ui/container';
 
 const supportLogos = [
@@ -11,8 +12,8 @@ export function SiteFooter() {
     <footer className="border-t border-white/5 py-10 text-sm text-muted">
       <Container className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(22rem,34rem)] lg:items-start">
         <div className="max-w-2xl">
-          <p className="font-display text-lg text-white">FerSil VC</p>
-          <p className="mt-1 max-w-xl text-muted">
+          <BrandMark size="md" />
+          <p className="mt-4 max-w-xl text-muted">
             Backing founders building at the ferrum-silicon interface, with a particular lens on CEE diaspora founders, robotics, industrial systems, and software that learns from the physical world.
           </p>
         </div>

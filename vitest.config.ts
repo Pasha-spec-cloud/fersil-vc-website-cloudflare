@@ -8,10 +8,6 @@ export default defineConfig({
     setupFiles: ['./vitest.setup.ts'],
     include: ['**/*.test.{ts,tsx}']
   },
-  esbuild: {
-    jsx: 'automatic',
-    jsxImportSource: 'react'
-  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, '.')

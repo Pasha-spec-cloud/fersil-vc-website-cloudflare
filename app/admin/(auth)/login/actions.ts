@@ -1,6 +1,7 @@
 'use server';
 
 import { redirect } from 'next/navigation';
+import type { Route } from 'next';
 
 import { createAdminSession } from '@/lib/auth';
 
@@ -19,5 +20,6 @@ export async function loginAction(prevState: LoginState, formData: FormData): Pr
     return { error: result.error ?? 'Invalid credentials' };
   }
 
-  redirect(redirectTo || '/admin');
+  const safeRedirect = redirectTo.startsWith('/admin') ? redirectTo : '/admin';
+  redirect(safeRedirect as Route);
 }

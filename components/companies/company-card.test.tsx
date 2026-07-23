@@ -50,7 +50,7 @@ describe('CompanyCard', () => {
     render(<CompanyCard company={{ ...baseCompany }} />);
     expect(screen.getByText('Sample Co')).toBeInTheDocument();
     expect(screen.getByText('Active')).toBeInTheDocument();
-    expect(screen.getByText('Seed')).toBeInTheDocument();
+    expect(screen.queryByText('Seed')).not.toBeInTheDocument();
     expect(screen.getByText('S')).toBeInTheDocument();
   });
 

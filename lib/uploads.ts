@@ -29,6 +29,23 @@ const MIME_EXTENSION_MAP: Record<string, string> = {
 };
 
 const uploadsRoot = path.join(process.cwd(), 'public', 'media', 'uploads');
+const MAX_UPLOAD_BYTES = 5 * 1024 * 1024;
+
+function detectImageType(buffer: Buffer): { extension: string; contentType: string } | null {
+  if (buffer.subarray(0, 8).equals(Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]))) {
+    return { extension: '.png', contentType: 'image/png' };
+  }
+  if (buffer[0] === 0xff && buffer[1] === 0xd8 && buffer[2] === 0xff) {
+    return { extension: '.jpg', contentType: 'image/jpeg' };
+  }
+  if (buffer.subarray(0, 6).toString('ascii') === 'GIF87a' || buffer.subarray(0, 6).toString('ascii') === 'GIF89a') {
+    return { extension: '.gif', contentType: 'image/gif' };
+  }
+  if (buffer.subarray(0, 4).toString('ascii') === 'RIFF' && buffer.subarray(8, 12).toString('ascii') === 'WEBP') {
+    return { extension: '.webp', contentType: 'image/webp' };
+  }
+  return null;
+}
 
 function sanitizePrefix(prefix?: string): string | undefined {
   if (!prefix) {
@@ -96,10 +113,17 @@ export async function saveUploadedFile(file: File | null, options: SaveUploadedF
     return undefined;
   }
 
-  const extension = getUploadFileExtension(file);
-  const key = buildUploadKey(extension, options);
+  if (file.size > MAX_UPLOAD_BYTES) {
+    throw new Error('Image uploads must be 5 MB or smaller');
+  }
+
   const buffer = Buffer.from(await file.arrayBuffer());
-  return uploadMediaObject(key, buffer, file.type || undefined);
+  const image = detectImageType(buffer);
+  if (!image) {
+    throw new Error('Upload a PNG, JPEG, GIF, or WebP image');
+  }
+  const key = buildUploadKey(image.extension, options);
+  return uploadMediaObject(key, buffer, image.contentType);
 }
 
 export function getUploadsRoot(): string {

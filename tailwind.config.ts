@@ -18,8 +18,8 @@ const config: Config = {
     },
     extend: {
       fontFamily: {
-        sans: ['var(--font-inter)', ...fontFamily.sans],
-        display: ['var(--font-grotesk)', ...fontFamily.sans]
+        sans: ['var(--font-sans)', ...fontFamily.sans],
+        display: ['var(--font-display)', ...fontFamily.sans]
       },
       colors: {
         background: 'var(--color-background)',

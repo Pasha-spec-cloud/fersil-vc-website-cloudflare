@@ -10,13 +10,13 @@ import type { TeamMember } from '@/types/content';
 import { slugify } from '@/lib/utils';
 
 export async function GET() {
-  assertAdminSession();
+  await assertAdminSession();
   const team = await getTeamMembers({ includeDrafts: true });
   return NextResponse.json({ data: team });
 }
 
 export async function POST(request: NextRequest) {
-  assertAdminSession();
+  await assertAdminSession();
   try {
     const { payload, headshotFile, heroImageFile } = await parseTeamRequest(request);
     if (headshotFile) {
@@ -85,4 +85,3 @@ function handleError(error: unknown) {
   const status = message === 'Not found' ? 404 : 400;
   return NextResponse.json({ error: message }, { status });
 }
-

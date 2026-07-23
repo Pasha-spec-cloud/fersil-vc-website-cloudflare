@@ -1,6 +1,6 @@
 # FerSil VC Website
 
-This project powers the next iteration of `fersil.vc` using Next.js 14, JSON content, custom admin tooling, and a private-launch developer access flow.
+This project powers `fersil.vc` using Next.js 16, Cloudflare Workers, R2-backed content, custom admin tooling, and a private-launch email access flow.
 
 ## Development
 
@@ -26,7 +26,9 @@ Developer access behavior:
 
 - Only `@fersil.vc` addresses are accepted
 - The user requests a six-digit code by e-mail
-- The code is delivered through your `admin@fersil.vc` mailbox using Gmail SMTP with OAuth2
+- The code is delivered through the Gmail API as `admin@fersil.vc` using OAuth2
+- Codes expire after 10 minutes and allow five verification attempts
+- Cloudflare limits code requests to three per address per minute
 - Successful verification stores a browser cookie and unlocks the site until that cookie expires
 
 Required variables for that flow:
@@ -34,24 +36,25 @@ Required variables for that flow:
 ```bash
 SITE_COMING_SOON=1
 DEVELOPER_ACCESS_SECRET=replace-with-a-long-random-secret
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=465
-SMTP_SECURE=1
-SMTP_USER=admin@fersil.vc
-SMTP_FROM_EMAIL="FerSil VC <admin@fersil.vc>"
+GMAIL_SENDER_EMAIL=admin@fersil.vc
 GOOGLE_OAUTH_CLIENT_ID=your-google-client-id
 GOOGLE_OAUTH_CLIENT_SECRET=your-google-client-secret
 GOOGLE_OAUTH_REFRESH_TOKEN=your-google-refresh-token
 NEXT_PUBLIC_SITE_URL=https://fersil.vc
 ```
 
-Optional fallback if you intentionally use SMTP password auth instead of OAuth:
+Use `.env.example` as the starting point for `.env.local`.
+
+Store the OAuth client secret, refresh token, admin password, and both session secrets with `npx wrangler secret put NAME`; do not add them to `wrangler.jsonc`. The Google OAuth grant must include `https://www.googleapis.com/auth/gmail.send`, offline access, and authorization by `admin@fersil.vc`.
 
 ```bash
-SMTP_PASS=replace-with-google-app-password
+npx wrangler secret put GOOGLE_OAUTH_CLIENT_ID
+npx wrangler secret put GOOGLE_OAUTH_CLIENT_SECRET
+npx wrangler secret put GOOGLE_OAUTH_REFRESH_TOKEN
+npx wrangler secret put DEVELOPER_ACCESS_SECRET
+npx wrangler secret put ADMIN_PASSWORD
+npx wrangler secret put ADMIN_SESSION_SECRET
 ```
-
-Use `.env.example` as the starting point for `.env.local`.
 
 ### Cloudflare storage model
 
@@ -91,7 +94,7 @@ Refer to `.zenflow/tasks/new-fersil-website-b8bd/spec.md` for the full specifica
 ## Local Run (macOS)
 
 Prerequisites
-- Node 20+ (project supports >=18.17)
+- Node 22+
 - npm 10+
 
 Steps
@@ -101,11 +104,7 @@ Steps
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
 SITE_COMING_SOON=1
 DEVELOPER_ACCESS_SECRET=replace-with-a-long-random-secret
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=465
-SMTP_SECURE=1
-SMTP_USER=admin@fersil.vc
-SMTP_FROM_EMAIL="FerSil VC <admin@fersil.vc>"
+GMAIL_SENDER_EMAIL=admin@fersil.vc
 GOOGLE_OAUTH_CLIENT_ID=your-google-client-id
 GOOGLE_OAUTH_CLIENT_SECRET=your-google-client-secret
 GOOGLE_OAUTH_REFRESH_TOKEN=your-google-refresh-token
@@ -129,6 +128,8 @@ Prerequisites
 - Two R2 buckets:
   - `fersil-vc-content`
   - `fersil-vc-media`
+- One incremental-cache R2 bucket:
+  - `fersil-vc-inc-cache`
 - Wrangler authenticated with your Cloudflare account
 
 Key files
@@ -143,5 +144,6 @@ Commands
 - Deploy: `npm run deploy`
 
 Notes
-- The Cloudflare build currently uses OpenNext’s unsupported-version override because this site is still on `Next.js 14.2.35`. As of July 22, 2026, Next 14 is outside the supported window, so upgrading this app to Next 15 or 16 is still recommended.
+- The site uses Next.js `16.2.11`, React `19.2.4`, and the supported OpenNext adapter. The production build uses webpack for predictable adapter compatibility.
+- Public pages render dynamically so R2 admin edits are visible across Worker isolates without a separate tag-cache database.
 - During local and CI builds, content falls back to the checked-in JSON files if the R2 content bucket is empty. In production, populate the bucket with `companies.json`, `team.json`, `news.json`, and `admin.json` if you want remote persistence from the start.

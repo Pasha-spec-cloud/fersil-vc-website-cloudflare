@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 import { generateTotp } from './lib/totp';
 
-const adminEmail = process.env.PLAYWRIGHT_ADMIN_EMAIL ?? process.env.ADMIN_EMAIL ?? 'admin@amz-capital.com';
+const adminEmail = process.env.PLAYWRIGHT_ADMIN_EMAIL ?? process.env.ADMIN_EMAIL ?? 'admin@fersil.vc';
 const adminPassword = process.env.PLAYWRIGHT_ADMIN_PASSWORD ?? process.env.ADMIN_PASSWORD ?? 'changeme';
 const totpSecret = process.env.PLAYWRIGHT_ADMIN_TOTP_SECRET ?? process.env.ADMIN_TOTP_SECRET;
 

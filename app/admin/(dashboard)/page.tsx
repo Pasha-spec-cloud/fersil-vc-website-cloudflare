@@ -1,6 +1,4 @@
-import Link from 'next/link';
-
-import { Button } from '@/components/ui/button';
+import { ButtonLink } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { getContentBundle } from '@/lib/content';
 
@@ -24,9 +22,7 @@ export default async function AdminDashboardPage() {
             <div key={stat.label} className="rounded-2xl border border-white/10 bg-white/5 p-4">
               <p className="text-xs uppercase tracking-[0.3em] text-muted">{stat.label}</p>
               <p className="mt-2 font-display text-4xl text-white">{stat.value}</p>
-              <Button asChild variant="ghost" className="mt-4 w-full">
-                <Link href={stat.href}>Manage {stat.label.toLowerCase()}</Link>
-              </Button>
+              <ButtonLink href={stat.href} variant="ghost" className="mt-4 w-full">Manage {stat.label.toLowerCase()}</ButtonLink>
             </div>
           ))}
         </div>

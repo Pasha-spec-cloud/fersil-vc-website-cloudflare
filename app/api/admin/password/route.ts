@@ -6,7 +6,7 @@ import { getAdminSettings, setAdminPassword, verifyPasswordHash } from '@/lib/ad
 import { verifyTotp } from '@/lib/totp';
 
 export async function POST(request: NextRequest) {
-  assertAdminSession();
+  await assertAdminSession();
   try {
     const form = await request.formData();
     const currentPassword = String(form.get('currentPassword') ?? '');
@@ -24,7 +24,7 @@ export async function POST(request: NextRequest) {
     if (settings.passwordHash) {
       currentOk = verifyPasswordHash(currentPassword, settings.passwordHash);
     }
-    if (!currentOk && currentPassword === creds.password) {
+    if (!settings.passwordHash && !currentOk && currentPassword === creds.password) {
       currentOk = true;
     }
     if (!currentOk) {
@@ -40,7 +40,7 @@ export async function POST(request: NextRequest) {
 
     await setAdminPassword(newPassword);
     return NextResponse.json({ ok: true });
-  } catch (error) {
+  } catch {
     return NextResponse.json({ ok: false }, { status: 400 });
   }
 }

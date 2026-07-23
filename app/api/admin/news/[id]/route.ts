@@ -40,12 +40,12 @@ function handleError(error: unknown) {
 }
 
 type RouteContext = {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 };
 
 export async function PATCH(request: NextRequest, context: RouteContext) {
-  assertAdminSession();
-  const { id } = context.params;
+  await assertAdminSession();
+  const { id } = await context.params;
   try {
     const { payload, imageFile } = await parseNewsRequest(request);
     payload.id = id;
@@ -70,8 +70,8 @@ export async function PATCH(request: NextRequest, context: RouteContext) {
 }
 
 export async function DELETE(_request: NextRequest, context: RouteContext) {
-  assertAdminSession();
-  const { id } = context.params;
+  await assertAdminSession();
+  const { id } = await context.params;
   try {
     let removed = false;
     await mutateResource('news', (items) => {

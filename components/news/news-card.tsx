@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { NewsItem } from '@/types/content';
 import { Card } from '@/components/ui/card';
 import { formatDate } from '@/lib/utils';

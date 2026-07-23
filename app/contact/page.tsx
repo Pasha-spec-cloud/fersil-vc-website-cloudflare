@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
+import { BrandMark } from '@/components/brand/brand-mark';
 import { PageHero } from '@/components/layout/page-hero';
 import { Container } from '@/components/ui/container';
-import { SectionHeading } from '@/components/ui/section-heading';
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -19,7 +19,7 @@ export default function ContactPage() {
   return (
     <div className="py-16">
       <Container className="space-y-10">
-        <PageHero imageSrc="/media/backgrounds/contact-hero.png" imageAlt="FerSil contact page background with advanced industrial facility corridor" contentClassName="max-w-3xl space-y-4">
+        <PageHero tone="contact" imageSrc="/media/backgrounds/contact-hero.png" imageAlt="FerSil contact page background with advanced industrial facility corridor" contentClassName="max-w-3xl space-y-4">
           <p className="text-sm uppercase tracking-[0.4em] text-muted">Contact</p>
           <h1 className="h2">Get in touch</h1>
           <p className="max-w-3xl text-muted">Find our office location and the best way to reach our team.</p>
@@ -27,6 +27,13 @@ export default function ContactPage() {
 
         <div className="grid gap-10 md:grid-cols-2">
           <div className="space-y-6">
+            <div className="panel border-white/10 p-6">
+              <BrandMark size="lg" />
+              <p className="mt-4 max-w-md text-sm text-muted">
+                Ferrum meets silicon: investing across physical intelligence, industrial systems, and the CEE-US founder corridor.
+              </p>
+            </div>
+
             <div>
               <h3 className="font-display text-xl text-white">Office</h3>
               <address className="mt-2 not-italic text-muted">

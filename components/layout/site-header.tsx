@@ -3,7 +3,8 @@
 import Link from 'next/link';
 import type { Route } from 'next';
 import { usePathname } from 'next/navigation';
-import { Button } from '@/components/ui/button';
+import { BrandMark } from '@/components/brand/brand-mark';
+import { ButtonLink } from '@/components/ui/button';
 import { Container } from '@/components/ui/container';
 import { motion } from 'framer-motion';
 
@@ -20,9 +21,8 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-30 backdrop-blur-xl">
       <Container className="flex items-center justify-between border-b border-white/5 py-4">
-        <Link href="/" className="font-display text-xl text-white flex items-center gap-2">
-          <img src="/fersil.svg" alt="FerSil VC" width={24} height={24} className="h-7 w-7 shrink-0 inline-block" loading="eager" decoding="async" />
-          <span>FerSil VC</span>
+        <Link href="/" aria-label="FerSil VC home">
+          <BrandMark priority />
         </Link>
         <nav className="hidden items-center gap-6 text-sm text-muted md:flex">
           {navLinks.map((link) => {
@@ -45,9 +45,7 @@ export function SiteHeader() {
           })}
         </nav>
         <div className="flex items-center gap-3">
-          <Button variant="accent" size="md" asChild>
-            <Link href="/contact">Contact</Link>
-          </Button>
+          <ButtonLink href="/contact" variant="accent" size="md">Contact</ButtonLink>
         </div>
       </Container>
     </header>

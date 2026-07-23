@@ -3,33 +3,33 @@
 @tailwind utilities;
 
 :root {
-  --font-inter: "Inter", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-grotesk: "Avenir Next", "Helvetica Neue", "Segoe UI", sans-serif;
-  --color-background: #12161b;
-  --color-surface: rgba(30, 35, 42, 0.72);
-  --color-primary: #83b7c2;
-  --color-primary-foreground: #ffffff;
-  --color-accent: #b7c0c8;
-  --color-muted: #96a0a9;
-  --color-border: rgba(131, 183, 194, 0.22);
-  --color-ring: rgba(131, 183, 194, 0.55);
-  --grid-color: rgba(150, 160, 169, 0.08);
+  --font-sans: "IBM Plex Sans Variable", "IBM Plex Sans", sans-serif;
+  --font-display: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+  --color-background: #070b18;
+  --color-surface: rgba(15, 22, 37, 0.78);
+  --color-primary: #55a4ff;
+  --color-primary-foreground: #06101f;
+  --color-accent: #c96a3e;
+  --color-muted: #9aa8ba;
+  --color-border: rgba(118, 145, 174, 0.24);
+  --color-ring: rgba(85, 164, 255, 0.58);
+  --grid-color: rgba(130, 151, 177, 0.07);
   color-scheme: dark;
 }
 
 body {
-  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: var(--font-sans);
   background:
-    radial-gradient(circle at top, rgba(131, 183, 194, 0.12), transparent 42%),
-    radial-gradient(circle at 78% 22%, rgba(183, 192, 200, 0.14), transparent 34%),
-    linear-gradient(180deg, #181d23 0%, #101317 100%);
+    radial-gradient(circle at 14% 4%, rgba(201, 106, 62, 0.11), transparent 31rem),
+    radial-gradient(circle at 82% 18%, rgba(85, 164, 255, 0.12), transparent 36rem),
+    linear-gradient(180deg, #0b1120 0%, #070b18 58%, #090d17 100%);
   color: #f8fafc;
   min-height: 100vh;
 }
 
 ::selection {
-  background: rgba(131, 183, 194, 0.4);
-  color: #11151b;
+  background: rgba(201, 106, 62, 0.62);
+  color: #fff7f0;
 }
 
 a {
@@ -42,13 +42,14 @@ a {
 .h2,
 .h3,
 .h4 {
-  font-family: var(--font-grotesk);
+  font-family: var(--font-display);
+  font-variation-settings: "wght" 570;
 }
 
 .h1 {
   font-size: clamp(2.75rem, 4vw, 4rem);
-  line-height: 1.1;
-  letter-spacing: -0.04em;
+  line-height: 1.04;
+  letter-spacing: -0.05em;
 }
 
 .h2 {
@@ -72,40 +73,139 @@ p {
   border-radius: 1.25rem;
 }
 
-/* Branded hero background */
-.hero-brand-bg {
-  background:
-    radial-gradient(circle at 20% -10%, rgba(131, 183, 194, 0.16), transparent 45%),
-    radial-gradient(circle at 85% 20%, rgba(183, 192, 200, 0.16), transparent 35%),
-    repeating-linear-gradient(135deg,
-      rgba(150, 160, 169, 0.05) 0px,
-      rgba(150, 160, 169, 0.05) 2px,
-      transparent 2px,
-      transparent 10px
-    );
+/* Photographic page identities */
+.page-hero {
+  --hero-accent: #d17a4f;
+  min-height: 25rem;
+  isolation: isolate;
+  box-shadow: 0 34px 90px rgba(1, 4, 12, 0.34);
 }
 
-.hero-industrial-illustration {
+.page-hero::before {
   position: absolute;
-  inset: 0;
-  opacity: 0.34;
-  pointer-events: none;
+  inset: 0 auto auto 0;
+  z-index: 20;
+  width: min(18rem, 42%);
+  height: 2px;
+  content: "";
+  background: linear-gradient(90deg, var(--hero-accent), transparent);
 }
 
-.hero-industrial-illustration svg {
-  width: 100%;
-  height: 100%;
+.page-hero-media::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 18%;
+  height: 28%;
+  content: "";
+  background: radial-gradient(circle at 100% 100%, rgba(7, 11, 24, 0.98) 0%, rgba(7, 11, 24, 0.72) 30%, transparent 72%);
+}
+
+.page-hero-image {
+  object-position: 50% 46%;
+  transform: scale(1.18);
+  filter: saturate(0.82) contrast(1.1);
+}
+
+.page-hero-overlay {
+  background:
+    linear-gradient(90deg, rgba(5, 9, 18, 0.9) 0%, rgba(7, 12, 23, 0.78) 38%, rgba(7, 11, 22, 0.38) 72%, rgba(7, 11, 22, 0.24) 100%);
+}
+
+.page-hero-vignette {
+  background:
+    linear-gradient(180deg, rgba(3, 7, 15, 0.12) 0%, rgba(3, 7, 15, 0.67) 100%),
+    radial-gradient(circle at 82% 12%, color-mix(in srgb, var(--hero-accent) 21%, transparent), transparent 34%);
+}
+
+.page-hero > div:last-child > p:first-child {
+  color: var(--hero-accent);
+}
+
+.page-hero[data-tone="home"] {
+  --hero-accent: #d17a4f;
+  min-height: 32rem;
+}
+
+.page-hero[data-tone="home"] .page-hero-image {
+  object-position: 50% 38%;
+  transform: scale(1.17);
+  filter: saturate(0.78) contrast(1.08) sepia(0.08);
+}
+
+.page-hero[data-tone="companies"] {
+  --hero-accent: #62b0ff;
+}
+
+.page-hero[data-tone="companies"] .page-hero-image {
+  object-position: 48% 55%;
+  transform: scale(1.24);
+  filter: saturate(0.96) contrast(1.19) hue-rotate(-7deg);
+}
+
+.page-hero[data-tone="companies"] .page-hero-vignette {
+  background:
+    linear-gradient(180deg, rgba(2, 8, 18, 0.08), rgba(3, 9, 20, 0.73)),
+    linear-gradient(125deg, transparent 46%, rgba(38, 126, 184, 0.16));
+}
+
+.page-hero[data-tone="team"] {
+  --hero-accent: #d28a5e;
+}
+
+.page-hero[data-tone="team"] .page-hero-image {
+  object-position: 52% 62%;
+  transform: scale(1.2);
+  filter: saturate(0.58) contrast(1.08) sepia(0.17);
+}
+
+.page-hero[data-tone="team"] .page-hero-vignette {
+  background:
+    linear-gradient(180deg, rgba(10, 7, 8, 0.1), rgba(12, 8, 11, 0.7)),
+    radial-gradient(circle at 76% 18%, rgba(201, 106, 62, 0.22), transparent 39%);
+}
+
+.page-hero[data-tone="news"] {
+  --hero-accent: #75c7d3;
+}
+
+.page-hero[data-tone="news"] .page-hero-image {
+  object-position: 48% 45%;
+  transform: scale(1.22);
+  filter: saturate(0.84) contrast(1.28) brightness(0.82) hue-rotate(-5deg);
+}
+
+.page-hero[data-tone="news"] .page-hero-vignette {
+  background:
+    linear-gradient(180deg, rgba(2, 7, 12, 0.04), rgba(2, 8, 15, 0.75)),
+    linear-gradient(120deg, transparent 54%, rgba(65, 173, 190, 0.16));
+}
+
+.page-hero[data-tone="contact"] {
+  --hero-accent: #cb764a;
+}
+
+.page-hero[data-tone="contact"] .page-hero-image {
+  object-position: 46% 50%;
+  transform: scale(1.26);
+  filter: saturate(0.5) contrast(1.12) sepia(0.22) brightness(0.88);
+}
+
+.page-hero[data-tone="contact"] .page-hero-vignette {
+  background:
+    linear-gradient(90deg, rgba(5, 8, 15, 0.18), rgba(40, 20, 13, 0.12)),
+    linear-gradient(180deg, transparent 15%, rgba(8, 7, 10, 0.74));
 }
 
 /* Alternating backgrounds for logo tiles */
 .logo-tile-blue {
   background:
     radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.16), transparent 42%),
-    linear-gradient(180deg, rgba(131, 183, 194, 0.58), rgba(71, 108, 118, 0.42));
+    linear-gradient(180deg, rgba(85, 164, 255, 0.58), rgba(39, 91, 151, 0.42));
 }
 
 .logo-tile-orange {
   background:
     radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.16), transparent 42%),
-    linear-gradient(180deg, rgba(183, 192, 200, 0.52), rgba(96, 104, 112, 0.4));
+    linear-gradient(180deg, rgba(201, 106, 62, 0.55), rgba(112, 49, 31, 0.42));
 }

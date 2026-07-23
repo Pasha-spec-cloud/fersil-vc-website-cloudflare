@@ -17,7 +17,7 @@ export default async function TeamPage() {
   return (
     <div className="py-16">
       <Container className="space-y-12">
-        <PageHero imageSrc="/media/backgrounds/team-hero.png" imageAlt="FerSil team page background with robotics and semiconductor workspace" contentClassName="max-w-3xl space-y-4">
+        <PageHero tone="team" imageSrc="/media/backgrounds/team-hero.png" imageAlt="FerSil team page background with robotics and semiconductor workspace" contentClassName="max-w-3xl space-y-4">
           <p className="text-sm uppercase tracking-[0.4em] text-muted">People</p>
           <h1 className="h2">A compact team for technical conviction</h1>
           <p className="max-w-3xl text-muted">

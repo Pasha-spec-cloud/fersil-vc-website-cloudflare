@@ -2,14 +2,14 @@ import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 
 import { ADMIN_SESSION_COOKIE, DEVELOPER_ACCESS_COOKIE } from '@/lib/constants';
+import { readAdminSessionToken } from '@/lib/admin-session';
 import { readDeveloperToken } from '@/lib/developer-access';
 
-const sessionSecret = process.env.ADMIN_SESSION_SECRET ?? process.env.ADMIN_PASSWORD ?? 'fersil-admin-session';
 const adminOpenAccess = process.env.ADMIN_OPEN_ACCESS === '1';
 
-function hasSession(request: NextRequest): boolean {
+async function hasSession(request: NextRequest): Promise<boolean> {
   const cookie = request.cookies.get(ADMIN_SESSION_COOKIE)?.value;
-  return Boolean(cookie && cookie === sessionSecret);
+  return Boolean(await readAdminSessionToken(cookie));
 }
 
 function isStaticAsset(pathname: string): boolean {
@@ -43,7 +43,7 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  const loggedIn = hasSession(request);
+  const loggedIn = await hasSession(request);
   const isLoginRoute = pathname === '/admin/login';
 
   if (isLoginRoute) {

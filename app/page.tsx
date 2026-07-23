@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
+import { ButtonLink } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Container } from '@/components/ui/container';
 import { SectionHeading } from '@/components/ui/section-heading';
@@ -24,60 +24,6 @@ const differentiators = [
     description: 'We care about systems that improve through deployment in the real world, from industrial data loops to autonomy stacks and edge intelligence.'
   }
 ];
-
-function HeroIndustrialIllustration() {
-  return (
-    <div className="hero-industrial-illustration" aria-hidden>
-      <svg viewBox="0 0 1440 640" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="armStroke" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="rgba(131,183,194,0.9)" />
-            <stop offset="100%" stopColor="rgba(183,192,200,0.25)" />
-          </linearGradient>
-          <linearGradient id="waferStroke" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="rgba(183,192,200,0.6)" />
-            <stop offset="100%" stopColor="rgba(131,183,194,0.15)" />
-          </linearGradient>
-        </defs>
-        <g fill="none" strokeLinecap="round" strokeLinejoin="round">
-          <g stroke="url(#armStroke)" strokeWidth="4">
-            <path d="M1040 130h120" />
-            <circle cx="1030" cy="130" r="14" />
-            <path d="M1030 130l-70 72" />
-            <circle cx="960" cy="202" r="16" />
-            <path d="M960 202l92 88" />
-            <circle cx="1052" cy="290" r="16" />
-            <path d="M1052 290l-62 72" />
-            <path d="M990 362h96" />
-            <path d="M1018 362v34h40v-34" />
-            <rect x="1158" y="108" width="42" height="42" rx="8" />
-          </g>
-          <g stroke="url(#waferStroke)" strokeWidth="3">
-            <ellipse cx="300" cy="390" rx="170" ry="74" />
-            <ellipse cx="300" cy="390" rx="128" ry="55" />
-            <ellipse cx="300" cy="390" rx="84" ry="36" />
-            <path d="M130 390h340" />
-            <path d="M174 352c56 24 196 24 252 0" />
-            <path d="M174 428c56-24 196-24 252 0" />
-            <path d="M300 316v148" />
-            <path d="M236 330v120" />
-            <path d="M364 330v120" />
-          </g>
-          <g stroke="rgba(131,183,194,0.35)" strokeWidth="2">
-            <path d="M720 460h420" />
-            <path d="M760 460v-120h54v120" />
-            <path d="M840 460v-160h54v160" />
-            <path d="M920 460v-104h54v104" />
-            <path d="M1000 460v-142h54v142" />
-            <path d="M1080 460v-82h54v82" />
-            <path d="M740 500h430" />
-            <path d="M760 500v16M840 500v16M920 500v16M1000 500v16M1080 500v16" />
-          </g>
-        </g>
-      </svg>
-    </div>
-  );
-}
 
 export default async function HomePage() {
   const { companies, team, news } = await getContentBundle();
@@ -116,7 +62,7 @@ export default async function HomePage() {
 
   return (
     <div className="space-y-24 py-16">
-      <PageHero imageSrc="/media/backgrounds/home-hero.png" imageAlt="FerSil VC hero background with robotics lab environment" className="px-8 py-16">
+      <PageHero tone="home" imageSrc="/media/backgrounds/home-hero.png" imageAlt="FerSil VC hero background with robotics lab environment" className="px-8 py-16">
         <Container className="grid gap-10 lg:grid-cols-[2fr,1fr]">
           <div className="space-y-8">
             <p className="text-sm uppercase tracking-[0.4em] text-muted">FerSil VC</p>
@@ -125,12 +71,8 @@ export default async function HomePage() {
               FerSil VC invests in technical founders building robotics, industrial intelligence, and software shaped by the physical world. Ferrum ↔ silicon is the industry focus. The team angle is CEE diaspora founders building globally ambitious companies with deep technical roots.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button size="lg" asChild>
-                <Link href="/companies">View Portfolio</Link>
-              </Button>
-              <Button variant="accent" size="lg" asChild>
-                <Link href="/team">Meet the Team</Link>
-              </Button>
+              <ButtonLink href="/companies" size="lg">View Portfolio</ButtonLink>
+              <ButtonLink href="/team" variant="accent" size="lg">Meet the Team</ButtonLink>
             </div>
           </div>
           <div className="rounded-3xl border border-white/5 bg-white/5 p-6 backdrop-blur">
@@ -145,8 +87,6 @@ export default async function HomePage() {
             </ul>
           </div>
         </Container>
-        <div className="hero-brand-bg pointer-events-none absolute inset-0" aria-hidden />
-        <HeroIndustrialIllustration />
       </PageHero>
 
       <section>
@@ -187,9 +127,7 @@ export default async function HomePage() {
               title="Portfolio companies building the future"
               description="Representative active companies across the FerSil network, spanning infrastructure, robotics, industrial systems, AI, and software shaped by the physical world."
             />
-            <Button variant="ghost" className="self-start md:self-auto" asChild>
-              <Link href="/companies">Browse companies →</Link>
-            </Button>
+            <ButtonLink href="/companies" variant="ghost" className="self-start md:self-auto">Browse companies →</ButtonLink>
           </div>
           <div className="panel mt-12 rounded-3xl border-white/10 p-6 md:p-8">
             <p className="text-xs uppercase tracking-[0.3em] text-muted">Representative active companies</p>
@@ -229,9 +167,7 @@ export default async function HomePage() {
               title="Operators for technical funds and technical founders"
               description="FerSil combines investing, LP operations, and company-building support around two lenses: ferrum ↔ silicon as sector focus, and CEE diaspora founders as a sourcing edge."
             />
-            <Button variant="ghost" className="self-start md:self-auto" asChild>
-              <Link href="/team">Meet the full team →</Link>
-            </Button>
+            <ButtonLink href="/team" variant="ghost" className="self-start md:self-auto">Meet the full team →</ButtonLink>
           </div>
           <div className="mt-10 grid grid-cols-2 gap-6">
             {teamSpotlight.map((member) => (
@@ -249,9 +185,7 @@ export default async function HomePage() {
               title="Updates from the FerSil network"
               description="Legacy portfolio news, new milestones, and signals from the systems we believe will matter next."
             />
-            <Button variant="ghost" className="self-start md:self-auto" asChild>
-              <Link href="/news">See all news →</Link>
-            </Button>
+            <ButtonLink href="/news" variant="ghost" className="self-start md:self-auto">See all news →</ButtonLink>
           </div>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {latestNews.map((item) => (

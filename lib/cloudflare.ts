@@ -28,6 +28,10 @@ export type R2BucketLike = {
   ): Promise<unknown>;
 };
 
+export type RateLimiterLike = {
+  limit(options: { key: string }): Promise<{ success: boolean }>;
+};
+
 type CloudflareBindings = {
   contentBucket: R2BucketLike | null;
   mediaBucket: R2BucketLike | null;
@@ -35,6 +39,7 @@ type CloudflareBindings = {
 
 const DEFAULT_CONTENT_BINDING = 'FERSIL_CONTENT';
 const DEFAULT_MEDIA_BINDING = 'FERSIL_MEDIA';
+let cloudflareEnvPromise: Promise<CloudflareEnv | null> | null = null;
 
 function getBindingName(kind: 'content' | 'media'): string {
   if (kind === 'content') {
@@ -43,7 +48,7 @@ function getBindingName(kind: 'content' | 'media'): string {
   return process.env.CLOUDFLARE_MEDIA_BUCKET_BINDING ?? DEFAULT_MEDIA_BINDING;
 }
 
-async function loadCloudflareEnv(): Promise<CloudflareEnv | null> {
+async function resolveCloudflareEnv(): Promise<CloudflareEnv | null> {
   try {
     const mod = (await import('@opennextjs/cloudflare')) as {
       getCloudflareContext?: GetCloudflareContext;
@@ -57,6 +62,13 @@ async function loadCloudflareEnv(): Promise<CloudflareEnv | null> {
   } catch {
     return null;
   }
+}
+
+function loadCloudflareEnv(): Promise<CloudflareEnv | null> {
+  // A page can request several bindings in parallel. Sharing initialization avoids
+  // competing local workerd instances opening the same persisted SQLite state.
+  cloudflareEnvPromise ??= resolveCloudflareEnv();
+  return cloudflareEnvPromise;
 }
 
 export async function getCloudflareBindings(): Promise<CloudflareBindings> {
@@ -86,4 +98,12 @@ function isR2BucketLike(value: unknown): value is R2BucketLike {
       'put' in value &&
       typeof (value as { put?: unknown }).put === 'function'
   );
+}
+
+export async function getCloudflareRateLimiter(binding: string): Promise<RateLimiterLike | null> {
+  const env = await loadCloudflareEnv();
+  const candidate = env?.[binding];
+  return candidate && typeof candidate === 'object' && 'limit' in candidate && typeof candidate.limit === 'function'
+    ? candidate as RateLimiterLike
+    : null;
 }

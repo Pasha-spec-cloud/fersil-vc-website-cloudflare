@@ -59,12 +59,8 @@ async function readResource<TName extends ResourceName>(name: TName): Promise<Re
   const useRemoteStorage = await isCloudflareStorageEnabled();
 
   if (useRemoteStorage) {
-    if (existing) {
-      return existing.data as ResourceData<TName>;
-    }
     const raw = await readContentFile(config.file);
     const parsed = config.schema.parse(JSON.parse(raw));
-    cache.set(name, { data: parsed });
     return parsed as ResourceData<TName>;
   }
 
@@ -90,7 +86,6 @@ async function writeResource<TName extends ResourceName>(name: TName, data: Reso
 
   if (useRemoteStorage) {
     await writeContentFile(config.file, payload);
-    cache.set(name, { data: parsed });
     return parsed;
   }
 
