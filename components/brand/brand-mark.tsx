@@ -26,7 +26,7 @@ export function BrandMark({
   return (
     <span className={cn('inline-flex items-center gap-3', className)}>
       <Image
-        src="/favicon.svg"
+        src="/favicon.svg?v=2"
         alt=""
         aria-hidden
         width={config.pixels}
