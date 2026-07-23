@@ -31,7 +31,7 @@ function safeCompare(a: string, b: string): boolean {
 }
 
 function twoFactorRequired(): boolean {
-  const flag = process.env.NEXT_PUBLIC_ADMIN_2FA_ENABLED === '1';
+  const flag = process.env.ADMIN_2FA_ENABLED === '1';
   const secret = (process.env.ADMIN_TOTP_SECRET ?? '').trim();
   return flag && secret.length > 0;
 }

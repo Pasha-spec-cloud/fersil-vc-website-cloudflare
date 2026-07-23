@@ -31,7 +31,7 @@ export default async function AdminLoginPage({ searchParams }: LoginPageProps) {
         <p className="mb-6 text-sm text-muted">
           Enter the credentials shared with your operations team to update companies, team members, and news in real time.
         </p>
-        <LoginForm redirectTo={redirectTo} twoFactorRequired={process.env.NEXT_PUBLIC_ADMIN_2FA_ENABLED === '1'} />
+        <LoginForm redirectTo={redirectTo} twoFactorRequired={process.env.ADMIN_2FA_ENABLED === '1'} />
 
       </Card>
     </div>

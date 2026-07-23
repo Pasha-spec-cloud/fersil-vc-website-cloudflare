@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 export default function SecurityPage() {
-  const twoFactor = process.env.NEXT_PUBLIC_ADMIN_2FA_ENABLED === '1';
+  const twoFactor = process.env.ADMIN_2FA_ENABLED === '1';
   return (
     <div className="space-y-6">
       <Card title="Change Admin Password" eyebrow="Security">

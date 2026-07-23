@@ -31,7 +31,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ ok: false, error: 'Incorrect current password' }, { status: 400 });
     }
 
-    if (process.env.NEXT_PUBLIC_ADMIN_2FA_ENABLED === '1') {
+    if (process.env.ADMIN_2FA_ENABLED === '1') {
       const secret = (process.env.ADMIN_TOTP_SECRET ?? '').trim();
       if (!secret || !otp || !verifyTotp(secret, otp)) {
         return NextResponse.json({ ok: false, error: 'Invalid one-time code' }, { status: 400 });
