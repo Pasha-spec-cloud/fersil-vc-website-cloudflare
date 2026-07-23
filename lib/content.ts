@@ -8,6 +8,9 @@ import {
   teamMembersSchema,
   newsItemsSchema
 } from '@/schemas/content';
+import bundledCompanies from '@/content/companies.json';
+import bundledTeam from '@/content/team.json';
+import bundledNews from '@/content/news.json';
 import type { Company, TeamMember, NewsItem, ContentBundle } from '@/types/content';
 import { isCloudflareStorageEnabled, readContentFile, writeContentFile } from '@/lib/storage';
 
@@ -36,6 +39,12 @@ type ResourceName = keyof ResourceMap;
 
 type ResourceData<TName extends ResourceName> = z.infer<ResourceMap[TName]['schema']>;
 
+const bundledResources = {
+  companies: bundledCompanies,
+  team: bundledTeam,
+  news: bundledNews
+} satisfies Record<ResourceName, unknown>;
+
 type CacheEntry<T> = {
   mtimeMs?: number;
   data: T;
@@ -59,9 +68,14 @@ async function readResource<TName extends ResourceName>(name: TName): Promise<Re
   const useRemoteStorage = await isCloudflareStorageEnabled();
 
   if (useRemoteStorage) {
-    const raw = await readContentFile(config.file);
-    const parsed = config.schema.parse(JSON.parse(raw));
-    return parsed as ResourceData<TName>;
+    try {
+      const raw = await readContentFile(config.file);
+      const parsed = config.schema.parse(JSON.parse(raw));
+      return parsed as ResourceData<TName>;
+    } catch (error) {
+      console.error(`Unable to read ${config.file} from Cloudflare storage; using bundled content.`, error);
+      return config.schema.parse(bundledResources[name]) as ResourceData<TName>;
+    }
   }
 
   const filePath = path.join(contentRoot, config.file);
