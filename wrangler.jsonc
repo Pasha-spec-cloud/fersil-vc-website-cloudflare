@@ -17,6 +17,16 @@
 			"service": "fersil-vc-website-cloudflare"
 		}
 	],
+	"routes": [
+		{
+			"pattern": "fersil.vc",
+			"custom_domain": true
+		},
+		{
+			"pattern": "www.fersil.vc",
+			"custom_domain": true
+		}
+	],
 	"vars": {
 		"SITE_COMING_SOON": "1",
 		"ADMIN_OPEN_ACCESS": "0",
