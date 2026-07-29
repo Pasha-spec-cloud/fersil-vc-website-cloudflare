@@ -2,10 +2,10 @@ import type { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'FerSil VC',
+    name: 'FerSil Ventures',
     short_name: 'FerSil',
     description:
-      'FerSil VC backs founders building at the ferrum-silicon interface.',
+      'FerSil Ventures backs founders building at the ferrum-silicon interface.',
     start_url: '/',
     display: 'standalone',
     background_color: '#070b18',

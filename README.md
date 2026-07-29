@@ -1,4 +1,4 @@
-# FerSil VC Website
+# FerSil Ventures Website
 
 This project powers `fersil.vc` using Next.js 16, Cloudflare Workers, R2-backed content, custom admin tooling, and a private-launch email access flow.
 

@@ -8,7 +8,7 @@ import { uniqueValues } from '@/lib/utils';
 
 export const metadata: Metadata = {
   title: 'Companies',
-  description: 'Explore the legacy FerSil VC portfolio across infrastructure, automation, applied AI, and frontier software.'
+  description: 'Explore the legacy FerSil Ventures portfolio across infrastructure, automation, applied AI, and frontier software.'
 };
 
 export default async function CompaniesPage() {

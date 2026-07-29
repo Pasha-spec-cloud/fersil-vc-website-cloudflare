@@ -11,8 +11,8 @@ export const contentType = 'image/png';
 export default async function CompanyOgImage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const company = await getCompanyBySlug(slug);
-  const title = company?.name ?? 'FerSil VC';
-  const subtitle = company?.tagline ?? 'Portfolio highlight backed by FerSil VC';
+  const title = company?.name ?? 'FerSil Ventures';
+  const subtitle = company?.tagline ?? 'Portfolio highlight backed by FerSil Ventures';
   const stage = company?.stage ?? (company?.status === 'exited' ? 'Strategic exit' : 'Portfolio company');
 
   return new ImageResponse(
@@ -30,7 +30,7 @@ export default async function CompanyOgImage({ params }: { params: Promise<{ slu
           fontFamily: 'Space Grotesk, Inter, sans-serif'
         }}
       >
-        <div style={{ fontSize: 24, letterSpacing: '0.4em', textTransform: 'uppercase', color: '#94a3b8' }}>FerSil VC</div>
+        <div style={{ fontSize: 24, letterSpacing: '0.4em', textTransform: 'uppercase', color: '#94a3b8' }}>FerSil Ventures</div>
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           <p style={{ fontSize: 24, margin: 0, color: '#A7F3D0' }}>{stage}</p>
           <h1 style={{ fontSize: 72, margin: '12px 0 0 0', lineHeight: 1.1 }}>{title}</h1>

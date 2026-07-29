@@ -15,7 +15,7 @@ export default async function AdminDashboardPage() {
     <div className="space-y-8">
       <Card title="Welcome back" eyebrow="Admin">
         <p className="text-sm text-muted">
-          Manage content that powers FerSil VC in one place. Use the quick actions below to jump straight to the resource you need to update.
+          Manage content that powers FerSil Ventures in one place. Use the quick actions below to jump straight to the resource you need to update.
         </p>
         <div className="mt-6 grid gap-4 md:grid-cols-3">
           {stats.map((stat) => (

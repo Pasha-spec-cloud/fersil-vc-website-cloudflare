@@ -150,6 +150,7 @@ export async function getTeamMembers(options: LoadOptions = {}): Promise<TeamMem
 
 type NewsOptions = LoadOptions & {
   limit?: number;
+  companyId?: string;
 };
 
 const PUBLIC_NEWS_START = Date.UTC(2021, 0, 1);
@@ -158,10 +159,40 @@ export function isPublicNewsItem(item: Pick<NewsItem, 'publishedAt'>): boolean {
   return new Date(item.publishedAt).getTime() >= PUBLIC_NEWS_START;
 }
 
+export function hasPublicNewsAssociations(
+  item: Pick<NewsItem, 'companyId' | 'teamMemberIds'>,
+  companies: Company[],
+  team: TeamMember[]
+): boolean {
+  const company = companies.find((candidate) => candidate.id === item.companyId);
+  if (!company || company.status !== 'active' || company.draft || company.hidden) {
+    return false;
+  }
+
+  const teamById = new Map(team.map((member) => [member.id, member]));
+  return item.teamMemberIds.every((id) => {
+    const member = teamById.get(id);
+    return Boolean(member && !member.draft && !member.hidden);
+  });
+}
+
 export async function getNewsItems(options: NewsOptions = {}): Promise<NewsItem[]> {
   const news = await readResource('news');
   const visible = filterDrafts(news, options.includeDrafts);
-  const filtered = (options.includeDrafts ? visible : visible.filter(isPublicNewsItem)).sort(
+  let eligible = visible;
+
+  if (!options.includeDrafts) {
+    const [companies, team] = await Promise.all([readResource('companies'), readResource('team')]);
+    eligible = visible.filter(
+      (item) => isPublicNewsItem(item) && hasPublicNewsAssociations(item, companies, team)
+    );
+  }
+
+  if (options.companyId) {
+    eligible = eligible.filter((item) => item.companyId === options.companyId);
+  }
+
+  const filtered = eligible.sort(
     (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
   );
 

@@ -11,19 +11,19 @@ export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: {
-    default: 'FerSil VC | Hardware, Software, and the Physical World',
-    template: '%s | FerSil VC'
+    default: 'FerSil Ventures | Hardware, Software, and the Physical World',
+    template: '%s | FerSil Ventures'
   },
   description:
-    'FerSil VC backs founders building at the ferrum-silicon interface: robotics, industrial systems, and software that learns from the physical world.',
+    'FerSil Ventures backs founders building at the ferrum-silicon interface: robotics, industrial systems, and software that learns from the physical world.',
   metadataBase: new URL('https://fersil.vc'),
   manifest: '/manifest.webmanifest',
   openGraph: {
-    title: 'FerSil VC',
+    title: 'FerSil Ventures',
     description:
-      'FerSil VC backs founders building at the ferrum-silicon interface: robotics, industrial systems, and software that learns from the physical world.',
+      'FerSil Ventures backs founders building at the ferrum-silicon interface: robotics, industrial systems, and software that learns from the physical world.',
     url: 'https://fersil.vc',
-    siteName: 'FerSil VC',
+    siteName: 'FerSil Ventures',
     locale: 'en_US',
     type: 'website'
   },
@@ -51,7 +51,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className="bg-background text-white">
         <div className="min-h-screen bg-grid-slate bg-grid">
           <div className="mx-auto max-w-7xl px-4 sm:px-8">

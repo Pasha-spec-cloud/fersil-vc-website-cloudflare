@@ -36,7 +36,7 @@ export function BrandMark({
       />
       {showName && (
         <span className={cn('font-display font-medium tracking-[-0.03em] text-white', config.textClass)}>
-          FerSil VC
+          FerSil Ventures
         </span>
       )}
     </span>

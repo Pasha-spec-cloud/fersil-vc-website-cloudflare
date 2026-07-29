@@ -3,15 +3,18 @@ import { PageHero } from '@/components/layout/page-hero';
 import { Container } from '@/components/ui/container';
 import { SectionHeading } from '@/components/ui/section-heading';
 import { NewsTimeline } from '@/components/news/news-timeline';
-import { getNewsItems } from '@/lib/content';
+import { getCompanies, getNewsItems } from '@/lib/content';
 
 export const metadata: Metadata = {
   title: 'News',
-  description: 'Stay current on portfolio news, FerSil VC updates, and perspectives from the investment team.'
+  description: 'Stay current on portfolio news, FerSil Ventures updates, and perspectives from the investment team.'
 };
 
 export default async function NewsPage() {
-  const news = await getNewsItems();
+  const [news, companies] = await Promise.all([getNewsItems(), getCompanies()]);
+  const companyNamesById = Object.fromEntries(
+    companies.map((company) => [company.id, company.name])
+  );
 
   return (
     <div className="py-16">
@@ -27,11 +30,11 @@ export default async function NewsPage() {
         <SectionHeading
           kicker="Timeline"
           title="Filter by year or search"
-          description="Scan more than a decade of announcements, sorted instantly by the segments that matter most to you."
+          description="Scan updates from active portfolio companies, organized by year and searchable by company or topic."
           className="text-center"
         />
 
-        <NewsTimeline items={news} />
+        <NewsTimeline items={news} companyNamesById={companyNamesById} />
       </Container>
     </div>
   );

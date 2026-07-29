@@ -5,12 +5,12 @@ import { Container } from '@/components/ui/container';
 
 export const metadata: Metadata = {
   title: 'Contact',
-  description: 'Office address and contact information for FerSil VC.'
+  description: 'Office address and contact information for FerSil Ventures.'
 };
 
 export default function ContactPage() {
   const addressLines = [
-    'FerSil VC',
+    'FerSil Ventures',
     'Kurfürstendamm 70',
     '10709 Berlin, Germany'
   ];
@@ -66,7 +66,7 @@ export default function ContactPage() {
             <div className="overflow-hidden rounded-2xl border border-white/5 bg-white/5">
               <div className="aspect-[4/3] w-full">
                 <iframe
-                  title="FerSil VC — Berlin Office"
+                  title="FerSil Ventures — Berlin Office"
                   src={`https://www.google.com/maps?q=${mapQuery}&output=embed`}
                   className="h-full w-full"
                   loading="lazy"

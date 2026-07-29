@@ -7,6 +7,7 @@ import { formatDate } from '@/lib/utils';
 
 type NewsTimelineProps = {
   items: NewsItem[];
+  companyNamesById: Record<string, string>;
 };
 
 type NewsWithMeta = {
@@ -14,7 +15,7 @@ type NewsWithMeta = {
   year: number;
 };
 
-export function NewsTimeline({ items }: NewsTimelineProps) {
+export function NewsTimeline({ items, companyNamesById }: NewsTimelineProps) {
   const [year, setYear] = useState('all');
   const [query, setQuery] = useState('');
 
@@ -94,7 +95,11 @@ export function NewsTimeline({ items }: NewsTimelineProps) {
                 <h3 className="text-sm uppercase tracking-[0.3em] text-muted">{group}</h3>
                 <div className="grid gap-6 md:grid-cols-2">
                   {grouped[group].map((item) => (
-                    <NewsCard key={item.id} item={item} />
+                    <NewsCard
+                      key={item.id}
+                      item={item}
+                      companyName={item.companyId ? companyNamesById[item.companyId] : undefined}
+                    />
                   ))}
                 </div>
               </section>

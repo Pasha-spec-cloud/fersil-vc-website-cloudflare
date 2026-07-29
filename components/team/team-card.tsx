@@ -47,9 +47,9 @@ export function TeamCard({
         <div>
           <p className="font-display text-2xl text-white flex items-center gap-2">
             {member.name}
-            {(member.role.toLowerCase().includes('partner') || member.role.toLowerCase().includes('chairman')) && (
+            {member.role.toLowerCase().includes('chairman') && (
               <span className="rounded-full bg-accent/15 px-2 py-0.5 text-[10px] uppercase tracking-[0.2em] text-accent">
-                {member.role.toLowerCase().includes('chairman') ? 'Chairman' : 'Partner'}
+                Chairman
               </span>
             )}
           </p>

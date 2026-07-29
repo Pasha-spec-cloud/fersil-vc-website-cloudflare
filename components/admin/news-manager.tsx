@@ -6,16 +6,20 @@ import { useForm } from 'react-hook-form';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { AdminInput, AdminTextarea, labelStyles } from '@/components/admin/form-controls';
-import type { NewsItem } from '@/types/content';
+import type { Company, NewsItem, TeamMember } from '@/types/content';
 import { newsItemSchema } from '@/schemas/content';
 import { slugify } from '@/lib/utils';
 
 type NewsManagerProps = {
   initialNews: NewsItem[];
+  companies: Company[];
+  team: TeamMember[];
 };
 
 type NewsFormValues = {
   id?: string;
+  companyId: string;
+  teamMemberIds: string[];
   title: string;
   summary?: string;
   link?: string;
@@ -28,7 +32,7 @@ type NewsFormValues = {
   imageFile?: FileList;
 };
 
-export function NewsManager({ initialNews }: NewsManagerProps) {
+export function NewsManager({ initialNews, companies, team }: NewsManagerProps) {
   const [items, setItems] = useState(initialNews);
   const [selected, setSelected] = useState<NewsItem | null>(initialNews[0] ?? null);
   const [query, setQuery] = useState('');
@@ -45,8 +49,16 @@ export function NewsManager({ initialNews }: NewsManagerProps) {
       return items;
     }
     const lower = query.toLowerCase();
-    return items.filter((item) => `${item.title} ${item.summary ?? ''}`.toLowerCase().includes(lower));
-  }, [items, query]);
+    const companyNames = new Map(companies.map((company) => [company.id, company.name]));
+    const teamNames = new Map(team.map((member) => [member.id, member.name]));
+    return items.filter((item) => {
+      const associations = [
+        companyNames.get(item.companyId ?? '') ?? '',
+        ...item.teamMemberIds.map((id) => teamNames.get(id) ?? '')
+      ].join(' ');
+      return `${item.title} ${item.summary ?? ''} ${associations}`.toLowerCase().includes(lower);
+    });
+  }, [companies, items, query, team]);
 
   const handleSubmit = form.handleSubmit((values) => {
     setStatus({});
@@ -150,6 +162,21 @@ export function NewsManager({ initialNews }: NewsManagerProps) {
               <label className={labelStyles}>Title</label>
               <AdminInput {...form.register('title', { required: true })} placeholder="Headline" />
             </div>
+            <div>
+              <label className={labelStyles}>Associated company</label>
+              <select
+                className="w-full rounded-2xl border border-white/10 bg-slate-950 px-4 py-3 text-sm text-white"
+                {...form.register('companyId', { required: true })}
+              >
+                <option value="">Select a company</option>
+                {companies.map((company) => (
+                  <option key={company.id} value={company.id}>
+                    {company.name} {company.status === 'exited' ? '(Exited)' : ''}
+                    {company.hidden ? ' (Hidden)' : ''}
+                  </option>
+                ))}
+              </select>
+            </div>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
             <div>
@@ -184,6 +211,22 @@ export function NewsManager({ initialNews }: NewsManagerProps) {
               {...form.register('imageFile')}
             />
           </div>
+          <fieldset>
+            <legend className={labelStyles}>Associated team members</legend>
+            <div className="mt-2 grid gap-2 rounded-2xl border border-white/10 bg-white/5 p-4 sm:grid-cols-2">
+              {team.map((member) => (
+                <label key={member.id} className="flex items-center gap-3 text-sm text-muted">
+                  <input
+                    type="checkbox"
+                    value={member.id}
+                    className="h-4 w-4 accent-primary"
+                    {...form.register('teamMemberIds')}
+                  />
+                  {member.name}
+                </label>
+              ))}
+            </div>
+          </fieldset>
           <div className="flex flex-wrap gap-6 text-sm text-muted">
             <label className="flex items-center gap-3">
               <input type="checkbox" className="h-4 w-4 accent-primary" {...form.register('featured')} />
@@ -220,6 +263,8 @@ function newsToFormValues(item: NewsItem | null): NewsFormValues {
   if (!item) {
     return {
       title: '',
+      companyId: '',
+      teamMemberIds: [],
       summary: '',
       link: '',
       publishedAt: new Date().toISOString().slice(0, 16),
@@ -232,6 +277,8 @@ function newsToFormValues(item: NewsItem | null): NewsFormValues {
   }
   return {
     id: item.id,
+    companyId: item.companyId ?? '',
+    teamMemberIds: item.teamMemberIds,
     title: item.title,
     summary: item.summary ?? '',
     link: item.link ?? '',
@@ -245,8 +292,14 @@ function newsToFormValues(item: NewsItem | null): NewsFormValues {
 }
 
 function buildNewsPayload(values: NewsFormValues): { payload: NewsItem; imageFile?: File } {
+  if (!values.companyId.trim()) {
+    throw new Error('Select an associated company.');
+  }
+
   const payload = newsItemSchema.parse({
     id: values.id?.trim() || crypto.randomUUID(),
+    companyId: values.companyId.trim(),
+    teamMemberIds: values.teamMemberIds ?? [],
     title: values.title.trim(),
     slug: slugify(values.title.trim()),
     summary: values.summary?.trim() || undefined,

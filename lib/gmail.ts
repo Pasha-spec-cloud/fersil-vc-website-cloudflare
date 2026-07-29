@@ -39,13 +39,13 @@ export async function sendDeveloperAccessCode(email: string, code: string): Prom
   const safeRecipient = email.replace(/[\r\n]/g, '');
   const safeSender = sender.replace(/[\r\n]/g, '');
   const message = [
-    `From: FerSil VC <${safeSender}>`,
+    `From: FerSil Ventures <${safeSender}>`,
     `To: ${safeRecipient}`,
-    'Subject: Your FerSil VC access code',
+    'Subject: Your FerSil Ventures access code',
     'MIME-Version: 1.0',
     'Content-Type: text/plain; charset=UTF-8',
     '',
-    `Your FerSil VC website access code is: ${code}`,
+    `Your FerSil Ventures website access code is: ${code}`,
     '',
     'It expires in 10 minutes. If you did not request this code, you can ignore this email.'
   ].join('\r\n');

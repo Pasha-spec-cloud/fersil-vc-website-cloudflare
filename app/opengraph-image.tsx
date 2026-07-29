@@ -23,7 +23,7 @@ export default function OgImage() {
           fontFamily: 'Space Grotesk, Inter, sans-serif'
         }}
       >
-        <div style={{ fontSize: 24, letterSpacing: '0.4em', textTransform: 'uppercase', color: '#94a3b8' }}>FerSil VC</div>
+        <div style={{ fontSize: 24, letterSpacing: '0.4em', textTransform: 'uppercase', color: '#94a3b8' }}>FerSil Ventures</div>
         <div style={{ maxWidth: '80%', display: 'flex', flexDirection: 'column' }}>
           <h1 style={{ fontSize: 72, margin: 0, lineHeight: 1.1 }}>Hardware, software, and the physical world</h1>
           <p style={{ fontSize: 28, marginTop: 16, color: '#cbd5f5' }}>

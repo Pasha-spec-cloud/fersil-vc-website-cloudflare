@@ -3,8 +3,8 @@
     "id": "team-4566",
     "slug": "ani-nazare",
     "name": "Ani Nazare",
-    "role": "General Partner",
-    "bio": "Ani Nazare is a General Partner at FerSil VC based in Berlin. He brings operating and investing experience across enterprise software, telecom, semiconductors, medical devices, and robotics. FerSil leans on Ani where the physical world meets software: industrial automation, edge intelligence, sensing, semis, and systems that learn from real-world deployment rather than only from synthetic data. He has worked across the US, Europe, and India and supports founders on product strategy, scaling, and cross-border growth.",
+    "role": "Partner",
+    "bio": "Ani Nazare is a General Partner at FerSil Ventures based in Berlin. He brings operating and investing experience across enterprise software, telecom, semiconductors, medical devices, and robotics. FerSil leans on Ani where the physical world meets software: industrial automation, edge intelligence, sensing, semis, and systems that learn from real-world deployment rather than only from synthetic data. He has worked across the US, Europe, and India and supports founders on product strategy, scaling, and cross-border growth.",
     "headshotUrl": "/media/uploads/2021/08/360x360_Man3.jpg",
     "heroImageUrl": "/media/uploads/2021/09/1920x750_Man_3_2.jpg",
     "stats": [
@@ -45,8 +45,8 @@
     "id": "team-577",
     "slug": "pasha-bogdanov",
     "name": "Pasha Bogdanov",
-    "role": "General Partner",
-    "bio": "Pasha Bogdanov is a General Partner at FerSil VC in Berlin. He works across fundraising, LP relations, investments, portfolio support, and fund operations. His investing lens centers on technical founders turning deep engineering into durable businesses, especially where software interfaces with industry, machines, and the built world. He has backed companies across infrastructure software, applied AI, developer tooling, and globally ambitious teams emerging from Central and Eastern Europe.",
+    "role": "Partner",
+    "bio": "Pasha Bogdanov is a General Partner at FerSil Ventures in Berlin. He works across fundraising, LP relations, investments, portfolio support, and fund operations. His investing lens centers on technical founders turning deep engineering into durable businesses, especially where software interfaces with industry, machines, and the built world. He has backed companies across infrastructure software, applied AI, developer tooling, and globally ambitious teams emerging from Central and Eastern Europe.",
     "headshotUrl": "/media/uploads/2019/05/3_-_Pavel_Small.jpg",
     "heroImageUrl": "/media/uploads/2019/05/4_-_Pavel_Big.jpg",
     "stats": [
@@ -91,8 +91,8 @@
     "id": "team-3258",
     "slug": "michael-bastholt",
     "name": "Michael Bastholt",
-    "role": "Partner & COO",
-    "bio": "Michael Bastholt is Partner and COO at FerSil VC. He leads firm operations, investor relations, and the operating backbone required to support a concentrated early-stage platform. Michael has spent much of his career on the LP side of venture and private equity, giving FerSil a disciplined perspective on portfolio construction, fund governance, and how emerging managers earn long-term trust. He works closely with founders and LPs as FerSil builds a durable bridge between technical talent and global capital.",
+    "role": "Partner",
+    "bio": "Michael Bastholt is Partner and COO at FerSil Ventures. He leads firm operations, investor relations, and the operating backbone required to support a concentrated early-stage platform. Michael has spent much of his career on the LP side of venture and private equity, giving FerSil a disciplined perspective on portfolio construction, fund governance, and how emerging managers earn long-term trust. He works closely with founders and LPs as FerSil builds a durable bridge between technical talent and global capital.",
     "headshotUrl": "/media/uploads/2019/01/Michael_small.jpg",
     "heroImageUrl": "/media/uploads/2019/01/Michael_Big.jpg",
     "stats": [
@@ -122,37 +122,11 @@
     "hidden": false
   },
   {
-    "id": "team-5034",
-    "slug": "russell-green",
-    "name": "Russell Green",
-    "role": "Finance & Operations",
-    "bio": "Russell Green leads finance and reporting at FerSil VC. He oversees fund administration, reporting quality, and the operational cadence behind portfolio and LP communications. Russell's background across venture, private equity, and fund administration adds rigor to the platform, helping FerSil stay detail-oriented while moving fast. He is a key part of keeping the firm institutional where it matters and lightweight where founders need speed.",
-    "headshotUrl": "/media/uploads/2023/09/Russell_Photo_Small-1.jpg",
-    "heroImageUrl": "/media/uploads/2023/09/Russell_Photo_Large2.jpg",
-    "stats": [
-      {
-        "label": "Joined team",
-        "value": "2022"
-      },
-      {
-        "label": "Focus",
-        "value": "Finance / Reporting"
-      }
-    ],
-    "socialLinks": [],
-    "featureLinks": [],
-    "companySlugs": [],
-    "newsSlugs": [],
-    "order": 4,
-    "draft": false,
-    "hidden": false
-  },
-  {
     "id": "team-585",
     "slug": "charlie-ryan",
     "name": "Charlie Ryan",
-    "role": "LPAC Chairman",
-    "bio": "Charlie Ryan serves as LPAC Chairman for FerSil VC. His background spans investment banking, asset management, and governance across global markets. Charlie brings experienced oversight on fund structure, later-stage company development, and strategic outcomes, giving the platform a strong governance counterpart as it backs technical founders building in the real economy.",
+    "role": "Partner",
+    "bio": "Charlie Ryan serves as LPAC Chairman for FerSil Ventures. His background spans investment banking, asset management, and governance across global markets. Charlie brings experienced oversight on fund structure, later-stage company development, and strategic outcomes, giving the platform a strong governance counterpart as it backs technical founders building in the real economy.",
     "headshotUrl": "/media/uploads/2019/05/16-Charles_Small.jpg",
     "heroImageUrl": "/media/uploads/2019/05/15-Charles_Big.jpg",
     "stats": [
@@ -179,6 +153,32 @@
       "yandex",
       "refurbed"
     ],
+    "newsSlugs": [],
+    "order": 4,
+    "draft": false,
+    "hidden": false
+  },
+  {
+    "id": "team-5034",
+    "slug": "russell-green",
+    "name": "Russell Green",
+    "role": "Finance & Operations",
+    "bio": "Russell Green leads finance and reporting at FerSil Ventures. He oversees fund administration, reporting quality, and the operational cadence behind portfolio and LP communications. Russell's background across venture, private equity, and fund administration adds rigor to the platform, helping FerSil stay detail-oriented while moving fast. He is a key part of keeping the firm institutional where it matters and lightweight where founders need speed.",
+    "headshotUrl": "/media/uploads/2023/09/Russell_Photo_Small-1.jpg",
+    "heroImageUrl": "/media/uploads/2023/09/Russell_Photo_Large2.jpg",
+    "stats": [
+      {
+        "label": "Joined team",
+        "value": "2022"
+      },
+      {
+        "label": "Focus",
+        "value": "Finance / Reporting"
+      }
+    ],
+    "socialLinks": [],
+    "featureLinks": [],
+    "companySlugs": [],
     "newsSlugs": [],
     "order": 5,
     "draft": false,

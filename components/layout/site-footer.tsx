@@ -26,7 +26,7 @@ export function SiteFooter() {
           <p className="mt-3 max-w-2xl text-xs text-muted lg:ml-auto">
             The support and commitment from EIF are made through InnovFin Equity, with the financial backing of the European Union (EU) under Horizon 2020 Financial Instruments, as well as financial backing of the EU under the European Fund for Strategic Investments and the Pan-European Guarantee Fund.
           </p>
-          <p className="mt-4 text-xs text-muted">© {new Date().getFullYear()} FerSil VC. All rights reserved.</p>
+          <p className="mt-4 text-xs text-muted">© {new Date().getFullYear()} FerSil Ventures. All rights reserved.</p>
         </div>
       </Container>
     </footer>

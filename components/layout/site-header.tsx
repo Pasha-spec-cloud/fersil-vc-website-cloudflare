@@ -21,7 +21,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-30 backdrop-blur-xl">
       <Container className="flex items-center justify-between border-b border-white/5 py-4">
-        <Link href="/" aria-label="FerSil VC home">
+        <Link href="/" aria-label="FerSil Ventures home">
           <BrandMark priority />
         </Link>
         <nav className="hidden items-center gap-6 text-sm text-muted md:flex">

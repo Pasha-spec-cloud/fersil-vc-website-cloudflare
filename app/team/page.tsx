@@ -7,7 +7,7 @@ import { getCompanies, getTeamMembers } from '@/lib/content';
 
 export const metadata: Metadata = {
   title: 'Team',
-  description: 'Meet the FerSil VC team spanning investing, operations, finance, and LP governance.'
+  description: 'Meet the FerSil Ventures team spanning investing, operations, finance, and LP governance.'
 };
 
 export default async function TeamPage() {
@@ -21,7 +21,7 @@ export default async function TeamPage() {
           <p className="text-sm uppercase tracking-[0.4em] text-muted">People</p>
           <h1 className="h2">A compact team for technical conviction</h1>
           <p className="max-w-3xl text-muted">
-            FerSil VC brings together investing, LP operations, finance, and governance around two angles: ferrum ↔ silicon as the sector focus, and CEE diaspora founders as a durable sourcing edge.
+            FerSil Ventures brings together investing, LP operations, finance, and governance around two angles: ferrum ↔ silicon as the sector focus, and CEE diaspora founders as a durable sourcing edge.
           </p>
         </PageHero>
 

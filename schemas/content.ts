@@ -69,6 +69,8 @@ export const teamMemberSchema = z.object({
 export const newsItemSchema = z.object({
   id: z.string(),
   slug: z.string(),
+  companyId: nullableString(),
+  teamMemberIds: z.array(z.string()).optional().default([]),
   title: z.string(),
   summary: nullableString(),
   bodyHtml: nullableString(),

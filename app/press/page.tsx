@@ -4,7 +4,7 @@ import { SectionHeading } from '@/components/ui/section-heading';
 
 export const metadata: Metadata = {
   title: 'Press',
-  description: 'Press contacts and media resources for FerSil VC.'
+  description: 'Press contacts and media resources for FerSil Ventures.'
 };
 
 export default function PressPage() {
@@ -14,7 +14,7 @@ export default function PressPage() {
         <SectionHeading
           kicker="Press"
           title="Media resources"
-          description="Get in touch for interviews, background, and portfolio context related to FerSil VC."
+          description="Get in touch for interviews, background, and portfolio context related to FerSil Ventures."
         />
         <p className="mx-auto max-w-2xl text-muted">
           For media inquiries please email{' '}

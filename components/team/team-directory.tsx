@@ -10,12 +10,11 @@ type TeamDirectoryProps = {
   companiesBySlug: Record<string, Company>;
 };
 
-type TeamFilter = 'all' | 'partners' | 'investment' | 'platform';
+type TeamFilter = 'all' | 'partners' | 'platform';
 
 function categorize(member: TeamMember): TeamFilter {
   const role = member.role.toLowerCase();
   if (role.includes('partner')) return 'partners';
-  if (role.includes('principal') || role.includes('investment') || role.includes('associate')) return 'investment';
   return 'platform';
 }
 
@@ -60,7 +59,6 @@ export function TeamDirectory({ team, companiesBySlug }: TeamDirectoryProps) {
             {[
               { label: 'All', value: 'all' },
               { label: 'Partners', value: 'partners' },
-              { label: 'Investment', value: 'investment' },
               { label: 'Platform & Ops', value: 'platform' }
             ].map((option) => (
               <button

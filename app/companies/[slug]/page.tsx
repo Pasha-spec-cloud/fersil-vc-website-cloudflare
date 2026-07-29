@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: CompanyPageProps): Promise<Me
     return { title: 'Company not found' };
   }
 
-  const description = company.tagline ?? company.description ?? 'Portfolio company backed by FerSil VC.';
+  const description = company.tagline ?? company.description ?? 'Portfolio company backed by FerSil Ventures.';
 
   return {
     title: company.name,
@@ -60,6 +60,21 @@ function normalizeFactTitle(title: string): string {
   return title.replace(/1-st/g, '1st');
 }
 
+function extractHtmlLinks(html?: string | null): Array<{ label: string; url: string }> {
+  if (!html) return [];
+  return Array.from(html.matchAll(/<a\b[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi)).map(
+    ([, url, label]) => ({
+      url: url.replaceAll('&amp;', '&'),
+      label: label.replace(/<[^>]+>/g, '').trim() || 'Learn more'
+    })
+  );
+}
+
+function removeHtmlLinks(html?: string | null): string | null {
+  if (!html) return null;
+  return html.replace(/<a\b[^>]*>/gi, '').replace(/<\/a>/gi, '');
+}
+
 export default async function CompanyDetailPage({ params }: CompanyPageProps) {
   const { slug } = await params;
   const company = await getCompanyBySlug(slug);
@@ -68,17 +83,25 @@ export default async function CompanyDetailPage({ params }: CompanyPageProps) {
     notFound();
   }
 
-  const [team, news] = await Promise.all([getTeamMembers(), getNewsItems({ limit: 12 })]);
+  const [team, relatedNews] = await Promise.all([
+    getTeamMembers(),
+    getNewsItems({ companyId: company.id, limit: 3 })
+  ]);
   const champions = team.filter((member) => member.companySlugs.includes(company.slug));
-  const candidateNews = news.filter((item) => {
-    const needle = company.name.toLowerCase();
-    const haystack = `${item.title} ${item.summary ?? ''}`.toLowerCase();
-    return haystack.includes(needle);
-  });
-  const relatedNews = (candidateNews.length > 0 ? candidateNews : news).slice(0, 3);
   const companyMap = { [company.slug]: company };
-  const facts = company.facts.filter((fact) => fact.items.length > 0);
+  const sourceFacts = company.facts.filter((fact) => fact.items.length > 0);
+  const facts = sourceFacts.filter((fact) => !/links?\s*(?:&|and)?\s*social/i.test(fact.title));
   const hasDisclosedStage = Boolean(company.stage && company.stage !== 'Not publicly disclosed');
+  const links = [
+    company.website ? { label: 'Website', url: company.website } : null,
+    company.linkedin ? { label: 'LinkedIn', url: company.linkedin } : null,
+    ...company.links,
+    ...extractHtmlLinks(company.descriptionHtml),
+    ...sourceFacts.flatMap((fact) =>
+      fact.items.flatMap((item) => (item.url ? [{ label: item.text, url: item.url }] : []))
+    )
+  ].filter((link): link is { label: string; url: string } => Boolean(link));
+  const uniqueLinks = Array.from(new Map(links.map((link) => [link.url, link])).values());
 
   const metadataItems = [
     { label: 'Status', value: company.status === 'active' ? 'Active' : 'Exited' },
@@ -136,23 +159,11 @@ export default async function CompanyDetailPage({ params }: CompanyPageProps) {
             {company.descriptionHtml && (
               <div
                 className="prose prose-invert max-w-none text-muted"
-                dangerouslySetInnerHTML={{ __html: company.descriptionHtml }}
+                dangerouslySetInnerHTML={{ __html: removeHtmlLinks(company.descriptionHtml) ?? '' }}
               />
             )}
             {heroDescription && <p className="text-muted">{heroDescription}</p>}
 
-            <div className="flex flex-wrap gap-4 text-sm text-primary">
-              {company.website && (
-                <a href={company.website} target="_blank" rel="noreferrer noopener">
-                  Visit website →
-                </a>
-              )}
-              {company.linkedin && (
-                <a href={company.linkedin} target="_blank" rel="noreferrer noopener">
-                  LinkedIn →
-                </a>
-              )}
-            </div>
           </div>
 
           <aside className="panel rounded-3xl border border-white/10 p-6">
@@ -165,18 +176,27 @@ export default async function CompanyDetailPage({ params }: CompanyPageProps) {
                 </li>
               ))}
             </ul>
-            {company.links.length > 0 && (
-              <div className="mt-6 space-y-2 text-sm">
-                <p className="text-xs uppercase tracking-[0.3em] text-muted">Additional links</p>
-                {company.links.map((link) => (
-                  <a key={link.url} href={link.url} target="_blank" rel="noreferrer noopener" className="block text-primary">
-                    {link.label} →
-                  </a>
-                ))}
-              </div>
-            )}
           </aside>
         </header>
+
+        {uniqueLinks.length > 0 && (
+          <section>
+            <SectionHeading kicker="Resources" title="Links and Social Media" />
+            <div className="mt-6 flex flex-wrap gap-3">
+              {uniqueLinks.map((link) => (
+                <a
+                  key={link.url}
+                  href={link.url}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-primary transition hover:border-white/30 hover:text-white"
+                >
+                  {link.label} →
+                </a>
+              ))}
+            </div>
+          </section>
+        )}
 
         {facts.length > 0 && (
           <section>
@@ -191,13 +211,7 @@ export default async function CompanyDetailPage({ params }: CompanyPageProps) {
                   <ul className="mt-4 space-y-3 text-sm text-muted">
                     {fact.items.map((item) => (
                       <li key={item.text}>
-                        {item.url ? (
-                          <a href={item.url} target="_blank" rel="noreferrer noopener" className="text-primary">
-                            {item.text} →
-                          </a>
-                        ) : (
-                          item.text
-                        )}
+                        {item.text}
                       </li>
                     ))}
                   </ul>
@@ -223,7 +237,7 @@ export default async function CompanyDetailPage({ params }: CompanyPageProps) {
             <SectionHeading kicker="Updates" title="Recent headlines" />
             <div className="grid gap-6 md:grid-cols-3">
               {relatedNews.map((item) => (
-                <NewsCard key={item.id} item={item} variant="compact" />
+                <NewsCard key={item.id} item={item} companyName={company.name} variant="compact" />
               ))}
             </div>
           </section>

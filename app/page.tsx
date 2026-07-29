@@ -53,6 +53,7 @@ export default async function HomePage() {
     .slice(0, 4);
   const latestNews = news.slice(0, 3);
   const companiesBySlug = Object.fromEntries(companies.map((company) => [company.slug, company] as const));
+  const companiesById = Object.fromEntries(companies.map((company) => [company.id, company] as const));
 
   const heroStats = [
     { label: 'Active companies', value: activeCompanies.length.toString() },
@@ -62,13 +63,13 @@ export default async function HomePage() {
 
   return (
     <div className="space-y-24 py-16">
-      <PageHero tone="home" imageSrc="/media/backgrounds/home-hero.png" imageAlt="FerSil VC hero background with robotics lab environment" className="px-8 py-16">
+      <PageHero tone="home" imageSrc="/media/backgrounds/home-hero.png" imageAlt="FerSil Ventures hero background with robotics lab environment" className="px-8 py-16">
         <Container className="grid gap-10 lg:grid-cols-[2fr,1fr]">
           <div className="space-y-8">
-            <p className="text-sm uppercase tracking-[0.4em] text-muted">FerSil VC</p>
+            <p className="text-sm uppercase tracking-[0.4em] text-muted">FerSil Ventures</p>
             <h1 className="h1">Backing the hardware-software interface</h1>
             <p className="max-w-2xl text-lg text-muted">
-              FerSil VC invests in technical founders building robotics, industrial intelligence, and software shaped by the physical world. Ferrum ↔ silicon is the industry focus. The team angle is CEE diaspora founders building globally ambitious companies with deep technical roots.
+              FerSil Ventures invests in technical founders building robotics, industrial intelligence, and software shaped by the physical world. Ferrum ↔ silicon is the industry focus. The team angle is CEE diaspora founders building globally ambitious companies with deep technical roots.
             </p>
             <div className="flex flex-wrap gap-4">
               <ButtonLink href="/companies" size="lg">View Portfolio</ButtonLink>
@@ -189,7 +190,12 @@ export default async function HomePage() {
           </div>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {latestNews.map((item) => (
-              <NewsCard key={item.id} item={item} variant="compact" />
+              <NewsCard
+                key={item.id}
+                item={item}
+                companyName={item.companyId ? companiesById[item.companyId]?.name : undefined}
+                variant="compact"
+              />
             ))}
           </div>
         </Container>

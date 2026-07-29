@@ -176,10 +176,8 @@
     "name": "Acronis",
     "status": "active",
     "tagline": "Award-winning backup and data recovery software",
-    "descriptionHtml": "<div dir=\"ltr\">\n<div>\n<div dir=\"ltr\">\n<div>\n<div dir=\"ltr\">\n<div class=\"WordSection1\">\n\n<strong>Acronis unifies data protection and cybersecurity </strong><strong>to deliver integrated, automated cyber protection that solves the safety, accessibility, privacy, authenticity, and security (SAPAS) challenges of the modern digital world.</strong>\n\nWith flexible deployment models that fit the demands of service providers and IT professionals, Acronis provides superior cyber protection for data, applications, and systems with innovative next-generation antivirus, backup, disaster recovery, and endpoint protection management solutions powered by AI. With advanced anti-malware powered by cutting-edge machine intelligence and blockchain based data authentication technologies, Acronis protects any environment - from cloud to hybrid to on premises - at predictable cost.\n\nAcronis is a Swiss company, founded in Singapore has more than 2,000 employees in 45 locations. Acronis Cyber Protect solution is available in 26 languages in over 150 countries and is used by 16,000 service providers to protect over 750,000 businesses.\n\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>",
     "description": "Acronis unifies data protection and cybersecurity to deliver integrated, automated cyber protection that solves the safety, accessibility, privacy, authenticity, and security (SAPAS) challenges of the modern digital world. With flexible deployment models that fit the demands of service providers and IT professionals, Acronis provides superior cyber protection for data, applications, and systems with innovative next-generation antivirus, backup, disaster recovery, and endpoint protection management solutions powered by AI. With advanced anti-malware powered by cutting-edge machine intelligence and blockchain based data authentication technologies, Acronis protects any environment - from cloud to hybrid to on premises - at predictable cost.\n\nAcronis is a Swiss company, founded in Singapore has more than 2,000 employees in 45 locations. Acronis Cyber Protect solution is available in 26 languages in over 150 countries and is used by 16,000 service providers to protect over 750,000 businesses.",
-    "stage": "Not publicly disclosed",
-    "firstInvestmentYear": null,
+    "stage": "Series A",
     "founders": [
       "Serg Bell",
       "Stanislav Protassov"
@@ -301,7 +299,9 @@
         ]
       }
     ],
-    "logo": "/media/logos/acronis.svg"
+    "logo": "/media/logos/acronis.svg",
+    "draft": false,
+    "hidden": true
   },
   {
     "id": "company-315",
@@ -309,19 +309,16 @@
     "name": "Acumatica",
     "status": "exited",
     "tagline": "ERP cloud-based platform software company",
-    "descriptionHtml": "<a href=\"https://www.acumatica.com/\">Acumatica</a>",
     "description": "Acumatica",
     "stage": "Not publicly disclosed",
-    "firstInvestmentYear": null,
     "founders": [],
-    "ceo": null,
     "coInvestors": [],
     "officeLocations": [],
-    "website": null,
-    "linkedin": null,
     "links": [],
     "facts": [],
-    "logo": "/media/logos/acumatica.svg"
+    "logo": "/media/logos/acumatica.svg",
+    "draft": false,
+    "hidden": true
   },
   {
     "id": "company-321",
@@ -329,10 +326,8 @@
     "name": "Alawar Entertainment",
     "status": "exited",
     "tagline": "Developer, publisher and distributor of video games",
-    "descriptionHtml": "<span data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;Alawar is a company that develops, distributes and publishes video games for PCs, mobile platforms, game consoles, and other devices. The company’s main area of activity is midcore games for experienced players, as well as casual downloadable and F2P games for PC, Mac, iOS, Android, PlayStation, XBox, social networks, and other platforms. More than 200 million copies of the company’s games have been distributed and are available in more than 100 countries.&quot;}\" data-sheets-userformat=\"{&quot;2&quot;:15107,&quot;3&quot;:{&quot;1&quot;:0},&quot;4&quot;:[null,2,16777215],&quot;11&quot;:4,&quot;12&quot;:0,&quot;14&quot;:[null,2,-1728053248],&quot;15&quot;:&quot;-apple-system, system-ui, BlinkMacSystemFont, \\&quot;Segoe UI\\&quot;, Roboto, \\&quot;Helvetica Neue\\&quot;, \\&quot;Fira Sans\\&quot;, Ubuntu, Oxygen, \\&quot;Oxygen Sans\\&quot;, Cantarell, \\&quot;Droid Sans\\&quot;, \\&quot;Apple Color Emoji\\&quot;, \\&quot;Segoe UI Emoji\\&quot;, \\&quot;Segoe UI Emoji\\&quot;, \\&quot;Segoe UI Symbol\\&quot;, \\&quot;Lucida Grande\\&quot;, Helvetica, Arial, sans-serif&quot;,&quot;16&quot;:11}\"><strong>Alawar is a company that develops, distributes and publishes video games for PCs, mobile platforms, game consoles and other devices.</strong></span>\n\n<span data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;Alawar is a company that develops, distributes and publishes video games for PCs, mobile platforms, game consoles, and other devices. The company’s main area of activity is midcore games for experienced players, as well as casual downloadable and F2P games for PC, Mac, iOS, Android, PlayStation, XBox, social networks, and other platforms. More than 200 million copies of the company’s games have been distributed and are available in more than 100 countries.&quot;}\" data-sheets-userformat=\"{&quot;2&quot;:15107,&quot;3&quot;:{&quot;1&quot;:0},&quot;4&quot;:[null,2,16777215],&quot;11&quot;:4,&quot;12&quot;:0,&quot;14&quot;:[null,2,-1728053248],&quot;15&quot;:&quot;-apple-system, system-ui, BlinkMacSystemFont, \\&quot;Segoe UI\\&quot;, Roboto, \\&quot;Helvetica Neue\\&quot;, \\&quot;Fira Sans\\&quot;, Ubuntu, Oxygen, \\&quot;Oxygen Sans\\&quot;, Cantarell, \\&quot;Droid Sans\\&quot;, \\&quot;Apple Color Emoji\\&quot;, \\&quot;Segoe UI Emoji\\&quot;, \\&quot;Segoe UI Emoji\\&quot;, \\&quot;Segoe UI Symbol\\&quot;, \\&quot;Lucida Grande\\&quot;, Helvetica, Arial, sans-serif&quot;,&quot;16&quot;:11}\">The company’s main area of activity is midcore games for experienced players, as well as casual downloadable and F2P games for PC, Mac, iOS, Android, PlayStation, XBox, social networks and other platforms. More than 200 million copies of the company’s games have been distributed and are available in more than 100 countries.</span>",
     "description": "Alawar is a company that develops, distributes and publishes video games for PCs, mobile platforms, game consoles and other devices. The company’s main area of activity is midcore games for experienced players, as well as casual downloadable and F2P games for PC, Mac, iOS, Android, PlayStation, XBox, social networks and other platforms. More than 200 million copies of the company’s games have been distributed and are available in more than 100 countries.",
     "stage": "Series A",
-    "firstInvestmentYear": null,
     "founders": [
       "Alexander Lyskovsky",
       "Sergey Zanin"
@@ -438,18 +433,18 @@
         ]
       }
     ],
-    "logo": "/media/logos/alawar-entertainment.svg"
+    "logo": "/media/logos/alawar-entertainment.svg",
+    "draft": false,
+    "hidden": true
   },
   {
     "id": "company-4867",
     "slug": "alcatraz-ai",
     "name": "Alcatraz AI",
     "status": "active",
-    "tagline": "The leader in autonomous access control ",
-    "descriptionHtml": "<strong>Alcatraz AI, the leader in autonomous access control using industry-leading 3D facial authentication and AI. </strong>\n\nSince its founding in 2016, Alcatraz AI set out to transform the experience of entering spaces in the most highly secure manner, while enabling a completely passive and frictionless use case at doors for occupants and the security teams that manage them. Alcatraz AI’s flagship product, the Rock, is deployed at some of the most successful enterprises in the world, including 25 of the Fortune 500.",
+    "tagline": "The leader in autonomous access control",
     "description": "Alcatraz AI, the leader in autonomous access control using industry-leading 3D facial authentication and AI. Since its founding in 2016, Alcatraz AI set out to transform the experience of entering spaces in the most highly secure manner, while enabling a completely passive and frictionless use case at doors for occupants and the security teams that manage them. Alcatraz AI’s flagship product, the Rock, is deployed at some of the most successful enterprises in the world, including 25 of the Fortune 500.",
-    "stage": "Not publicly disclosed",
-    "firstInvestmentYear": null,
+    "stage": "Series A",
     "founders": [
       "Vince Gaydarzhiev"
     ],
@@ -534,7 +529,7 @@
         ]
       },
       {
-        "title": " Links & Social media",
+        "title": "Links & Social media",
         "items": [
           {
             "text": "Website",
@@ -551,7 +546,9 @@
         ]
       }
     ],
-    "logo": "/media/logos/alcatraz-ai.svg"
+    "logo": "/media/logos/alcatraz-ai.svg",
+    "draft": false,
+    "hidden": false
   },
   {
     "id": "company-5205",
@@ -680,19 +677,16 @@
     "name": "AppScotch",
     "status": "exited",
     "tagline": "Product that brings transparency to mobile paid ads",
-    "descriptionHtml": "<a href=\"https://www.data.ai/en/\"><b>AppScotch</b></a>",
     "description": "AppScotch",
     "stage": "Not publicly disclosed",
-    "firstInvestmentYear": null,
     "founders": [],
-    "ceo": null,
     "coInvestors": [],
     "officeLocations": [],
-    "website": null,
-    "linkedin": null,
     "links": [],
     "facts": [],
-    "logo": "/media/logos/appscotch.svg"
+    "logo": "/media/logos/appscotch.svg",
+    "draft": false,
+    "hidden": true
   },
   {
     "id": "company-5098",
@@ -805,10 +799,8 @@
     "name": "CarPrice",
     "status": "exited",
     "tagline": "Online used car broker and auctioneer",
-    "descriptionHtml": "<span data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;Carprice is online used car broker and auctioneer offering a site and application for instant online evaluation and pricing and offline locations for assessment, diagnostics and purchasing. Carprice uses quantitative engine to understand market spreads. Cars are then resold to dealerships of used cars or via car auctions. It is an adoption of WeBuyAnyCar from UK to the local Russian market, done by serial founder, Oskar Hartman.&quot;}\" data-sheets-userformat=\"{&quot;2&quot;:15105,&quot;3&quot;:{&quot;1&quot;:0},&quot;11&quot;:4,&quot;12&quot;:0,&quot;14&quot;:[null,2,0],&quot;15&quot;:&quot;Calibri&quot;,&quot;16&quot;:12}\"><strong>Carprice is an online used car broker and auctioneer offering a site and application for instant online evaluation and pricing and offline locations for assessment, diagnostics and purchasing.</strong></span>\n\n<span data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;Carprice is online used car broker and auctioneer offering a site and application for instant online evaluation and pricing and offline locations for assessment, diagnostics and purchasing. Carprice uses quantitative engine to understand market spreads. Cars are then resold to dealerships of used cars or via car auctions. It is an adoption of WeBuyAnyCar from UK to the local Russian market, done by serial founder, Oskar Hartman.&quot;}\" data-sheets-userformat=\"{&quot;2&quot;:15105,&quot;3&quot;:{&quot;1&quot;:0},&quot;11&quot;:4,&quot;12&quot;:0,&quot;14&quot;:[null,2,0],&quot;15&quot;:&quot;Calibri&quot;,&quot;16&quot;:12}\">Carprice uses a quantitative engine to understand market spreads. Cars are then resold to <span lang=\"EN\">used car dealerships</span> or via car auctions. It is an adoption of WeBuyAnyCar from the UK to the local Russian market, by serial founder, Oskar Hartman.</span>",
     "description": "Carprice is an online used car broker and auctioneer offering a site and application for instant online evaluation and pricing and offline locations for assessment, diagnostics and purchasing. Carprice uses a quantitative engine to understand market spreads. Cars are then resold to used car dealerships or via car auctions. It is an adoption of WeBuyAnyCar from the UK to the local Russian market, by serial founder, Oskar Hartman.",
     "stage": "Seed",
-    "firstInvestmentYear": null,
     "founders": [
       "Eduard Gurinovich",
       "Oskar Hartmann"
@@ -824,7 +816,6 @@
       "Russia"
     ],
     "website": "http://www.carprice.ru/",
-    "linkedin": null,
     "links": [
       {
         "label": "Website",
@@ -926,7 +917,9 @@
         ]
       }
     ],
-    "logo": "/media/logos/carprice.svg"
+    "logo": "/media/logos/carprice.svg",
+    "draft": false,
+    "hidden": true
   },
   {
     "id": "company-5058",
@@ -1029,23 +1022,20 @@
   },
   {
     "id": "company-665",
-    "slug": "cinnarra",
+    "slug": "cinarra-systems",
     "name": "Cinarra Systems",
     "status": "exited",
     "tagline": "Real-time carrier data analytics and monetization",
-    "descriptionHtml": "<a href=\"https://www.cinarra.com/\"><span data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;Cinarra Systems develops real-time mobile data analytics and monetization in collaboration with mobile network operators and Internet application platforms. Cinarra’s analytics software architecture, designed from ground up with carrier requirements in mind, is able to process large amounts of operator data and build in real time unique data insights that are then monetized using Cinarra’s mediation platform. Cinarra has offices in Silicon Valley, Kazan Russia, and Singapore. &quot;}\" data-sheets-userformat=\"{&quot;2&quot;:15105,&quot;3&quot;:{&quot;1&quot;:0},&quot;11&quot;:4,&quot;12&quot;:0,&quot;14&quot;:[null,2,0],&quot;15&quot;:&quot;Calibri&quot;,&quot;16&quot;:12}\"><strong>Cinarra </strong></span></a>",
     "description": "Cinarra",
     "stage": "Not publicly disclosed",
-    "firstInvestmentYear": null,
     "founders": [],
-    "ceo": null,
     "coInvestors": [],
     "officeLocations": [],
-    "website": null,
-    "linkedin": null,
     "links": [],
     "facts": [],
-    "logo": "/media/logos/cinnarra.svg"
+    "logo": "/media/logos/cinnarra.svg",
+    "draft": false,
+    "hidden": true
   },
   {
     "id": "company-667",
@@ -1053,27 +1043,23 @@
     "name": "Content Analytics",
     "status": "exited",
     "tagline": "An e-commerce analytics platform",
-    "descriptionHtml": "<a href=\"https://syndigo.com/\"><span data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;Content Analytics provides deep insight into on-site search rankings, content quality, product assortment, product naming, and product purchase associations to improve discoverability and increase sales. Content Analytics analyzes an ecommerce website, performs semantic, natural language and content analysis. The results are linked to a dashboard, showing which items are incorrectly positioned, presented or categorized. Accordingly, the site operators may then re-do the underperforming products mention and increase revenue. &quot;}\" data-sheets-userformat=\"{&quot;2&quot;:15105,&quot;3&quot;:{&quot;1&quot;:0},&quot;11&quot;:4,&quot;12&quot;:0,&quot;14&quot;:[null,2,0],&quot;15&quot;:&quot;Calibri&quot;,&quot;16&quot;:12}\"><strong>Content Analytics</strong></span></a>",
     "description": "Content Analytics",
     "stage": "Not publicly disclosed",
-    "firstInvestmentYear": null,
     "founders": [],
-    "ceo": null,
     "coInvestors": [],
     "officeLocations": [],
-    "website": null,
-    "linkedin": null,
     "links": [],
     "facts": [],
-    "logo": "/media/logos/content-analytics.svg"
+    "logo": "/media/logos/content-analytics.svg",
+    "draft": false,
+    "hidden": true
   },
   {
     "id": "company-312",
-    "slug": "dabble",
+    "slug": "dabbl",
     "name": "Dabbl",
     "status": "exited",
     "tagline": "Solution providing real value to the shopper journey",
-    "descriptionHtml": "<span data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;Dabbl is a next-generation mobile marketing technology solution that provides real value to all three participants in the shopper journey – the brand, the retailer, and the consumer.&quot;}\" data-sheets-userformat=\"{&quot;2&quot;:15105,&quot;3&quot;:{&quot;1&quot;:0},&quot;11&quot;:4,&quot;12&quot;:0,&quot;14&quot;:[null,2,0],&quot;15&quot;:&quot;Calibri&quot;,&quot;16&quot;:12}\"><strong>Next-generation mobile marketing technology solution</strong> <strong>that provides real value to all three participants in the shopper journey – the brand, the retailer, and the consumer.</strong></span>",
     "description": "Next-generation mobile marketing technology solution that provides real value to all three participants in the shopper journey – the brand, the retailer, and the consumer.",
     "stage": "Series A",
     "firstInvestmentYear": 2016,
@@ -1090,7 +1076,6 @@
       "Ukraine"
     ],
     "website": "http://www.getdabbl.com./",
-    "linkedin": null,
     "links": [
       {
         "label": "Website",
@@ -1106,7 +1091,7 @@
       },
       {
         "label": "Youtube",
-        "url": "https://www.youtube.com/watch?v=Y3sBLHo7scA "
+        "url": "https://www.youtube.com/watch?v=Y3sBLHo7scA"
       }
     ],
     "facts": [
@@ -1181,12 +1166,14 @@
           },
           {
             "text": "Youtube",
-            "url": "https://www.youtube.com/watch?v=Y3sBLHo7scA "
+            "url": "https://www.youtube.com/watch?v=Y3sBLHo7scA"
           }
         ]
       }
     ],
-    "logo": "/media/logos/dabble.svg"
+    "logo": "/media/logos/dabble.svg",
+    "draft": false,
+    "hidden": true
   },
   {
     "id": "company-4123",
@@ -1213,15 +1200,13 @@
     "slug": "dubformer",
     "name": "Dubformer",
     "status": "active",
-    "tagline": null,
-    "descriptionHtml": "<h2 class=\"h2-new\">All-in-one tool for professional dubbing</h2>\n<p class=\"p1\">Dubformer is building the dubbing platform to offer scalable, cost-effective, and quick video localization.</p>",
+    "tagline": "Media dubbing at scale",
     "description": "All-in-one tool for professional dubbing Dubformer is building the dubbing platform to offer scalable, cost-effective, and quick video localization.",
     "stage": "Seed",
     "firstInvestmentYear": 2024,
     "founders": [
       "Anton Dvorkovich"
     ],
-    "ceo": null,
     "coInvestors": [
       "s16vc",
       "FinSight"
@@ -1231,7 +1216,6 @@
       "Serbia"
     ],
     "website": "https://dubformer.ai/",
-    "linkedin": null,
     "links": [
       {
         "label": "Website",
@@ -1295,7 +1279,9 @@
         ]
       }
     ],
-    "logo": "/media/logos/dubformer.svg"
+    "logo": "/media/logos/dubformer.svg",
+    "draft": false,
+    "hidden": false
   },
   {
     "id": "company-735",
@@ -1303,10 +1289,8 @@
     "name": "Esperanto",
     "status": "exited",
     "tagline": "The most energy-efficient computing solutions",
-    "descriptionHtml": "<span data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;Esperanto Technologies develops high performance, energy-efficient processors based on the open standard RISC-V ISA. Esperanto has brought together a seasoned team of experienced processor and software engineers with the goal of making RISC-V the architecture of choice for compute-intensive applications such as Machine Learning.&quot;}\" data-sheets-userformat=\"{&quot;2&quot;:15105,&quot;3&quot;:{&quot;1&quot;:0},&quot;11&quot;:4,&quot;12&quot;:0,&quot;14&quot;:[null,2,0],&quot;15&quot;:&quot;Calibri&quot;,&quot;16&quot;:12}\"><strong>Esperanto Technologies develops high performance, energy-efficient processors based on the open standard RISC-V ISA.</strong></span>\n\n<span data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;Esperanto Technologies develops high performance, energy-efficient processors based on the open standard RISC-V ISA. Esperanto has brought together a seasoned team of experienced processor and software engineers with the goal of making RISC-V the architecture of choice for compute-intensive applications such as Machine Learning.&quot;}\" data-sheets-userformat=\"{&quot;2&quot;:15105,&quot;3&quot;:{&quot;1&quot;:0},&quot;11&quot;:4,&quot;12&quot;:0,&quot;14&quot;:[null,2,0],&quot;15&quot;:&quot;Calibri&quot;,&quot;16&quot;:12}\">Esperanto has brought together a seasoned team of experienced processor and software engineers with the goal of making RISC-V the architecture of choice for compute-intensive applications such as Machine Learning.</span>",
     "description": "Esperanto Technologies develops high performance, energy-efficient processors based on the open standard RISC-V ISA. Esperanto has brought together a seasoned team of experienced processor and software engineers with the goal of making RISC-V the architecture of choice for compute-intensive applications such as Machine Learning.",
     "stage": "Series A",
-    "firstInvestmentYear": null,
     "founders": [
       "Dave Ditzel"
     ],
@@ -1320,7 +1304,6 @@
       "Spain"
     ],
     "website": "https://www.esperanto.ai/",
-    "linkedin": null,
     "links": [
       {
         "label": "Website",
@@ -1410,7 +1393,9 @@
         ]
       }
     ],
-    "logo": "/media/logos/esperanto.svg"
+    "logo": "/media/logos/esperanto.svg",
+    "draft": false,
+    "hidden": true
   },
   {
     "id": "company-669",
@@ -1418,34 +1403,28 @@
     "name": "Fasten",
     "status": "exited",
     "tagline": "Ridesharing with driver friendly approach",
-    "descriptionHtml": "<strong>Fasten</strong>",
     "description": "Fasten",
     "stage": "Not publicly disclosed",
-    "firstInvestmentYear": null,
     "founders": [],
-    "ceo": null,
     "coInvestors": [],
     "officeLocations": [],
-    "website": null,
-    "linkedin": null,
     "links": [],
     "facts": [],
-    "logo": "/media/logos/fasten.svg"
+    "logo": "/media/logos/fasten.svg",
+    "draft": false,
+    "hidden": true
   },
   {
     "id": "company-671",
-    "slug": "final-price",
+    "slug": "finalprice",
     "name": "FinalPrice",
     "status": "active",
     "tagline": "Subscription-based travel app",
-    "descriptionHtml": "<span data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;FinalPrice is an online travel agency for booking flights, hotels and car rentals at prices that are not available to the public. The team consists of professionals who have a deep knowledge of the travel industry, as well as experience developing other digital travel projects. Founded by Peter Kutis, who previously founded the successful online travel agency, OneTwoTrip.com. FinalPrice mission is to leverage this understanding to deliver an unmatched travel experience for their members.&quot;}\" data-sheets-userformat=\"{&quot;2&quot;:14593,&quot;3&quot;:{&quot;1&quot;:0,&quot;3&quot;:1},&quot;11&quot;:4,&quot;14&quot;:[null,2,0],&quot;15&quot;:&quot;Calibri&quot;,&quot;16&quot;:12}\"><strong>FinalPrice is an online travel agency for booking flights, hotels and car rentals at prices that are not available to the public.</strong></span>\n\n<span data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;FinalPrice is an online travel agency for booking flights, hotels and car rentals at prices that are not available to the public. The team consists of professionals who have a deep knowledge of the travel industry, as well as experience developing other digital travel projects. Founded by Peter Kutis, who previously founded the successful online travel agency, OneTwoTrip.com. FinalPrice mission is to leverage this understanding to deliver an unmatched travel experience for their members.&quot;}\" data-sheets-userformat=\"{&quot;2&quot;:14593,&quot;3&quot;:{&quot;1&quot;:0,&quot;3&quot;:1},&quot;11&quot;:4,&quot;14&quot;:[null,2,0],&quot;15&quot;:&quot;Calibri&quot;,&quot;16&quot;:12}\">The team consists of professionals who have a deep knowledge of the travel industry, as well as experience developing other digital travel projects. Founded by Peter Kutis, who previously founded the successful online travel agency, OneTwoTrip.com. FinalPrice mission is to leverage this understanding to deliver an unmatched travel experience for their members.</span>",
     "description": "FinalPrice is an online travel agency for booking flights, hotels and car rentals at prices that are not available to the public. The team consists of professionals who have a deep knowledge of the travel industry, as well as experience developing other digital travel projects. Founded by Peter Kutis, who previously founded the successful online travel agency, OneTwoTrip.com. FinalPrice mission is to leverage this understanding to deliver an unmatched travel experience for their members.",
     "stage": "Seed",
-    "firstInvestmentYear": null,
     "founders": [
       "Peter Kutis"
     ],
-    "ceo": null,
     "coInvestors": [],
     "officeLocations": [
       "Portugal",
@@ -1464,7 +1443,7 @@
       },
       {
         "label": "Facebook",
-        "url": " https://www.facebook.com/finalpricecom/"
+        "url": "https://www.facebook.com/finalpricecom/"
       }
     ],
     "facts": [
@@ -1516,27 +1495,26 @@
           },
           {
             "text": "Facebook",
-            "url": " https://www.facebook.com/finalpricecom/"
+            "url": "https://www.facebook.com/finalpricecom/"
           }
         ]
       }
     ],
-    "logo": "/media/logos/final-price.svg"
+    "logo": "/media/logos/final-price.svg",
+    "draft": false,
+    "hidden": true
   },
   {
     "id": "company-673",
-    "slug": "good-data",
+    "slug": "gooddata",
     "name": "GoodData",
     "status": "active",
     "tagline": "End-to-end cloud BI",
-    "descriptionHtml": "<span data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;GoodData powers the transformation of decision-making for frontline workers within their daily business processes. The GoodData Enterprise Insights Platform is a cloud-based, end-to-end platform that gathers data and user decisions and transforms them into actionable insights delivered at the point of work. This empowers enterprises and software companies to integrate insights into applications so that their customers, partners, and employees can make more intelligent decisions, faster. The platform is powered by a highly scalable, elastic, and secure cloud analytics architecture with capabilities that support the entire data pipeline from data ingestion to insights delivery. More than 50 percent of the Fortune 500 are using GoodData to achieve actionable insights.&quot;}\" data-sheets-userformat=\"{&quot;2&quot;:13059,&quot;3&quot;:{&quot;1&quot;:0},&quot;4&quot;:[null,2,16777215],&quot;11&quot;:4,&quot;12&quot;:0,&quot;15&quot;:&quot;\\&quot;Segoe UI\\&quot;,sans-serif&quot;,&quot;16&quot;:11}\"><strong>GoodData powers the transformation of decision-making for frontline workers within their daily business processes.</strong></span>\n\n<span data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;GoodData powers the transformation of decision-making for frontline workers within their daily business processes. The GoodData Enterprise Insights Platform is a cloud-based, end-to-end platform that gathers data and user decisions and transforms them into actionable insights delivered at the point of work. This empowers enterprises and software companies to integrate insights into applications so that their customers, partners, and employees can make more intelligent decisions, faster. The platform is powered by a highly scalable, elastic, and secure cloud analytics architecture with capabilities that support the entire data pipeline from data ingestion to insights delivery. More than 50 percent of the Fortune 500 are using GoodData to achieve actionable insights.&quot;}\" data-sheets-userformat=\"{&quot;2&quot;:13059,&quot;3&quot;:{&quot;1&quot;:0},&quot;4&quot;:[null,2,16777215],&quot;11&quot;:4,&quot;12&quot;:0,&quot;15&quot;:&quot;\\&quot;Segoe UI\\&quot;,sans-serif&quot;,&quot;16&quot;:11}\">The GoodData Enterprise Insights Platform is a cloud-based, end-to-end platform that gathers data and user decisions and transforms them into actionable insights delivered at the point of work. This empowers enterprises and software companies to integrate insights into applications so that their customers, partners, and employees can make more intelligent decisions, faster. The platform is powered by a highly scalable, elastic, and secure cloud analytics architecture with capabilities that support the entire data pipeline from data ingestion to insights delivery. More than 50 percent of the Fortune 500 are using GoodData to achieve actionable insights.</span>",
     "description": "GoodData powers the transformation of decision-making for frontline workers within their daily business processes. The GoodData Enterprise Insights Platform is a cloud-based, end-to-end platform that gathers data and user decisions and transforms them into actionable insights delivered at the point of work. This empowers enterprises and software companies to integrate insights into applications so that their customers, partners, and employees can make more intelligent decisions, faster. The platform is powered by a highly scalable, elastic, and secure cloud analytics architecture with capabilities that support the entire data pipeline from data ingestion to insights delivery. More than 50 percent of the Fortune 500 are using GoodData to achieve actionable insights.",
-    "stage": "Not publicly disclosed",
-    "firstInvestmentYear": null,
+    "stage": "Series B",
     "founders": [
       "Roman Stanek"
     ],
-    "ceo": null,
     "coInvestors": [
       "General Catalyst",
       "Andreessen Horowitz",
@@ -1658,18 +1636,18 @@
         ]
       }
     ],
-    "logo": "/media/logos/good-data.svg"
+    "logo": "/media/logos/good-data.svg",
+    "draft": false,
+    "hidden": true
   },
   {
     "id": "company-675",
-    "slug": "grid-gain",
+    "slug": "gridgain",
     "name": "GridGain",
     "status": "exited",
     "tagline": "In-memory computing platform",
-    "descriptionHtml": "<span data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;GridGain powers the digital enterprise with an in-memory computing platform built on Apache IgniteTM that provides in-memory speed and massive scalability for data-intensive applications. It requires no rip-and-replace of your existing database and can be deployed on-premises, on a public or private cloud, or on a hybrid environment.\\nBuilt from the ground up, GridGain’s product line delivers all the high performance benefits of In-Memory Computing in a simple, intuitive package. Form high performance computing, streaming and database to HDFS and MongoDB accelerators, GridGain provides a complete end-to-end stack for low-latency, high performance computing for every category of payloads and data processing requirements. Fortune 500 companies, government agencies and mobile and web companies use GridGain to achieve unprecedented performance and business insight.&quot;}\" data-sheets-userformat=\"{&quot;2&quot;:15105,&quot;3&quot;:{&quot;1&quot;:0},&quot;11&quot;:4,&quot;12&quot;:0,&quot;14&quot;:[null,2,0],&quot;15&quot;:&quot;Calibri&quot;,&quot;16&quot;:12}\"><strong>GridGain powers the digital enterprise with an in-memory computing platform built on Apache IgniteTM that provides in-memory speed and massive scalability for data-intensive applications</strong>.</span>\n\n<span data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;GridGain powers the digital enterprise with an in-memory computing platform built on Apache IgniteTM that provides in-memory speed and massive scalability for data-intensive applications. It requires no rip-and-replace of your existing database and can be deployed on-premises, on a public or private cloud, or on a hybrid environment.\\nBuilt from the ground up, GridGain’s product line delivers all the high performance benefits of In-Memory Computing in a simple, intuitive package. Form high performance computing, streaming and database to HDFS and MongoDB accelerators, GridGain provides a complete end-to-end stack for low-latency, high performance computing for every category of payloads and data processing requirements. Fortune 500 companies, government agencies and mobile and web companies use GridGain to achieve unprecedented performance and business insight.&quot;}\" data-sheets-userformat=\"{&quot;2&quot;:15105,&quot;3&quot;:{&quot;1&quot;:0},&quot;11&quot;:4,&quot;12&quot;:0,&quot;14&quot;:[null,2,0],&quot;15&quot;:&quot;Calibri&quot;,&quot;16&quot;:12}\">It requires no rip-and-replace of your existing database and can be deployed on-premises, on a public or private cloud, or on a hybrid environment. Built from the ground up, GridGain’s product line delivers all the high performance benefits of In-Memory Computing in a simple, intuitive package. From high performance computing, streaming and database to HDFS and MongoDB accelerators, GridGain provides a complete end-to-end stack for low-latency, high performance computing for every category of payloads and data processing requirements. Fortune 500 companies, government agencies and mobile and web companies use GridGain to achieve unprecedented performance and business insight.</span>",
     "description": "GridGain powers the digital enterprise with an in-memory computing platform built on Apache IgniteTM that provides in-memory speed and massive scalability for data-intensive applications . It requires no rip-and-replace of your existing database and can be deployed on-premises, on a public or private cloud, or on a hybrid environment. Built from the ground up, GridGain’s product line delivers all the high performance benefits of In-Memory Computing in a simple, intuitive package. From high performance computing, streaming and database to HDFS and MongoDB accelerators, GridGain provides a complete end-to-end stack for low-latency, high performance computing for every category of payloads and data processing requirements. Fortune 500 companies, government agencies and mobile and web companies use GridGain to achieve unprecedented performance and business insight.",
     "stage": "Series A",
-    "firstInvestmentYear": null,
     "founders": [
       "Dmitriy Setrakyan",
       "Nikita Ivanov"
@@ -1777,7 +1755,9 @@
         ]
       }
     ],
-    "logo": "/media/logos/grid-gain.svg"
+    "logo": "/media/logos/grid-gain.svg",
+    "draft": false,
+    "hidden": true
   },
   {
     "id": "company-677",
@@ -1785,10 +1765,8 @@
     "name": "Hover",
     "status": "active",
     "tagline": "3D mapping technology",
-    "descriptionHtml": "<span data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;Hover is a 3D imagery company, producing a product which allows the combination of overhead and oblique imagery to produce 3D models of buildings. By using Computer Machine Vision algorithms Hover’s software takes the outlines of a building and drapes the textures over it for uses in construction, home improvement and insurance. Hover has the only system, which is centimeter accurate, but also can be updated via smart phone company imagery and can render thousands of structures rapidly. &quot;}\" data-sheets-userformat=\"{&quot;2&quot;:14593,&quot;3&quot;:{&quot;1&quot;:0,&quot;3&quot;:1},&quot;11&quot;:4,&quot;14&quot;:[null,2,0],&quot;15&quot;:&quot;Calibri&quot;,&quot;16&quot;:12}\"><strong>Hover is a 3D imagery company, producing a product which allows the combination of overhead and oblique imagery to produce 3D models of buildings.</strong></span>\n\n<span data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;Hover is a 3D imagery company, producing a product which allows the combination of overhead and oblique imagery to produce 3D models of buildings. By using Computer Machine Vision algorithms Hover’s software takes the outlines of a building and drapes the textures over it for uses in construction, home improvement and insurance. Hover has the only system, which is centimeter accurate, but also can be updated via smart phone company imagery and can render thousands of structures rapidly. &quot;}\" data-sheets-userformat=\"{&quot;2&quot;:14593,&quot;3&quot;:{&quot;1&quot;:0,&quot;3&quot;:1},&quot;11&quot;:4,&quot;14&quot;:[null,2,0],&quot;15&quot;:&quot;Calibri&quot;,&quot;16&quot;:12}\">By using Computer Machine Vision algorithms, Hover’s software takes the outlines of a building and drapes the textures over it for uses in construction, home improvement and insurance. Hover has the only system which is centimeter accurate, but can also be updated via smart phone company imagery and can render thousands of structures rapidly. </span>",
     "description": "Hover is a 3D imagery company, producing a product which allows the combination of overhead and oblique imagery to produce 3D models of buildings. By using Computer Machine Vision algorithms, Hover’s software takes the outlines of a building and drapes the textures over it for uses in construction, home improvement and insurance. Hover has the only system which is centimeter accurate, but can also be updated via smart phone company imagery and can render thousands of structures rapidly.",
     "stage": "Series A",
-    "firstInvestmentYear": null,
     "founders": [
       "A.J. Altman",
       "Ross Hangebrauck"
@@ -1806,7 +1784,6 @@
       "USA"
     ],
     "website": "https://hover.to",
-    "linkedin": null,
     "links": [
       {
         "label": "Website",
@@ -1889,9 +1866,6 @@
         "items": [
           {
             "text": "USA"
-          },
-          {
-            "text": ""
           }
         ]
       },
@@ -1917,7 +1891,9 @@
         ]
       }
     ],
-    "logo": "/media/logos/hover.svg"
+    "logo": "/media/logos/hover.svg",
+    "draft": false,
+    "hidden": true
   },
   {
     "id": "company-679",
@@ -1925,19 +1901,16 @@
     "name": "Jelastic",
     "status": "exited",
     "tagline": "Multi-cloud DevOps PaaS",
-    "descriptionHtml": "<a href=\"https://www.virtuozzo.com/application-platform-partners/\"><span data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;Jelastic is a Multi-Cloud DevOps PaaS for ISVs, telcos, service providers and enterprises needing to speed up development, reduce cost of IT infrastructure, improve uptime and security. The platform automates creation, scaling, clustering and security updates of cloud-native and traditional applications. Jelastic has a unique pay-as-you-use pricing model and is available as public, private, hybrid and multi-cloud through a fast growing network of hosting companies around the globe, giving developers greater flexibility and choice.&quot;}\" data-sheets-userformat=\"{&quot;2&quot;:15107,&quot;3&quot;:{&quot;1&quot;:0},&quot;4&quot;:[null,2,16777215],&quot;11&quot;:4,&quot;12&quot;:0,&quot;14&quot;:[null,2,0],&quot;15&quot;:&quot;Arial&quot;,&quot;16&quot;:11}\"><strong>Jelastic </strong></span></a>",
     "description": "Jelastic",
     "stage": "Not publicly disclosed",
-    "firstInvestmentYear": null,
     "founders": [],
-    "ceo": null,
     "coInvestors": [],
     "officeLocations": [],
-    "website": null,
-    "linkedin": null,
     "links": [],
     "facts": [],
-    "logo": "/media/logos/jelastic.svg"
+    "logo": "/media/logos/jelastic.svg",
+    "draft": false,
+    "hidden": true
   },
   {
     "id": "company-681",
@@ -1945,19 +1918,16 @@
     "name": "Maketime",
     "status": "exited",
     "tagline": "Online marketplace for machined components production",
-    "descriptionHtml": "<a href=\"https://www.xometry.com/\"><span data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;MakeTime is an online, transactional marketplace where manufacturers connect to buy and sell machine production capacity by the hour. MakeTime’s goal is to revolutionize the manufacturing value chain by changing the way businesses negotiate and transact to produce goods across the world. For small and medium manufacturers as well as OEMs the company is making it as easy to purchase manufacturing capacity as it is to purchase server bandwidth in the cloud. Maketime merged with Xometry Inc in 2018.&quot;}\" data-sheets-userformat=\"{&quot;2&quot;:15105,&quot;3&quot;:{&quot;1&quot;:0},&quot;11&quot;:4,&quot;12&quot;:0,&quot;14&quot;:[null,2,0],&quot;15&quot;:&quot;Calibri&quot;,&quot;16&quot;:12}\"><strong>MakeTime</strong></span></a>",
     "description": "MakeTime",
     "stage": "Not publicly disclosed",
-    "firstInvestmentYear": null,
     "founders": [],
-    "ceo": null,
     "coInvestors": [],
     "officeLocations": [],
-    "website": null,
-    "linkedin": null,
     "links": [],
     "facts": [],
-    "logo": "/media/logos/maketime.svg"
+    "logo": "/media/logos/maketime.svg",
+    "draft": false,
+    "hidden": true
   },
   {
     "id": "company-mariadb",
@@ -1965,16 +1935,13 @@
     "name": "MariaDB",
     "status": "active",
     "tagline": "Open source database platform for modern applications",
-    "descriptionHtml": "<strong>MariaDB builds an open source database platform used for transactional, analytical, and hybrid workloads across cloud and on-prem environments.</strong>",
     "description": "MariaDB builds an open source database platform used for transactional, analytical, and hybrid workloads across cloud and on-prem environments.",
     "stage": "Growth",
-    "firstInvestmentYear": null,
     "founders": [
       "Michael Widenius",
       "Patrik Sallner",
       "Kaj Arnö"
     ],
-    "ceo": null,
     "coInvestors": [],
     "officeLocations": [
       "United States",
@@ -2032,7 +1999,9 @@
         ]
       }
     ],
-    "logo": "/media/logos/mariadb.svg"
+    "logo": "/media/logos/mariadb.svg",
+    "draft": false,
+    "hidden": true
   },
   {
     "id": "company-4839",
@@ -2314,10 +2283,8 @@
     "name": "Mobalytics",
     "status": "active",
     "tagline": "Gamer performance analytics for eSports",
-    "descriptionHtml": "<span data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;Mobalytics is an eSports company creating a new, more robust way for competitive gamers to analyze and improve their performance. The company is developing a Gamer Performance Index (GPI) that involves using in-game data available from game APIs and crunching it through machine learning algorithms to analyze and improve player performance across several areas crucial for competitive gaming.&quot;}\" data-sheets-userformat=\"{&quot;2&quot;:14593,&quot;3&quot;:{&quot;1&quot;:0,&quot;3&quot;:1},&quot;11&quot;:4,&quot;14&quot;:[null,2,0],&quot;15&quot;:&quot;Calibri&quot;,&quot;16&quot;:12}\"><strong>Mobalytics is an eSports company creating a new, more robust way for competitive gamers to analyze and improve their performance.</strong></span>\n\n<span data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;Mobalytics is an eSports company creating a new, more robust way for competitive gamers to analyze and improve their performance. The company is developing a Gamer Performance Index (GPI) that involves using in-game data available from game APIs and crunching it through machine learning algorithms to analyze and improve player performance across several areas crucial for competitive gaming.&quot;}\" data-sheets-userformat=\"{&quot;2&quot;:14593,&quot;3&quot;:{&quot;1&quot;:0,&quot;3&quot;:1},&quot;11&quot;:4,&quot;14&quot;:[null,2,0],&quot;15&quot;:&quot;Calibri&quot;,&quot;16&quot;:12}\">The company is developing a Gamer Performance Index (GPI) that involves using in-game data available from game APIs and crunching it through machine learning algorithms to analyze and improve player performance across several areas crucial for competitive gaming.</span>",
     "description": "Mobalytics is an eSports company creating a new, more robust way for competitive gamers to analyze and improve their performance. The company is developing a Gamer Performance Index (GPI) that involves using in-game data available from game APIs and crunching it through machine learning algorithms to analyze and improve player performance across several areas crucial for competitive gaming.",
     "stage": "Seed",
-    "firstInvestmentYear": null,
     "founders": [
       "Amine Issa",
       "Bogdan Suchyk",
@@ -2339,7 +2306,6 @@
       "USA"
     ],
     "website": "https://www.mobalytics.gg/",
-    "linkedin": null,
     "links": [
       {
         "label": "Website",
@@ -2438,9 +2404,6 @@
         "items": [
           {
             "text": "USA"
-          },
-          {
-            "text": ""
           }
         ]
       },
@@ -2470,7 +2433,9 @@
         ]
       }
     ],
-    "logo": "/media/logos/mobalytics.svg"
+    "logo": "/media/logos/mobalytics.svg",
+    "draft": false,
+    "hidden": true
   },
   {
     "id": "company-5049",
@@ -2865,19 +2830,16 @@
     "name": "nScaled",
     "status": "exited",
     "tagline": "Business continuity solutions",
-    "descriptionHtml": "<a href=\"https://www.acronis.com/\"><strong>nScaled</strong></a>",
     "description": "nScaled",
     "stage": "Not publicly disclosed",
-    "firstInvestmentYear": null,
     "founders": [],
-    "ceo": null,
     "coInvestors": [],
     "officeLocations": [],
-    "website": null,
-    "linkedin": null,
     "links": [],
     "facts": [],
-    "logo": "/media/logos/nscaled.svg"
+    "logo": "/media/logos/nscaled.svg",
+    "draft": false,
+    "hidden": true
   },
   {
     "id": "company-693",
@@ -2885,19 +2847,16 @@
     "name": "Odin",
     "status": "exited",
     "tagline": "Cloud provisioning management",
-    "descriptionHtml": "<a href=\"http://cloudblue.com\"><span data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;Odin (part of Parallels Holdings) provides the software that powers the cloud ecosystem, from small and local hosters to some of the world’s largest telecommunication companies. By partnering with Odin, service providers gain access to industry expertise, a catalog of the most in-demand cloud applications, and the most comprehensive selection of software including web server management, server virtualization, provisioning, and billing automation.&quot;}\" data-sheets-userformat=\"{&quot;2&quot;:15105,&quot;3&quot;:{&quot;1&quot;:0},&quot;11&quot;:4,&quot;12&quot;:0,&quot;14&quot;:[null,2,0],&quot;15&quot;:&quot;Calibri&quot;,&quot;16&quot;:12}\"><strong>Odin</strong></span></a>",
     "description": "Odin",
     "stage": "Not publicly disclosed",
-    "firstInvestmentYear": null,
     "founders": [],
-    "ceo": null,
     "coInvestors": [],
     "officeLocations": [],
-    "website": null,
-    "linkedin": null,
     "links": [],
     "facts": [],
-    "logo": "/media/logos/odin.svg"
+    "logo": "/media/logos/odin.svg",
+    "draft": false,
+    "hidden": true
   },
   {
     "id": "company-4342",
@@ -2905,10 +2864,8 @@
     "name": "OneSoil",
     "status": "active",
     "tagline": "Democratising digital agriculture",
-    "descriptionHtml": "<strong>OneSoil helps agricultural professionals monitor fields and increase yields.</strong>\n\nOneSoil builds mobile and web apps that use satellite imagery for agricultural analytics and provides field insights for farmers and agricultural consultants at no cost. The company's tools for remote crop monitoring and variable-rate seed and fertiliser application help reduce the time spent on field scouting and save farmers money on inputs. OneSoil's machine-learning technologies also automatically recognise fields, crops, and other agricultural data using satellite images. The company provides paid analytics and technological solutions to major agricultural companies.",
     "description": "OneSoil helps agricultural professionals monitor fields and increase yields. OneSoil builds mobile and web apps that use satellite imagery for agricultural analytics and provides field insights for farmers and agricultural consultants at no cost. The company's tools for remote crop monitoring and variable-rate seed and fertiliser application help reduce the time spent on field scouting and save farmers money on inputs. OneSoil's machine-learning technologies also automatically recognise fields, crops, and other agricultural data using satellite images. The company provides paid analytics and technological solutions to major agricultural companies.",
-    "stage": "Series A",
-    "firstInvestmentYear": null,
+    "stage": "Seed",
     "founders": [
       "Slava Mazai",
       "Sasha Yakovlev",
@@ -3046,27 +3003,24 @@
         ]
       }
     ],
-    "logo": "/media/logos/onesoil.svg"
+    "logo": "/media/logos/onesoil.svg",
+    "draft": false,
+    "hidden": false
   },
   {
     "id": "company-5227",
     "slug": "openai",
     "name": "OpenAI",
     "status": "active",
-    "tagline": null,
-    "descriptionHtml": "OpenAI is a company dedicated to AI research and practical application. Its mission is to ensure that artificial general intelligence benefits all of humanity.",
-    "description": "OpenAI is a company dedicated to AI research and practical application. Its mission is to ensure that artificial general intelligence benefits all of humanity.",
-    "stage": "Not publicly disclosed",
-    "firstInvestmentYear": null,
+    "description": "OpenAI is a company dedicated to AI research and practical application. Its mission is to ensure that artificial general intelligence benefits all of humanity. We became shareholders after OpenAI acquired Neptune.ai, our Series A AI model training company.",
     "founders": [],
-    "ceo": null,
     "coInvestors": [],
     "officeLocations": [],
-    "website": null,
-    "linkedin": null,
     "links": [],
     "facts": [],
-    "logo": "/media/logos/openai.svg"
+    "logo": "/media/logos/openai.svg",
+    "draft": false,
+    "hidden": false
   },
   {
     "id": "company-313",
@@ -3074,19 +3028,16 @@
     "name": "Parallels",
     "status": "exited",
     "tagline": "Virtualization and business automation cross-platform solutions",
-    "descriptionHtml": "<a href=\"http://parallels.com\"><span data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;Parallels Holdings (former SWSoft) - a leading virtualization and business automation software company for Hosting and Telco provider, providing a full suite of cloud-based product offerings. The Holdings included Paralles, Odin, Plesk and Virtuozzo, later split in separte companies.\\nParallels, a global leader in cross-platform solutions, makes it simple for customers to use and access the applications and files they need on any device or operating system. We help businesses and individuals to securely and productively use their favorite devices and preferred technology, whether it’s Windows®, Mac®, iOS, AndroidTM, Chromebook, Windows Phone, Linux, Raspberry Pi or the Cloud. Parallels solutions enable seamless delivery of virtual desktops and applications to any device, running Windows on a Mac, Mac management with Microsoft SCCM, and remote access to PCs and Macs from any device. \\n&quot;}\" data-sheets-userformat=\"{&quot;2&quot;:15105,&quot;3&quot;:{&quot;1&quot;:0},&quot;11&quot;:4,&quot;12&quot;:0,&quot;14&quot;:[null,2,0],&quot;15&quot;:&quot;Calibri&quot;,&quot;16&quot;:12}\"><strong>Parallels</strong></span></a><span data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;Parallels Holdings (former SWSoft) - a leading virtualization and business automation software company for Hosting and Telco provider, providing a full suite of cloud-based product offerings. The Holdings included Paralles, Odin, Plesk and Virtuozzo, later split in separte companies.\\nParallels, a global leader in cross-platform solutions, makes it simple for customers to use and access the applications and files they need on any device or operating system. We help businesses and individuals to securely and productively use their favorite devices and preferred technology, whether it’s Windows®, Mac®, iOS, AndroidTM, Chromebook, Windows Phone, Linux, Raspberry Pi or the Cloud. Parallels solutions enable seamless delivery of virtual desktops and applications to any device, running Windows on a Mac, Mac management with Microsoft SCCM, and remote access to PCs and Macs from any device. \\n&quot;}\" data-sheets-userformat=\"{&quot;2&quot;:15105,&quot;3&quot;:{&quot;1&quot;:0},&quot;11&quot;:4,&quot;12&quot;:0,&quot;14&quot;:[null,2,0],&quot;15&quot;:&quot;Calibri&quot;,&quot;16&quot;:12}\">\n</span>",
     "description": "Parallels",
     "stage": "Not publicly disclosed",
-    "firstInvestmentYear": null,
     "founders": [],
-    "ceo": null,
     "coInvestors": [],
     "officeLocations": [],
-    "website": null,
-    "linkedin": null,
     "links": [],
     "facts": [],
-    "logo": "/media/logos/parallels.svg"
+    "logo": "/media/logos/parallels.svg",
+    "draft": false,
+    "hidden": true
   },
   {
     "id": "company-695",
@@ -3094,10 +3045,8 @@
     "name": "Petcube",
     "status": "active",
     "tagline": "Interactive pet monitor and mobile app",
-    "descriptionHtml": "<span data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;PetCube offers an interactive camera device and a smartphone companion app for pet owners that allows them to watch, talk and play with their pets using a smartphone. Founded by a Ukrainian team in 2012, the company was funded by a combination of a Kickstarter campaign, angel money and seed investment from Aventures and SOS Ventures, Ukraine-based VC funds. &quot;}\" data-sheets-userformat=\"{&quot;2&quot;:15105,&quot;3&quot;:{&quot;1&quot;:0},&quot;11&quot;:4,&quot;12&quot;:0,&quot;14&quot;:[null,2,0],&quot;15&quot;:&quot;Calibri&quot;,&quot;16&quot;:12}\"><strong>PetCube offers an interactive camera device and a smartphone companion app for pet owners that allows them to watch, talk and play with their pets using a smartphone.</strong></span>\n\n<span data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;PetCube offers an interactive camera device and a smartphone companion app for pet owners that allows them to watch, talk and play with their pets using a smartphone. Founded by a Ukrainian team in 2012, the company was funded by a combination of a Kickstarter campaign, angel money and seed investment from Aventures and SOS Ventures, Ukraine-based VC funds. &quot;}\" data-sheets-userformat=\"{&quot;2&quot;:15105,&quot;3&quot;:{&quot;1&quot;:0},&quot;11&quot;:4,&quot;12&quot;:0,&quot;14&quot;:[null,2,0],&quot;15&quot;:&quot;Calibri&quot;,&quot;16&quot;:12}\">Founded by a Ukrainian team in 2012, the company was funded by a combination of a Kickstarter campaign, angel money and seed investment from Aventures and SOS Ventures, Ukraine-based VC funds. </span>",
     "description": "PetCube offers an interactive camera device and a smartphone companion app for pet owners that allows them to watch, talk and play with their pets using a smartphone. Founded by a Ukrainian team in 2012, the company was funded by a combination of a Kickstarter campaign, angel money and seed investment from Aventures and SOS Ventures, Ukraine-based VC funds.",
     "stage": "Seed",
-    "firstInvestmentYear": null,
     "founders": [
       "Alex Neskin",
       "Andrey Klen",
@@ -3114,7 +3063,6 @@
       "USA"
     ],
     "website": "http://www.petcube.com/",
-    "linkedin": null,
     "links": [
       {
         "label": "Website",
@@ -3202,9 +3150,6 @@
         "items": [
           {
             "text": "USA"
-          },
-          {
-            "text": ""
           }
         ]
       },
@@ -3238,7 +3183,9 @@
         ]
       }
     ],
-    "logo": "/media/logos/petcube.svg"
+    "logo": "/media/logos/petcube.svg",
+    "draft": false,
+    "hidden": true
   },
   {
     "id": "company-4992",
@@ -3431,19 +3378,16 @@
     "name": "Plesk",
     "status": "exited",
     "tagline": "WebOps hosting platform",
-    "descriptionHtml": "<a href=\"https://www.plesk.com/\"><span data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;Parallels Holdings (former SWSoft) - a leading virtualization and business automation software company for Hosting and Telco provider, providing a full suite of cloud-based product offerings. The Holdings included Paralles, Odin, Plesk and Virtuozzo, later split in separte companies.\\nParallels, a global leader in cross-platform solutions, makes it simple for customers to use and access the applications and files they need on any device or operating system. We help businesses and individuals to securely and productively use their favorite devices and preferred technology, whether it’s Windows®, Mac®, iOS, AndroidTM, Chromebook, Windows Phone, Linux, Raspberry Pi or the Cloud. Parallels solutions enable seamless delivery of virtual desktops and applications to any device, running Windows on a Mac, Mac management with Microsoft SCCM, and remote access to PCs and Macs from any device. \\n&quot;}\" data-sheets-userformat=\"{&quot;2&quot;:15105,&quot;3&quot;:{&quot;1&quot;:0},&quot;11&quot;:4,&quot;12&quot;:0,&quot;14&quot;:[null,2,0],&quot;15&quot;:&quot;Calibri&quot;,&quot;16&quot;:12}\"><strong>Plesk</strong></span></a><span data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;Parallels Holdings (former SWSoft) - a leading virtualization and business automation software company for Hosting and Telco provider, providing a full suite of cloud-based product offerings. The Holdings included Paralles, Odin, Plesk and Virtuozzo, later split in separte companies.\\nParallels, a global leader in cross-platform solutions, makes it simple for customers to use and access the applications and files they need on any device or operating system. We help businesses and individuals to securely and productively use their favorite devices and preferred technology, whether it’s Windows®, Mac®, iOS, AndroidTM, Chromebook, Windows Phone, Linux, Raspberry Pi or the Cloud. Parallels solutions enable seamless delivery of virtual desktops and applications to any device, running Windows on a Mac, Mac management with Microsoft SCCM, and remote access to PCs and Macs from any device. \\n&quot;}\" data-sheets-userformat=\"{&quot;2&quot;:15105,&quot;3&quot;:{&quot;1&quot;:0},&quot;11&quot;:4,&quot;12&quot;:0,&quot;14&quot;:[null,2,0],&quot;15&quot;:&quot;Calibri&quot;,&quot;16&quot;:12}\">\n</span>",
     "description": "Plesk",
     "stage": "Not publicly disclosed",
-    "firstInvestmentYear": null,
     "founders": [],
-    "ceo": null,
     "coInvestors": [],
     "officeLocations": [],
-    "website": null,
-    "linkedin": null,
     "links": [],
     "facts": [],
-    "logo": "/media/logos/plesk.svg"
+    "logo": "/media/logos/plesk.svg",
+    "draft": false,
+    "hidden": true
   },
   {
     "id": "company-4922",
@@ -3568,19 +3512,16 @@
     "name": "Qik",
     "status": "exited",
     "tagline": "Consumer application for sharing mobile videos",
-    "descriptionHtml": "<a href=\"https://www.skype.com/de/\"><span data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;Qik is an online messenger that allows its users to exchange video messages between individuals or within a group. Qik service supported millions of users in over 160 countries and on all the major smart phones (over 140 models) including iPhone, Android, Symbian, Blackberry, and Windows Mobile. Qik enabled users to record and upload video directly from supported cell phones to numerous services including Ovi Share, Facebook, Twitter, Livestream, YouTube, Blogger, Seesmic, Tumblr, WordPress, Digg, StumbleUpon, Del.icio.us, MySpace, and Technorati. In 2011, Qik was acquired by Skype Technologies.&quot;}\" data-sheets-userformat=\"{&quot;2&quot;:15105,&quot;3&quot;:{&quot;1&quot;:0},&quot;11&quot;:4,&quot;12&quot;:0,&quot;14&quot;:[null,2,0],&quot;15&quot;:&quot;Calibri&quot;,&quot;16&quot;:12}\"><strong>Qik</strong></span></a>",
     "description": "Qik",
     "stage": "Not publicly disclosed",
-    "firstInvestmentYear": null,
     "founders": [],
-    "ceo": null,
     "coInvestors": [],
     "officeLocations": [],
-    "website": null,
-    "linkedin": null,
     "links": [],
     "facts": [],
-    "logo": "/media/logos/qik.svg"
+    "logo": "/media/logos/qik.svg",
+    "draft": false,
+    "hidden": true
   },
   {
     "id": "company-4042",
@@ -3757,19 +3698,16 @@
     "name": "Sensity",
     "status": "exited",
     "tagline": "Smart LED lighting IoT platform",
-    "descriptionHtml": "<a href=\"https://www.verizon.com/\"><span data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;Sensity Systems uses energy-efficient LED lighting as the foundation for a high-speed, sensor based Light Sensory Network (LSN). The company enables light owners to capitalize on LED conversion process by embedding networking technology within both retrofit and new LED luminaires. With Sensity’s open, multiservice NetSense platform, lighting owners are able to reduce energy costs and implement a variety of SensApps applications and services, including public safety, environmental and weather monitoring, parking management and retail analytics. In 2016, Sensity Systems was acquired by Verizon.&quot;}\" data-sheets-userformat=\"{&quot;2&quot;:15105,&quot;3&quot;:{&quot;1&quot;:0},&quot;11&quot;:4,&quot;12&quot;:0,&quot;14&quot;:[null,2,0],&quot;15&quot;:&quot;Calibri&quot;,&quot;16&quot;:12}\"><strong>Sensity Systems </strong></span></a>",
     "description": "Sensity Systems",
     "stage": "Not publicly disclosed",
-    "firstInvestmentYear": null,
     "founders": [],
-    "ceo": null,
     "coInvestors": [],
     "officeLocations": [],
-    "website": null,
-    "linkedin": null,
     "links": [],
     "facts": [],
-    "logo": "/media/logos/sensity.svg"
+    "logo": "/media/logos/sensity.svg",
+    "draft": false,
+    "hidden": true
   },
   {
     "id": "company-4428",
@@ -4059,19 +3997,16 @@
     "name": "StarWind Software",
     "status": "exited",
     "tagline": "Software-defined storage solutions",
-    "descriptionHtml": "<a href=\"https://www.starwindsoftware.com/\"><span data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;Starwind Software is software and hardware appliance company specializing in storage virtualization. StarWind gathered all the innovation in storage management and featured it in its core product - StarWind Virtual SAN., eliminating any need for an expensive SAN or NAS or other physical shared storage. It seamlessly integrates into the hypervisor for unbeatable performance and exceptional simplicity of use. Company’s latest offering is StarWind HyperConverged Appliance, a turnkey solution that unifies servers, spindle disks and flash, hypervisor and associated software into a pre-tested and pre-configured setup. In 2019, StarWind was acquired vy Veeam, a global leader in backup software solutions.&quot;}\" data-sheets-userformat=\"{&quot;2&quot;:15105,&quot;3&quot;:{&quot;1&quot;:0},&quot;11&quot;:4,&quot;12&quot;:0,&quot;14&quot;:[null,2,0],&quot;15&quot;:&quot;Calibri&quot;,&quot;16&quot;:12}\"><strong>Starwind Software</strong></span></a>",
     "description": "Starwind Software",
     "stage": "Not publicly disclosed",
-    "firstInvestmentYear": null,
     "founders": [],
-    "ceo": null,
     "coInvestors": [],
     "officeLocations": [],
-    "website": null,
-    "linkedin": null,
     "links": [],
     "facts": [],
-    "logo": "/media/logos/starwind-software.svg"
+    "logo": "/media/logos/starwind-software.svg",
+    "draft": false,
+    "hidden": true
   },
   {
     "id": "company-5054",
@@ -4174,10 +4109,8 @@
     "name": "Virtuozzo",
     "status": "active",
     "tagline": "Hyperconverged infrastructure software provider",
-    "descriptionHtml": "<span data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;Virtuozzo (part of Parallels Holdings) developed the ﬁrst commercially available container technology in 2001, which today is used by over 700 service providers, ISVs and enterprises to enable over 5 million virtual environments running mission-critical cloud workloads.\\nToday, Virtuozzo continues to innovate in areas ranging from industry-leading virtualized object storage to cloud-optimized Linux distributions to groundbreaking container migration technologies. A signiﬁcant force in the open source community, Virtuozzo sponsors and/or is a contributor to numerous open source projects including OpenVZ, CRIU, KVM, Docker, OpenStack, and the Linux kernel.&quot;}\" data-sheets-userformat=\"{&quot;2&quot;:15105,&quot;3&quot;:{&quot;1&quot;:0},&quot;11&quot;:4,&quot;12&quot;:0,&quot;14&quot;:[null,2,0],&quot;15&quot;:&quot;Calibri&quot;,&quot;16&quot;:12}\"><strong>Virtuozzo (part of Parallels Holdings) developed the first commercially available container technology in 2001, which today is used by over 700 service providers, ISVs and enterprises to enable over 5 million virtual environments running mission-critical cloud workloads.</strong></span>\n\n<span data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;Virtuozzo (part of Parallels Holdings) developed the ﬁrst commercially available container technology in 2001, which today is used by over 700 service providers, ISVs and enterprises to enable over 5 million virtual environments running mission-critical cloud workloads.\\nToday, Virtuozzo continues to innovate in areas ranging from industry-leading virtualized object storage to cloud-optimized Linux distributions to groundbreaking container migration technologies. A signiﬁcant force in the open source community, Virtuozzo sponsors and/or is a contributor to numerous open source projects including OpenVZ, CRIU, KVM, Docker, OpenStack, and the Linux kernel.&quot;}\" data-sheets-userformat=\"{&quot;2&quot;:15105,&quot;3&quot;:{&quot;1&quot;:0},&quot;11&quot;:4,&quot;12&quot;:0,&quot;14&quot;:[null,2,0],&quot;15&quot;:&quot;Calibri&quot;,&quot;16&quot;:12}\">Today, Virtuozzo continues to innovate in areas ranging from industry-leading virtualized object storage to cloud-optimized Linux distributions to groundbreaking container migration technologies. A signiﬁcant force in the open source community, Virtuozzo sponsors and/or is a contributor to numerous open source projects including OpenVZ, CRIU, KVM, Docker, OpenStack, and the Linux kernel.</span>",
     "description": "Virtuozzo (part of Parallels Holdings) developed the first commercially available container technology in 2001, which today is used by over 700 service providers, ISVs and enterprises to enable over 5 million virtual environments running mission-critical cloud workloads. Today, Virtuozzo continues to innovate in areas ranging from industry-leading virtualized object storage to cloud-optimized Linux distributions to groundbreaking container migration technologies. A signiﬁcant force in the open source community, Virtuozzo sponsors and/or is a contributor to numerous open source projects including OpenVZ, CRIU, KVM, Docker, OpenStack, and the Linux kernel.",
-    "stage": "Not publicly disclosed",
-    "firstInvestmentYear": null,
+    "stage": "Series A",
     "founders": [
       "Serg Bell",
       "Ilya Zubarev",
@@ -4210,7 +4143,7 @@
       },
       {
         "label": "Facebook",
-        "url": "https://www.facebook.com/VirtuozzoInc/ "
+        "url": "https://www.facebook.com/VirtuozzoInc/"
       },
       {
         "label": "Twitter",
@@ -4294,7 +4227,7 @@
           },
           {
             "text": "Facebook",
-            "url": "https://www.facebook.com/VirtuozzoInc/ "
+            "url": "https://www.facebook.com/VirtuozzoInc/"
           },
           {
             "text": "Twitter",
@@ -4307,7 +4240,9 @@
         ]
       }
     ],
-    "logo": "/media/logos/virtuozzo.svg"
+    "logo": "/media/logos/virtuozzo.svg",
+    "draft": false,
+    "hidden": true
   },
   {
     "id": "company-708",
@@ -4315,19 +4250,16 @@
     "name": "Vyatta",
     "status": "exited",
     "tagline": "Advanced routing and security software",
-    "descriptionHtml": "<a href=\"https://www.broadcom.com/\"><strong>Vyatta</strong></a>",
     "description": "Vyatta",
     "stage": "Not publicly disclosed",
-    "firstInvestmentYear": null,
     "founders": [],
-    "ceo": null,
     "coInvestors": [],
     "officeLocations": [],
-    "website": null,
-    "linkedin": null,
     "links": [],
     "facts": [],
-    "logo": "/media/logos/vyatta.svg"
+    "logo": "/media/logos/vyatta.svg",
+    "draft": false,
+    "hidden": true
   },
   {
     "id": "company-4882",
@@ -4573,19 +4505,16 @@
     "name": "Xometry",
     "status": "exited",
     "tagline": "On-demand manufacturing platform",
-    "descriptionHtml": "<a href=\"http://xometry.com\"><span data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;Xometry Inc., is the industry’s largest distributed on-demand manufacturing network, with more than 3000 US manufacturers and machine shops that make prototypes and smaller runs of parts for customers including BMW AG and General Electric Co. , which are also investors. Businesses upload their design files to Xometry platform, which uses machine learning to match companies with vetted suppliers, generating instant price quotes and lead-time estimates. The aim is to streamline the sourcing process and reduce costs for manufacturers. Xometry merged with a rival firm MakeTime (original FerSil investment) Inc. in 2018.&quot;}\" data-sheets-userformat=\"{&quot;2&quot;:15105,&quot;3&quot;:{&quot;1&quot;:0},&quot;11&quot;:4,&quot;12&quot;:0,&quot;14&quot;:[null,2,0],&quot;15&quot;:&quot;Calibri&quot;,&quot;16&quot;:12}\"><strong>Xometry </strong></span></a>",
     "description": "Xometry",
     "stage": "Not publicly disclosed",
-    "firstInvestmentYear": null,
     "founders": [],
-    "ceo": null,
     "coInvestors": [],
     "officeLocations": [],
-    "website": null,
-    "linkedin": null,
     "links": [],
     "facts": [],
-    "logo": "/media/logos/xometry.svg"
+    "logo": "/media/logos/xometry.svg",
+    "draft": false,
+    "hidden": true
   },
   {
     "id": "company-714",
@@ -4593,19 +4522,16 @@
     "name": "Yandex",
     "status": "exited",
     "tagline": "Search engine and consumer services in CEE",
-    "descriptionHtml": "<a href=\"http://ya.ru\"><span data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;Yandex is one of the largest internet companies in Europe, operating Russia’s most popular search engine and its most visited website. The company provides other nternet-related products and services, lincluding eCommerce, transportation, navigation, mobile applications, and online advertising.\\n&quot;}\" data-sheets-userformat=\"{&quot;2&quot;:15105,&quot;3&quot;:{&quot;1&quot;:0},&quot;11&quot;:4,&quot;12&quot;:0,&quot;14&quot;:[null,2,0],&quot;15&quot;:&quot;Calibri&quot;,&quot;16&quot;:12}\"><strong>Yandex </strong></span></a><span data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;Yandex is one of the largest internet companies in Europe, operating Russia’s most popular search engine and its most visited website. The company provides other nternet-related products and services, lincluding eCommerce, transportation, navigation, mobile applications, and online advertising.\\n&quot;}\" data-sheets-userformat=\"{&quot;2&quot;:15105,&quot;3&quot;:{&quot;1&quot;:0},&quot;11&quot;:4,&quot;12&quot;:0,&quot;14&quot;:[null,2,0],&quot;15&quot;:&quot;Calibri&quot;,&quot;16&quot;:12}\">\n</span>",
     "description": "Yandex",
     "stage": "Not publicly disclosed",
-    "firstInvestmentYear": null,
     "founders": [],
-    "ceo": null,
     "coInvestors": [],
     "officeLocations": [],
-    "website": null,
-    "linkedin": null,
     "links": [],
     "facts": [],
-    "logo": "/media/logos/yandex.svg"
+    "logo": "/media/logos/yandex.svg",
+    "draft": false,
+    "hidden": true
   },
   {
     "id": "company-5117",
