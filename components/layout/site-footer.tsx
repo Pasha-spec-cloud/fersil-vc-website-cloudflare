@@ -1,4 +1,5 @@
 import { BrandMark } from '@/components/brand/brand-mark';
+import { ButtonLink } from '@/components/ui/button';
 import { Container } from '@/components/ui/container';
 
 const supportLogos = [
@@ -13,9 +14,11 @@ export function SiteFooter() {
       <Container className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(22rem,34rem)] lg:items-start">
         <div className="max-w-2xl">
           <BrandMark size="md" />
-          <p className="mt-4 max-w-xl text-muted">
-            Backing founders building at the ferrum-silicon interface, with a particular lens on CEE diaspora founders, robotics, industrial systems, and software that learns from the physical world.
+          <h2 className="mt-5 font-display text-2xl text-white">Building at the intersection of atoms and bits?</h2>
+          <p className="mt-3 max-w-xl text-muted">
+            Whether you are scaling in autonomy, deploying industrial intelligence, or expanding from the CEE diaspora to global markets, we want to hear from you.
           </p>
+          <ButtonLink href="/contact" variant="accent" className="mt-5">Get in Touch</ButtonLink>
         </div>
         <div className="lg:justify-self-end lg:text-right">
           <div className="flex flex-wrap items-center gap-4 lg:justify-end">

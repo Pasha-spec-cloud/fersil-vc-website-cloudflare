@@ -139,6 +139,13 @@ export default async function CompanyDetailPage({ params }: CompanyPageProps) {
                 </span>
               )}
             </div>
+            {company.focusAreas.length > 0 && (
+              <div className="flex flex-wrap gap-2">
+                {company.focusAreas.map((focusArea) => (
+                  <Badge key={focusArea} tone="outline">{focusArea}</Badge>
+                ))}
+              </div>
+            )}
             <div className="flex items-center gap-6">
               {company.logo && (
                 <div className="relative h-20 w-20 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">

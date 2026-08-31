@@ -24,16 +24,16 @@ export default async function CompaniesPage() {
       <Container className="space-y-12">
         <PageHero tone="companies" imageSrc="/media/backgrounds/companies-hero.png" imageAlt="FerSil companies page background with robotics and automation lab" contentClassName="max-w-3xl space-y-4">
           <p className="text-sm uppercase tracking-[0.4em] text-muted">Portfolio</p>
-          <h1 className="h2">Companies forging new categories</h1>
+          <h1 className="h2">Portfolio Built for the Physical-Software Frontier.</h1>
           <p className="max-w-3xl text-muted">
-            FerSil reuses the legacy portfolio set while reframing the investment story around infrastructure, robotics, autonomy, physical-world learning, and CEE diaspora founder ambition.
+            Backing category-defining companies across robotics, industrial intelligence, edge infrastructure, and autonomous systems—powered by technical founders scaling globally.
           </p>
         </PageHero>
 
         <SectionHeading
           kicker="Explorer"
-          title="Filter by thesis, status, and stage"
-          description="Use the filters below to navigate the full legacy company set by industry, geography, or stage."
+          title="Filter by focus, stage, and status"
+          description="Explore the portfolio through FerSil's physical-software investment taxonomy."
           className="text-center"
         />
 

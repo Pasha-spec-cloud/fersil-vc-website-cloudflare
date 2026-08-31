@@ -27,6 +27,7 @@ const baseCompany: Company = {
   slug: 'sample-co',
   name: 'Sample Co',
   status: 'active',
+  focusAreas: [],
   tagline: 'Building the future',
   descriptionHtml: null,
   description: null,

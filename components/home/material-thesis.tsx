@@ -158,10 +158,10 @@ export function MaterialThesis() {
           </div>
           <div className="mt-5 space-y-3 text-sm text-muted">
             <p>
-              Natural iron silicides such as Fe₃Si appear in meteorites and offer a useful metaphor for the FerSil thesis: the strength and material reality of iron meeting the logic and conductivity associated with silicon.
+              FerSil exists at the compound interface (Fe₃Si), where the tangible constraints of heavy industry and physical hardware meet computational logic and artificial intelligence.
             </p>
             <p>
-              Hans Eduard Suess, the Austrian-born American scientist for whom the mineral suessite is named, made major contributions to cosmochemistry, isotope science, and elemental abundances. That CEE-to-US arc is a better historical analogy for FerSil than the mineral name itself.
+              Named in homage to Austrian-American cosmochemist Hans Suess, our platform mirrors that transatlantic arc—connecting European technical depth with global market execution.
             </p>
           </div>
           <div className="mt-5 flex flex-wrap gap-4 text-sm text-muted">

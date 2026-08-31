@@ -12,25 +12,22 @@ import { getContentBundle } from '@/lib/content';
 
 const differentiators = [
   {
-    title: 'Ferrum ↔ silicon thesis',
-    description: 'We back companies where atoms meet bits: sensing, control systems, robotics, industrial software, and the infrastructure that binds hardware to software.'
+    title: 'The Ferrum ↔ Silicon Focus',
+    description: 'We invest at the boundary of hardware and software—robotics, industrial intelligence, sensing, and edge infrastructure.'
   },
   {
-    title: 'CEE diaspora angle',
-    description: 'Our team has spent years working with CEE talent and global operators, giving FerSil a differentiated view into diaspora founders building category-defining companies far beyond their home markets.'
+    title: 'The Diaspora Advantage',
+    description: 'We back world-class CEE engineering talent and provide the bridge, capital, and network required to win in global and US markets.'
   },
   {
-    title: 'Physical world learning',
-    description: 'We care about systems that improve through deployment in the real world, from industrial data loops to autonomy stacks and edge intelligence.'
+    title: 'Real-World Deployment Loops',
+    description: 'We understand hardware deployment cycles, sensor-data feedback loops, and the unique challenges of scaling physical AI.'
   }
 ];
 
 export default async function HomePage() {
   const { companies, team, news } = await getContentBundle();
   const activeCompanies = companies.filter((company) => company.status === 'active');
-  const exits = companies.filter((company) => company.status === 'exited').length;
-  const geographies = new Set<string>();
-  companies.forEach((company) => company.officeLocations.forEach((location) => geographies.add(location)));
   const representativeLogoSlugs = [
     'openai',
     'mariadb',
@@ -56,9 +53,10 @@ export default async function HomePage() {
   const companiesById = Object.fromEntries(companies.map((company) => [company.id, company] as const));
 
   const heroStats = [
-    { label: 'Active companies', value: activeCompanies.length.toString() },
-    { label: 'Strategic exits', value: exits.toString() },
-    { label: 'Regions represented', value: geographies.size.toString() }
+    { label: 'Initial Check', value: '$1M – $5M' },
+    { label: 'Stage', value: 'Seed & Series A' },
+    { label: 'Portfolio Companies', value: '22+' },
+    { label: 'Strategic Exits', value: '2', detail: 'incl. Neptune → OpenAI' }
   ];
 
   return (
@@ -67,22 +65,26 @@ export default async function HomePage() {
         <Container className="grid gap-10 lg:grid-cols-[2fr,1fr]">
           <div className="space-y-8">
             <p className="text-sm uppercase tracking-[0.4em] text-muted">FerSil Ventures</p>
-            <h1 className="h1">Backing the hardware-software interface</h1>
+            <h1 className="h1">Where Atoms Meet Bits.</h1>
             <p className="max-w-2xl text-lg text-muted">
-              FerSil Ventures invests in technical founders building robotics, industrial intelligence, and software shaped by the physical world. Ferrum ↔ silicon is the industry focus. The team angle is CEE diaspora founders building globally ambitious companies with deep technical roots.
+              FerSil Ventures backs early-stage technical founders building robotics, industrial intelligence, and software rooted in the physical world. We bridge deep Central &amp; Eastern European engineering talent with global scale and US market velocity.
             </p>
             <div className="flex flex-wrap gap-4">
+              <ButtonLink href="/contact" variant="accent" size="lg">Pitch Us</ButtonLink>
               <ButtonLink href="/companies" size="lg">View Portfolio</ButtonLink>
-              <ButtonLink href="/team" variant="accent" size="lg">Meet the Team</ButtonLink>
+              <ButtonLink href="/team" variant="ghost" size="lg" className="border border-white/15">Meet the Team</ButtonLink>
             </div>
           </div>
           <div className="rounded-3xl border border-white/5 bg-white/5 p-6 backdrop-blur">
             <p className="text-sm text-muted">Platform Snapshot</p>
-            <ul className="mt-6 space-y-4 text-3xl font-display">
+            <ul className="mt-6 space-y-5 font-display">
               {heroStats.map((stat) => (
-                <li key={stat.label} className="flex items-baseline justify-between">
-                  <span>{stat.value}</span>
-                  <span className="text-xs uppercase tracking-[0.3em] text-muted">{stat.label}</span>
+                <li key={stat.label} className="border-b border-white/10 pb-4 last:border-0 last:pb-0">
+                  <div className="flex items-baseline justify-between gap-4">
+                    <span className="text-2xl text-white">{stat.value}</span>
+                    <span className="text-right text-xs uppercase tracking-[0.25em] text-muted">{stat.label}</span>
+                  </div>
+                  {'detail' in stat && stat.detail && <p className="mt-1 text-right text-xs text-muted">{stat.detail}</p>}
                 </li>
               ))}
             </ul>
@@ -94,8 +96,8 @@ export default async function HomePage() {
         <Container>
           <SectionHeading
             kicker="Differentiators"
-            title="What differentiates FerSil"
-            description="A focused early-stage platform for founders building real-world systems, technical infrastructure, and robotics-enabled workflows."
+            title="Why Founders Build With FerSil"
+            description="An early-stage partner engineered for complex, physical-world systems."
           />
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {differentiators.map((item) => (
@@ -110,9 +112,9 @@ export default async function HomePage() {
       <section>
         <Container>
           <SectionHeading
-            kicker="Ferrum ↔ Silicon"
-            title="A materials metaphor behind the investment thesis"
-            description="We translated the iron-silicon crystal and property studies into an interactive FerSil section to make the thesis more tangible on the page."
+            kicker="The Thesis"
+            title="Iron Meets Silicon"
+            description="Iron (Fe) represents the tangible constraints of heavy industry, physical hardware, and atoms. Silicon (Si) embodies computational logic, artificial intelligence, and bits."
           />
           <div className="mt-12">
             <MaterialThesis />
@@ -154,7 +156,7 @@ export default async function HomePage() {
               ))}
             </div>
             <p className="mt-6 text-sm text-muted">
-              {activeCompanies.length}+ active companies across {geographies.size}+ regions, plus {exits}+ strategic exits.
+              22+ portfolio companies across the physical-software frontier.
             </p>
           </div>
         </Container>
@@ -165,8 +167,8 @@ export default async function HomePage() {
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <SectionHeading
               kicker="Team"
-              title="Operators for technical funds and technical founders"
-              description="FerSil combines investing, LP operations, and company-building support around two lenses: ferrum ↔ silicon as sector focus, and CEE diaspora founders as a sourcing edge."
+              title="Built by Operators for Technical Founders"
+              description="We combine deep-tech investing experience with hands-on support in US market expansion, technical hiring across CEE corridors, and industrial pilot deployment."
             />
             <ButtonLink href="/team" variant="ghost" className="self-start md:self-auto">Meet the full team →</ButtonLink>
           </div>

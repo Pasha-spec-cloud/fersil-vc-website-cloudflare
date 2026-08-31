@@ -3,18 +3,18 @@
     "id": "team-4566",
     "slug": "ani-nazare",
     "name": "Ani Nazare",
-    "role": "Partner",
-    "bio": "Ani Nazare is a General Partner at FerSil Ventures based in Berlin. He brings operating and investing experience across enterprise software, telecom, semiconductors, medical devices, and robotics. FerSil leans on Ani where the physical world meets software: industrial automation, edge intelligence, sensing, semis, and systems that learn from real-world deployment rather than only from synthetic data. He has worked across the US, Europe, and India and supports founders on product strategy, scaling, and cross-border growth.",
+    "role": "General Partner",
+    "bio": "Ani focuses on physical-world software, robotics, and edge systems. With deep operating and investing roots spanning the US, Europe, and India, he partners with technical founders on cross-border expansion, product architecture, and commercializing complex industrial tech.",
     "headshotUrl": "/media/uploads/2021/08/360x360_Man3.jpg",
     "heroImageUrl": "/media/uploads/2021/09/1920x750_Man_3_2.jpg",
     "stats": [
       {
-        "label": "Joined team",
-        "value": "2021"
+        "label": "Focus",
+        "value": "Robotics, Edge Intelligence, Semiconductors, Industrial Automation, Sensing."
       },
       {
-        "label": "Focus",
-        "value": "Robotics / Semis"
+        "label": "Selected Investments",
+        "value": "Nomagic, ZEDEDA, Workerbase, Marta, Minut."
       }
     ],
     "socialLinks": [
@@ -26,15 +26,10 @@
     "featureLinks": [],
     "companySlugs": [
       "nomagic",
-      "marta",
-      "workerbase",
       "zededa",
-      "minut-navy",
-      "neptune-ai",
-      "usound",
-      "certivity",
-      "yazen",
-      "specter-automation"
+      "workerbase",
+      "marta",
+      "minut-navy"
     ],
     "newsSlugs": [],
     "order": 1,
@@ -45,18 +40,18 @@
     "id": "team-577",
     "slug": "pasha-bogdanov",
     "name": "Pasha Bogdanov",
-    "role": "Partner",
-    "bio": "Pasha Bogdanov is a General Partner at FerSil Ventures in Berlin. He works across fundraising, LP relations, investments, portfolio support, and fund operations. His investing lens centers on technical founders turning deep engineering into durable businesses, especially where software interfaces with industry, machines, and the built world. He has backed companies across infrastructure software, applied AI, developer tooling, and globally ambitious teams emerging from Central and Eastern Europe.",
+    "role": "General Partner",
+    "bio": "Pasha backs technical founders transforming deep engineering into category-defining enterprise platforms. He leads FerSil’s focus on the CEE-to-global corridor, helping regional engineering powerhouses scale into global commercial leaders.",
     "headshotUrl": "/media/uploads/2019/05/3_-_Pavel_Small.jpg",
     "heroImageUrl": "/media/uploads/2019/05/4_-_Pavel_Big.jpg",
     "stats": [
       {
-        "label": "Joined team",
-        "value": "2008"
+        "label": "Focus",
+        "value": "Infrastructure Software, Applied AI, Developer Platforms, Industrial B2B."
       },
       {
-        "label": "Focus",
-        "value": "Infra / Applied AI"
+        "label": "Selected Investments",
+        "value": "Portside, Xolo, Areti Health, 3DLOOK, Neptune (acquired by OpenAI)."
       }
     ],
     "socialLinks": [
@@ -67,20 +62,11 @@
     ],
     "featureLinks": [],
     "companySlugs": [
-      "neptune-ai",
       "portside",
       "xolo",
       "areti-health",
-      "appscotch",
-      "maketime",
-      "starwind-software",
-      "hover",
-      "alawar-entertainment",
-      "refurbed",
       "3dlook",
-      "onesoil",
-      "nomagic",
-      "final-price"
+      "neptune-ai"
     ],
     "newsSlugs": [],
     "order": 2,
@@ -91,18 +77,18 @@
     "id": "team-3258",
     "slug": "michael-bastholt",
     "name": "Michael Bastholt",
-    "role": "Partner",
-    "bio": "Michael Bastholt is Partner and COO at FerSil Ventures. He leads firm operations, investor relations, and the operating backbone required to support a concentrated early-stage platform. Michael has spent much of his career on the LP side of venture and private equity, giving FerSil a disciplined perspective on portfolio construction, fund governance, and how emerging managers earn long-term trust. He works closely with founders and LPs as FerSil builds a durable bridge between technical talent and global capital.",
+    "role": "Partner & COO",
+    "bio": "Michael oversees fund operations, LP relations, and institutional governance. Drawing on extensive experience on the institutional LP side of venture and private equity, he ensures institutional-grade portfolio management and operational rigor across the firm.",
     "headshotUrl": "/media/uploads/2019/01/Michael_small.jpg",
     "heroImageUrl": "/media/uploads/2019/01/Michael_Big.jpg",
     "stats": [
       {
-        "label": "Joined team",
-        "value": "2019"
+        "label": "Focus",
+        "value": "Fund Strategy, Institutional LP Relations, Governance, Portfolio Operations."
       },
       {
-        "label": "Focus",
-        "value": "Operations / LPs"
+        "label": "Selected Engagements",
+        "value": "Yazen, Refurbed."
       }
     ],
     "socialLinks": [
@@ -125,18 +111,18 @@
     "id": "team-585",
     "slug": "charlie-ryan",
     "name": "Charlie Ryan",
-    "role": "Partner",
-    "bio": "Charlie Ryan serves as LPAC Chairman for FerSil Ventures. His background spans investment banking, asset management, and governance across global markets. Charlie brings experienced oversight on fund structure, later-stage company development, and strategic outcomes, giving the platform a strong governance counterpart as it backs technical founders building in the real economy.",
+    "role": "Chairman & Partner",
+    "bio": "Charlie brings decades of leadership across global investment banking and asset management. He provides high-level governance, capital markets perspective, and strategic guidance on late-stage growth, M&A, and liquidity outcomes for the portfolio.",
     "headshotUrl": "/media/uploads/2019/05/16-Charles_Small.jpg",
     "heroImageUrl": "/media/uploads/2019/05/15-Charles_Big.jpg",
     "stats": [
       {
-        "label": "Joined team",
-        "value": "2008"
+        "label": "Focus",
+        "value": "Capital Markets, Strategic Exits, Fund Governance, Institutional Oversight."
       },
       {
-        "label": "Focus",
-        "value": "Governance / LPAC"
+        "label": "Selected Investments",
+        "value": "Refurbed, Alcatraz, ClickHouse, Nebius, Toloka."
       }
     ],
     "socialLinks": [
@@ -147,11 +133,8 @@
     ],
     "featureLinks": [],
     "companySlugs": [
-      "acumatica",
-      "acronis",
-      "fasten",
-      "yandex",
-      "refurbed"
+      "refurbed",
+      "alcatraz-ai"
     ],
     "newsSlugs": [],
     "order": 4,
@@ -162,18 +145,14 @@
     "id": "team-5034",
     "slug": "russell-green",
     "name": "Russell Green",
-    "role": "Finance & Operations",
-    "bio": "Russell Green leads finance and reporting at FerSil Ventures. He oversees fund administration, reporting quality, and the operational cadence behind portfolio and LP communications. Russell's background across venture, private equity, and fund administration adds rigor to the platform, helping FerSil stay detail-oriented while moving fast. He is a key part of keeping the firm institutional where it matters and lightweight where founders need speed.",
+    "role": "Head of Finance & Operations",
+    "bio": "Russell leads fund accounting, financial reporting, and compliance. With a background across venture capital and private equity fund administration, he manages the firm's financial infrastructure and LP reporting cadence.",
     "headshotUrl": "/media/uploads/2023/09/Russell_Photo_Small-1.jpg",
     "heroImageUrl": "/media/uploads/2023/09/Russell_Photo_Large2.jpg",
     "stats": [
       {
-        "label": "Joined team",
-        "value": "2022"
-      },
-      {
         "label": "Focus",
-        "value": "Finance / Reporting"
+        "value": "Fund Administration, LP Reporting, Financial Compliance & Audit."
       }
     ],
     "socialLinks": [],

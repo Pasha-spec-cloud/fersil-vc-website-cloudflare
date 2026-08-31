@@ -18,6 +18,7 @@ type CompanyFormValues = {
   id?: string;
   name: string;
   status: Company['status'];
+  focusAreas: Company['focusAreas'];
   tagline?: string;
   description?: string;
   stage?: string;
@@ -181,6 +182,22 @@ export function CompaniesManager({ initialCompanies }: CompaniesManagerProps) {
                 <AdminInput {...form.register('name', { required: true })} placeholder="Company name" />
               </div>
             </div>
+            <fieldset>
+              <legend className={labelStyles}>Focus areas</legend>
+              <div className="mt-2 grid gap-2 rounded-2xl border border-white/10 bg-white/5 p-4 sm:grid-cols-2">
+                {(['Robotics & Autonomy', 'Industrial Intelligence', 'Edge & Infrastructure', 'Physical AI'] as const).map((focusArea) => (
+                  <label key={focusArea} className="flex items-center gap-3 text-sm text-muted">
+                    <input
+                      type="checkbox"
+                      value={focusArea}
+                      className="h-4 w-4 accent-primary"
+                      {...form.register('focusAreas')}
+                    />
+                    {focusArea}
+                  </label>
+                ))}
+              </div>
+            </fieldset>
             <div className="grid gap-4 md:grid-cols-2">
               <div>
                 <label className={labelStyles}>Stage</label>
@@ -367,6 +384,7 @@ function companyToFormValues(company: Company | null): CompanyFormValues {
     return {
       name: '',
       status: 'active',
+      focusAreas: [],
       tagline: '',
       description: '',
       stage: '',
@@ -389,6 +407,7 @@ function companyToFormValues(company: Company | null): CompanyFormValues {
     id: company.id,
     name: company.name,
     status: company.status,
+    focusAreas: company.focusAreas,
     tagline: company.tagline ?? '',
     description: company.description ?? '',
     stage: company.stage ?? '',
@@ -419,6 +438,7 @@ function buildCompanyPayload(values: CompanyFormValues): { payload: Company; fil
     name: values.name.trim(),
     slug: slugify(values.name.trim()),
     status: values.status,
+    focusAreas: values.focusAreas ?? [],
     tagline: values.tagline?.trim() || undefined,
     description: values.description?.trim() || undefined,
     stage: values.stage?.trim() || undefined,

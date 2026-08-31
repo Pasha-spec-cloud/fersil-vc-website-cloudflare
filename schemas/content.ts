@@ -24,11 +24,19 @@ const statSchema = z.object({
   value: z.string()
 });
 
+export const companyFocusAreaSchema = z.enum([
+  'Robotics & Autonomy',
+  'Industrial Intelligence',
+  'Edge & Infrastructure',
+  'Physical AI'
+]);
+
 export const companySchema = z.object({
   id: z.string(),
   slug: z.string(),
   name: z.string(),
   status: z.enum(['active', 'exited']),
+  focusAreas: z.array(companyFocusAreaSchema).optional().default([]),
   tagline: nullableString(),
   descriptionHtml: nullableString(),
   description: nullableString(),

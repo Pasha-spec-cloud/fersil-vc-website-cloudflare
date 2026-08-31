@@ -18,17 +18,17 @@ export default async function TeamPage() {
     <div className="py-16">
       <Container className="space-y-12">
         <PageHero tone="team" imageSrc="/media/backgrounds/team-hero.png" imageAlt="FerSil team page background with robotics and semiconductor workspace" contentClassName="max-w-3xl space-y-4">
-          <p className="text-sm uppercase tracking-[0.4em] text-muted">People</p>
-          <h1 className="h2">A compact team for technical conviction</h1>
+          <p className="text-sm uppercase tracking-[0.4em] text-muted">Team</p>
+          <h1 className="h2">Technical Conviction. Operational Depth.</h1>
           <p className="max-w-3xl text-muted">
-            FerSil Ventures brings together investing, LP operations, finance, and governance around two angles: ferrum ↔ silicon as the sector focus, and CEE diaspora founders as a durable sourcing edge.
+            Former founders, engineers, and institutional operators supporting deep-tech builders across Europe and the US.
           </p>
         </PageHero>
 
         <SectionHeading
           kicker="Directory"
-          title="Find the right point of contact"
-          description="Search the FerSil team by role, company exposure, or operating focus."
+          title="Meet the FerSil team"
+          description="Search by role, company exposure, or operating focus."
           className="text-center"
         />
 

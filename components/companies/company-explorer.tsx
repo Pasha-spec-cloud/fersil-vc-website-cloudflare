@@ -12,10 +12,17 @@ type CompanyExplorerProps = {
 
 type SortMode = 'alpha' | 'recent';
 type StatusFilter = 'all' | 'active' | 'exited';
+const focusAreaOptions = [
+  'Robotics & Autonomy',
+  'Industrial Intelligence',
+  'Edge & Infrastructure',
+  'Physical AI'
+] as const;
 
 export function CompanyExplorer({ companies, stageOptions }: CompanyExplorerProps) {
   const [query, setQuery] = useState('');
   const [status, setStatus] = useState<StatusFilter>('active');
+  const [focusArea, setFocusArea] = useState('all');
   const [stage, setStage] = useState('all');
   const [sortMode, setSortMode] = useState<SortMode>('alpha');
 
@@ -25,13 +32,16 @@ export function CompanyExplorer({ companies, stageOptions }: CompanyExplorerProp
         if (status !== 'all' && company.status !== status) {
           return false;
         }
+        if (focusArea !== 'all' && !company.focusAreas.includes(focusArea as Company['focusAreas'][number])) {
+          return false;
+        }
         if (stage !== 'all' && (company.stage ?? 'unknown') !== stage) {
           return false;
         }
         if (!query) {
           return true;
         }
-        const haystack = [company.name, company.tagline, company.stage, company.officeLocations.join(' ')]
+        const haystack = [company.name, company.tagline, company.stage, company.focusAreas.join(' '), company.officeLocations.join(' ')]
           .filter(Boolean)
           .join(' ')
           .toLowerCase();
@@ -43,15 +53,15 @@ export function CompanyExplorer({ companies, stageOptions }: CompanyExplorerProp
         }
         return a.name.localeCompare(b.name);
       });
-  }, [companies, query, stage, status, sortMode]);
+  }, [companies, focusArea, query, stage, status, sortMode]);
 
   const inputClass = 'w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-muted focus:border-primary focus:outline-none focus:ring-0';
   const selectClass = `${inputClass} appearance-none`;
 
   return (
     <div className="space-y-8">
-      <div className="panel grid gap-4 rounded-3xl border-white/10 p-6 md:grid-cols-3">
-        <div className="md:col-span-2">
+      <div className="panel grid gap-4 rounded-3xl border-white/10 p-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="md:col-span-2 lg:col-span-4">
           <label className="text-xs uppercase tracking-[0.3em] text-muted">Search</label>
           <input
             type="text"
@@ -60,6 +70,15 @@ export function CompanyExplorer({ companies, stageOptions }: CompanyExplorerProp
             placeholder="Search by name, focus, or location"
             className={`${inputClass} mt-2`}
           />
+        </div>
+        <div>
+          <label className="text-xs uppercase tracking-[0.3em] text-muted">Focus Area</label>
+          <select value={focusArea} onChange={(event) => setFocusArea(event.target.value)} className={`${selectClass} mt-2`}>
+            <option value="all">All</option>
+            {focusAreaOptions.map((option) => (
+              <option key={option} value={option}>{option}</option>
+            ))}
+          </select>
         </div>
         <div>
           <label className="text-xs uppercase tracking-[0.3em] text-muted">Stage</label>
@@ -72,7 +91,7 @@ export function CompanyExplorer({ companies, stageOptions }: CompanyExplorerProp
             ))}
           </select>
         </div>
-        <div className="md:col-span-2">
+        <div>
           <label className="text-xs uppercase tracking-[0.3em] text-muted">Status</label>
           <div className="mt-2 flex flex-wrap gap-2">
             {[

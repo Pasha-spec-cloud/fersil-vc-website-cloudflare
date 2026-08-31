@@ -57,6 +57,15 @@ export function CompanyCard({ company, variant = 'default' }: CompanyCardProps) 
           </div>
           <h3 className="font-display text-2xl text-white">{company.name}</h3>
           {company.tagline && <p className="text-sm text-muted">{company.tagline}</p>}
+          {(company.focusAreas?.length ?? 0) > 0 && (
+            <div className="flex flex-wrap gap-1.5">
+              {company.focusAreas?.map((focusArea) => (
+                <span key={focusArea} className="rounded-full border border-primary/20 bg-primary/10 px-2.5 py-1 text-[10px] uppercase tracking-[0.12em] text-primary">
+                  {focusArea}
+                </span>
+              ))}
+            </div>
+          )}
           {variant === 'default' && company.officeLocations.length > 0 && (
             <p className="text-xs uppercase tracking-[0.2em] text-muted">
               {company.officeLocations.join(' • ')}

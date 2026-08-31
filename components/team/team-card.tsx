@@ -31,6 +31,7 @@ export function TeamCard({
     .filter((company) => companyFilter !== 'active' || company.status === 'active')
     .map((company) => company.name)
     .slice(0, variant === 'compact' ? 4 : Number.MAX_SAFE_INTEGER);
+  const hasSelectedInvestments = member.stats.some((stat) => stat.label === 'Selected Investments');
 
   return (
     <Card className="flex h-full flex-col gap-4 rounded-3xl border-white/10 bg-white/5 p-6">
@@ -57,7 +58,17 @@ export function TeamCard({
         </div>
       </div>
       {variant === 'default' && member.bio && <p className="text-sm text-muted whitespace-pre-line">{member.bio}</p>}
-      {portfolio.length > 0 && (
+      {variant === 'default' && member.stats.length > 0 && (
+        <dl className="space-y-3 border-t border-white/10 pt-4">
+          {member.stats.map((stat) => (
+            <div key={stat.label}>
+              <dt className="text-xs uppercase tracking-[0.22em] text-muted">{stat.label}</dt>
+              <dd className="mt-1 text-sm text-white">{stat.value}</dd>
+            </div>
+          ))}
+        </dl>
+      )}
+      {portfolio.length > 0 && (variant === 'compact' || !hasSelectedInvestments) && (
         <div>
           <p className="text-xs uppercase tracking-[0.25em] text-muted">
             {companyFilter === 'active' ? 'Current companies' : 'Select companies'}
