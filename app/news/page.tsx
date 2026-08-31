@@ -23,7 +23,7 @@ export default async function NewsPage() {
           <p className="text-sm uppercase tracking-[0.4em] text-muted">Newsroom</p>
           <h1 className="h2">Updates across the FerSil ecosystem</h1>
           <p className="max-w-3xl text-muted">
-            Follow strategic exits, product launches, financing events, and technical milestones across the legacy portfolio.
+            Follow strategic exits, product launches, financing events, and technical milestones across the portfolio.
           </p>
         </PageHero>
 

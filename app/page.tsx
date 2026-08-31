@@ -17,7 +17,7 @@ const differentiators = [
   },
   {
     title: 'The Diaspora Advantage',
-    description: 'We back world-class CEE engineering talent and provide the bridge, capital, and network required to win in global and US markets.'
+    description: 'We back world-class CEE engineering talent and provide the bridge, capital, and network required to win in global and U.S. markets.'
   },
   {
     title: 'Real-World Deployment Loops',
@@ -67,7 +67,7 @@ export default async function HomePage() {
             <p className="text-sm uppercase tracking-[0.4em] text-muted">FerSil Ventures</p>
             <h1 className="h1">Where Atoms Meet Bits</h1>
             <p className="max-w-2xl text-lg text-muted">
-              FerSil Ventures backs early-stage technical founders building robotics, industrial intelligence, and software rooted in the physical world. We bridge deep Central &amp; Eastern European engineering talent with global scale and US market velocity.
+              FerSil Ventures backs early-stage technical founders building robotics, industrial intelligence, and software rooted in the physical world. We bridge deep Central &amp; Eastern European engineering talent with global scale and U.S. market velocity.
             </p>
             <div className="flex flex-wrap gap-4">
               <ButtonLink href="/contact" variant="accent" size="lg">Pitch Us</ButtonLink>
@@ -168,7 +168,7 @@ export default async function HomePage() {
             <SectionHeading
               kicker="Team"
               title="Built by Operators for Technical Founders"
-              description="We combine deep-tech investing experience with hands-on support in US market expansion, technical hiring across CEE corridors, and industrial pilot deployment."
+              description="We combine deep-tech investing experience with hands-on support in U.S. market expansion, technical hiring across CEE corridors, and industrial pilot deployment."
             />
             <ButtonLink href="/team" variant="ghost" className="self-start md:self-auto">Meet the full team →</ButtonLink>
           </div>
@@ -186,7 +186,7 @@ export default async function HomePage() {
             <SectionHeading
               kicker="News"
               title="Updates from the FerSil network"
-              description="Legacy portfolio news, new milestones, and signals from the systems we believe will matter next."
+              description="Portfolio news, new milestones, and signals from the systems we believe will matter next."
             />
             <ButtonLink href="/news" variant="ghost" className="self-start md:self-auto">See all news →</ButtonLink>
           </div>

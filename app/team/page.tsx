@@ -21,7 +21,7 @@ export default async function TeamPage() {
           <p className="text-sm uppercase tracking-[0.4em] text-muted">Team</p>
           <h1 className="h2">Technical Conviction. Operational Depth.</h1>
           <p className="max-w-3xl text-muted">
-            Former founders, engineers, and institutional operators supporting deep-tech builders across Europe and the US.
+            Former founders, engineers, and institutional operators supporting deep-tech builders across Europe and the U.S.
           </p>
         </PageHero>
 

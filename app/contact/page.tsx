@@ -30,7 +30,7 @@ export default function ContactPage() {
             <div className="panel border-white/10 p-6">
               <BrandMark size="lg" />
               <p className="mt-4 max-w-md text-sm text-muted">
-                Ferrum meets silicon: investing across physical intelligence, industrial systems, and the CEE-US founder corridor.
+                Ferrum meets silicon: investing across physical intelligence, industrial systems, and the CEE–U.S. founder corridor.
               </p>
             </div>
 

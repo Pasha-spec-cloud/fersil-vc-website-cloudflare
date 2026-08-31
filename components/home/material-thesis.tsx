@@ -161,7 +161,7 @@ export function MaterialThesis() {
               FerSil exists at the compound interface (Fe₃Si), where the tangible constraints of heavy industry and physical hardware meet computational logic and artificial intelligence.
             </p>
             <p>
-              Named in homage to Austrian-American cosmochemist Hans Suess, our platform mirrors that transatlantic arc—connecting European technical depth with global market execution.
+              Suessite, a naturally occurring Fe₃Si mineral, was named for Austrian-American cosmochemist Hans Suess. Our platform mirrors that transatlantic arc—connecting European technical depth with global market execution.
             </p>
           </div>
           <div className="mt-5 flex flex-wrap gap-4 text-sm text-muted">
@@ -183,7 +183,7 @@ export function MaterialThesis() {
           <p className="mt-3 max-w-2xl text-sm !text-slate-600">Select attributes to compare the physical and digital foundations.</p>
           <div className="mt-4 rounded-[1.25rem] bg-slate-50 px-4 py-4 text-sm leading-6 text-slate-600">
             <p className="!text-slate-600">
-              FerSil invests where physical intelligence and AI converge. The CEE region continues to produce deep-tech, robotics, and engineering talent; the US ecosystem contributes scale, software reach, and market velocity. We back founders building across that corridor.
+              FerSil invests where physical intelligence and AI converge. The CEE region continues to produce deep-tech, robotics, and engineering talent; the U.S. ecosystem contributes scale, software reach, and market velocity. We back founders building across that corridor.
             </p>
           </div>
           <div className="mt-6 flex flex-wrap gap-2">
