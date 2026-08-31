@@ -24,7 +24,7 @@ export default async function CompaniesPage() {
       <Container className="space-y-12">
         <PageHero tone="companies" imageSrc="/media/backgrounds/companies-hero.png" imageAlt="FerSil companies page background with robotics and automation lab" contentClassName="max-w-3xl space-y-4">
           <p className="text-sm uppercase tracking-[0.4em] text-muted">Portfolio</p>
-          <h1 className="h2">Portfolio Built for the Physical-Software Frontier.</h1>
+          <h1 className="h2">Portfolio Built for the Physical-Software Frontier</h1>
           <p className="max-w-3xl text-muted">
             Backing category-defining companies across robotics, industrial intelligence, edge infrastructure, and autonomous systems—powered by technical founders scaling globally.
           </p>

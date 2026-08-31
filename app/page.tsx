@@ -65,7 +65,7 @@ export default async function HomePage() {
         <Container className="grid gap-10 lg:grid-cols-[2fr,1fr]">
           <div className="space-y-8">
             <p className="text-sm uppercase tracking-[0.4em] text-muted">FerSil Ventures</p>
-            <h1 className="h1">Where Atoms Meet Bits.</h1>
+            <h1 className="h1">Where Atoms Meet Bits</h1>
             <p className="max-w-2xl text-lg text-muted">
               FerSil Ventures backs early-stage technical founders building robotics, industrial intelligence, and software rooted in the physical world. We bridge deep Central &amp; Eastern European engineering talent with global scale and US market velocity.
             </p>
