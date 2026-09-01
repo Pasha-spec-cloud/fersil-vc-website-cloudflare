@@ -1,9 +1,9 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import type { Route } from 'next';
 import { usePathname } from 'next/navigation';
-import { BrandMark } from '@/components/brand/brand-mark';
 import { ButtonLink } from '@/components/ui/button';
 import { Container } from '@/components/ui/container';
 import { motion } from 'framer-motion';
@@ -19,10 +19,18 @@ export function SiteHeader() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-30 backdrop-blur-xl">
-      <Container className="flex items-center justify-between border-b border-white/5 py-4">
-        <Link href="/" aria-label="FerSil Ventures home">
-          <BrandMark priority />
+    <header className="sticky top-0 z-30 bg-slate-950/72 backdrop-blur-xl">
+      <Container className="flex items-center justify-between gap-5 border-b border-white/5 py-3">
+        <Link href="/" aria-label="FerSil Ventures home" className="shrink-0">
+          <Image
+            src="/media/brand/ferrous-silicon-header-v2.png"
+            alt="Ferrous Silicon"
+            width={720}
+            height={480}
+            priority
+            className="h-[4.5rem] w-auto rounded-lg border border-white/15 object-contain shadow-[0_10px_32px_rgba(0,0,0,0.28)] sm:h-[5.5rem]"
+            sizes="(min-width: 640px) 132px, 108px"
+          />
         </Link>
         <nav className="hidden items-center gap-6 text-sm text-muted md:flex">
           {navLinks.map((link) => {
